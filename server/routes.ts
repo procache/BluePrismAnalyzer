@@ -9,7 +9,6 @@ import { insertProcessAnalysisSchema, type Dependency } from "@shared/schema";
 const upload = multer({ 
   storage: multer.memoryStorage(),
   fileFilter: (req, file, cb) => {
-    console.log("File upload attempt:", file.originalname, file.mimetype);
     if (file.originalname.endsWith('.bpprocess') || file.mimetype === 'text/xml' || file.mimetype === 'application/xml') {
       cb(null, true);
     } else {
@@ -26,10 +25,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Upload and analyze .bpprocess file
   app.post("/api/analyze", upload.single('file'), async (req, res) => {
     try {
-      console.log("Request body:", req.body);
-      console.log("Request file:", req.file);
-      console.log("Request files:", req.files);
-      
       if (!req.file) {
         return res.status(400).json({ message: "No file uploaded" });
       }

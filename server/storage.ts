@@ -1,4 +1,6 @@
 import { processAnalyses, type ProcessAnalysis, type InsertProcessAnalysis } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getProcessAnalysis(id: number): Promise<ProcessAnalysis | undefined>;
@@ -6,29 +8,23 @@ export interface IStorage {
   getAllProcessAnalyses(): Promise<ProcessAnalysis[]>;
 }
 
-export class MemStorage implements IStorage {
-  private analyses: Map<number, ProcessAnalysis>;
-  private currentId: number;
-
-  constructor() {
-    this.analyses = new Map();
-    this.currentId = 1;
-  }
-
+export class DatabaseStorage implements IStorage {
   async getProcessAnalysis(id: number): Promise<ProcessAnalysis | undefined> {
-    return this.analyses.get(id);
+    const [analysis] = await db.select().from(processAnalyses).where(eq(processAnalyses.id, id));
+    return analysis || undefined;
   }
 
   async createProcessAnalysis(insertAnalysis: InsertProcessAnalysis): Promise<ProcessAnalysis> {
-    const id = this.currentId++;
-    const analysis: ProcessAnalysis = { ...insertAnalysis, id };
-    this.analyses.set(id, analysis);
+    const [analysis] = await db
+      .insert(processAnalyses)
+      .values(insertAnalysis)
+      .returning();
     return analysis;
   }
 
   async getAllProcessAnalyses(): Promise<ProcessAnalysis[]> {
-    return Array.from(this.analyses.values());
+    return await db.select().from(processAnalyses);
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
