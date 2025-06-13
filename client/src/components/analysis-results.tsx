@@ -30,7 +30,12 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
   const dependencies = analysis.dependencies as VBODependency[];
 
   const filteredAndSortedDependencies = useMemo(() => {
+    if (!dependencies || !Array.isArray(dependencies)) {
+      return [];
+    }
+    
     let filtered = dependencies.filter(vbo => {
+      if (!vbo || !vbo.name || !vbo.actions) return false;
       const matchesSearch = vbo.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            vbo.actions.some(action => action.name.toLowerCase().includes(searchTerm.toLowerCase()));
       return matchesSearch;
@@ -153,17 +158,7 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
               </div>
               
-              {/* Filter */}
-              <Select value={typeFilter} onValueChange={setTypeFilter}>
-                <SelectTrigger className="w-[140px]">
-                  <SelectValue placeholder="All Types" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Types</SelectItem>
-                  <SelectItem value="vbo">VBO Only</SelectItem>
-                  <SelectItem value="action">Actions Only</SelectItem>
-                </SelectContent>
-              </Select>
+
               
               {/* Export */}
               <Button onClick={handleExport} className="bg-bp-green text-white hover:bg-green-600">
@@ -181,85 +176,71 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
                 <TableHead>
                   <Button
                     variant="ghost"
-                    onClick={() => handleSort("type")}
-                    className="flex items-center space-x-1 hover:text-gray-700 p-0"
-                  >
-                    <span>Type</span>
-                    <ArrowUpDown className="h-3 w-3" />
-                  </Button>
-                </TableHead>
-                <TableHead>
-                  <Button
-                    variant="ghost"
                     onClick={() => handleSort("name")}
                     className="flex items-center space-x-1 hover:text-gray-700 p-0"
                   >
-                    <span>Name</span>
+                    <span>Visual Business Object</span>
                     <ArrowUpDown className="h-3 w-3" />
                   </Button>
                 </TableHead>
-                <TableHead>Business Object</TableHead>
+                <TableHead>Actions</TableHead>
                 <TableHead>Usage Count</TableHead>
                 <TableHead>Locations</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {filteredAndSortedDependencies.map((dependency) => (
-                <TableRow key={dependency.id} className="table-row hover:bg-gray-50">
-                  <TableCell>
-                    <Badge 
-                      variant="secondary" 
-                      className={`inline-flex items-center ${
-                        dependency.type === "vbo" 
-                          ? "bg-blue-100 text-blue-800" 
-                          : "bg-green-100 text-green-800"
-                      }`}
-                    >
-                      {dependency.type === "vbo" ? (
-                        <Puzzle className="mr-1 h-3 w-3" />
-                      ) : (
-                        <Play className="mr-1 h-3 w-3" />
-                      )}
-                      {dependency.type.toUpperCase()}
-                    </Badge>
-                  </TableCell>
+              {filteredAndSortedDependencies.map((vbo) => (
+                <TableRow key={vbo.id} className="table-row hover:bg-gray-50">
                   <TableCell>
                     <div className="flex items-center">
-                      {dependency.type === "vbo" ? (
-                        <Box className="text-bp-blue mr-3 h-5 w-5" />
-                      ) : (
-                        <Cog className="text-bp-green mr-3 h-5 w-5" />
-                      )}
+                      <Box className="text-bp-blue mr-3 h-5 w-5" />
                       <div>
                         <div className="text-sm font-medium text-gray-900">
-                          {dependency.name}
+                          {vbo.name}
                         </div>
-                        {dependency.description && (
-                          <div className="text-sm text-gray-500">
-                            {dependency.description}
-                          </div>
-                        )}
+                        <Badge variant="outline" className="bg-blue-100 text-blue-800 mt-1">
+                          <Puzzle className="mr-1 h-3 w-3" />
+                          VBO
+                        </Badge>
                       </div>
                     </div>
                   </TableCell>
-                  <TableCell className="text-sm text-gray-900">
-                    {dependency.businessObject}
+                  <TableCell>
+                    <div className="space-y-2">
+                      {vbo.actions && vbo.actions.length > 0 ? (
+                        vbo.actions.map((action) => (
+                          <div key={action.id} className="flex items-center bg-gray-50 rounded-lg p-2">
+                            <Play className="text-bp-green mr-2 h-4 w-4" />
+                            <div className="flex-1">
+                              <div className="text-sm font-medium text-gray-900">
+                                {action.name}
+                              </div>
+                              <div className="text-xs text-gray-500">
+                                Used {action.usageCount} {action.usageCount === 1 ? "time" : "times"}
+                              </div>
+                            </div>
+                          </div>
+                        ))
+                      ) : (
+                        <div className="text-sm text-gray-500 italic">No actions found</div>
+                      )}
+                    </div>
                   </TableCell>
                   <TableCell>
                     <Badge variant="outline" className="bg-gray-100 text-gray-800">
-                      {dependency.usageCount} {dependency.usageCount === 1 ? "time" : "times"}
+                      {vbo.usageCount} {vbo.usageCount === 1 ? "time" : "times"}
                     </Badge>
                   </TableCell>
                   <TableCell>
                     <div className="flex flex-wrap gap-1">
-                      {dependency.locations.slice(0, 2).map((location, index) => (
+                      {vbo.locations.slice(0, 2).map((location: string, index: number) => (
                         <Badge key={index} variant="outline" className="bg-gray-100 text-gray-700 text-xs">
                           {location}
                         </Badge>
                       ))}
-                      {dependency.locations.length > 2 && (
+                      {vbo.locations.length > 2 && (
                         <Badge variant="outline" className="bg-gray-100 text-gray-700 text-xs">
-                          +{dependency.locations.length - 2} more
+                          +{vbo.locations.length - 2} more
                         </Badge>
                       )}
                     </div>
