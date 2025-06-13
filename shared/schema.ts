@@ -21,17 +21,25 @@ export const insertProcessAnalysisSchema = createInsertSchema(processAnalyses).o
 export type InsertProcessAnalysis = z.infer<typeof insertProcessAnalysisSchema>;
 export type ProcessAnalysis = typeof processAnalyses.$inferSelect;
 
-export const dependencySchema = z.object({
+export const actionSchema = z.object({
   id: z.string(),
-  type: z.enum(["vbo", "action"]),
   name: z.string(),
-  businessObject: z.string(),
   usageCount: z.number(),
   locations: z.array(z.string()),
   description: z.string().optional(),
 });
 
-export type Dependency = z.infer<typeof dependencySchema>;
+export const vboSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  usageCount: z.number(),
+  locations: z.array(z.string()),
+  actions: z.array(actionSchema),
+  description: z.string().optional(),
+});
+
+export type VBOAction = z.infer<typeof actionSchema>;
+export type VBODependency = z.infer<typeof vboSchema>;
 
 export const processStatsSchema = z.object({
   totalStages: z.number(),

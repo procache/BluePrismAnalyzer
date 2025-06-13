@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/table";
 import { Search, Download, ArrowUpDown, Puzzle, Play, Box, Cog } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import type { ProcessAnalysis, Dependency } from "@shared/schema";
+import type { ProcessAnalysis, VBODependency } from "@shared/schema";
 
 interface AnalysisResultsProps {
   analysis: ProcessAnalysis;
@@ -27,20 +27,19 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
   const { toast } = useToast();
 
-  const dependencies = analysis.dependencies as Dependency[];
+  const dependencies = analysis.dependencies as VBODependency[];
 
   const filteredAndSortedDependencies = useMemo(() => {
-    let filtered = dependencies.filter(dep => {
-      const matchesSearch = dep.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           dep.businessObject.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesType = typeFilter === "all" || dep.type === typeFilter;
-      return matchesSearch && matchesType;
+    let filtered = dependencies.filter(vbo => {
+      const matchesSearch = vbo.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           vbo.actions.some(action => action.name.toLowerCase().includes(searchTerm.toLowerCase()));
+      return matchesSearch;
     });
 
     if (sortField) {
       filtered.sort((a, b) => {
-        let aValue: any = a[sortField as keyof Dependency];
-        let bValue: any = b[sortField as keyof Dependency];
+        let aValue: any = a[sortField as keyof VBODependency];
+        let bValue: any = b[sortField as keyof VBODependency];
 
         if (typeof aValue === "string") {
           aValue = aValue.toLowerCase();
@@ -68,16 +67,22 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
   };
 
   const handleExport = () => {
-    const csvContent = [
-      ["Type", "Name", "Business Object", "Usage Count", "Locations"],
-      ...filteredAndSortedDependencies.map(dep => [
-        dep.type,
-        dep.name,
-        dep.businessObject,
-        dep.usageCount.toString(),
-        dep.locations.join("; ")
-      ])
-    ].map(row => row.map(field => `"${field}"`).join(",")).join("\n");
+    const csvRows = [
+      ["Business Object", "Action", "Usage Count", "Locations"]
+    ];
+    
+    filteredAndSortedDependencies.forEach(vbo => {
+      vbo.actions.forEach(action => {
+        csvRows.push([
+          vbo.name,
+          action.name,
+          action.usageCount.toString(),
+          action.locations.join("; ")
+        ]);
+      });
+    });
+
+    const csvContent = csvRows.map(row => row.map(field => `"${field}"`).join(",")).join("\n");
 
     const blob = new Blob([csvContent], { type: "text/csv" });
     const url = URL.createObjectURL(blob);

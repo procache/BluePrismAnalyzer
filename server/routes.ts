@@ -4,7 +4,7 @@ import multer from "multer";
 import { parseString } from "xml2js";
 import { z } from "zod";
 import { storage } from "./storage";
-import { insertProcessAnalysisSchema, type Dependency } from "@shared/schema";
+import { insertProcessAnalysisSchema, type VBODependency, type VBOAction } from "@shared/schema";
 
 const upload = multer({ 
   storage: multer.memoryStorage(),
@@ -54,8 +54,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const dependencies = extractDependencies(result.process);
       
       // Calculate stats
-      const vbos = dependencies.filter(d => d.type === "vbo");
-      const actions = dependencies.filter(d => d.type === "action");
+      const vbos = dependencies;
+      const totalActions = dependencies.reduce((sum, vbo) => sum + vbo.actions.length, 0);
       
       const analysisData = {
         fileName: req.file.originalname,
@@ -63,7 +63,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         processName,
         totalStages: stages.length,
         vboCount: vbos.length,
-        actionCount: actions.length,
+        actionCount: totalActions,
         subsheetCount: subsheets.length,
         dependencies: dependencies,
       };
@@ -116,135 +116,95 @@ export async function registerRoutes(app: Express): Promise<Server> {
   return httpServer;
 }
 
-function extractDependencies(process: any): Dependency[] {
-  const dependencies: Map<string, Dependency> = new Map();
+function extractDependencies(process: any): VBODependency[] {
+  const vbos: Map<string, VBODependency> = new Map();
   const stages = process.stage || [];
   const subsheets = process.subsheet || [];
 
   // Extract from main process stages
-  extractFromStages(stages, dependencies, "Main Process");
+  extractFromStages(stages, vbos, "Main Process");
 
   // Extract from subsheets
   subsheets.forEach((subsheet: any) => {
     const subsheetName = subsheet.name?.[0] || "Unknown Subsheet";
     const subsheetStages = findStagesBySubsheet(stages, subsheet.$.subsheetid);
-    extractFromStages(subsheetStages, dependencies, subsheetName);
+    extractFromStages(subsheetStages, vbos, subsheetName);
   });
 
-  return Array.from(dependencies.values());
+  return Array.from(vbos.values());
 }
 
-function extractFromStages(stages: any[], dependencies: Map<string, Dependency>, location: string) {
+function extractFromStages(stages: any[], vbos: Map<string, VBODependency>, location: string) {
   stages.forEach((stage: any) => {
     const stageData = stage.$;
     const stageName = stageData.name;
     const stageType = stageData.type;
 
-    // Look for SubSheet stages which indicate VBO usage
-    if (stageType === "SubSheet") {
-      // Extract business object from processid if available
-      const processId = stage.processid?.[0];
-      if (processId) {
-        // This indicates a call to another process/VBO
-        const vboKey = `vbo-${stageName}`;
-        if (!dependencies.has(vboKey)) {
-          dependencies.set(vboKey, {
-            id: vboKey,
-            type: "vbo",
-            name: stageName,
-            businessObject: stageName,
-            usageCount: 0,
-            locations: [],
-            description: `Visual Business Object: ${stageName}`
-          });
-        }
-        
-        const vbo = dependencies.get(vboKey)!;
-        vbo.usageCount++;
-        if (!vbo.locations.includes(location)) {
-          vbo.locations.push(location);
-        }
-
-        // Also create an action entry for this VBO usage
-        const actionKey = `action-${stageName}-${location}`;
-        if (!dependencies.has(actionKey)) {
-          dependencies.set(actionKey, {
-            id: actionKey,
-            type: "action",
-            name: stageName,
-            businessObject: stageName,
-            usageCount: 1,
-            locations: [location],
-            description: `Action in ${stageName}`
-          });
-        }
-      }
-    }
-
-    // Look for specific business object patterns in stage names
     if (stageName) {
-      // Common Blue Prism VBO patterns
+      // Look for specific business object patterns in stage names
       const vboPatterns = [
-        /Excel/i,
-        /Email/i,
-        /Collection/i,
-        /Utility/i,
-        /File/i,
-        /String/i,
-        /Date/i,
-        /Math/i,
-        /Environment/i,
-        /SAP/i,
-        /Web/i,
-        /Database/i
+        { pattern: /Excel/i, vboName: "MS Excel VBO" },
+        { pattern: /Email/i, vboName: "Email - POP3/SMTP" },
+        { pattern: /Collection/i, vboName: "Utility - Collection Manipulation" },
+        { pattern: /File/i, vboName: "Utility - File Management" },
+        { pattern: /String/i, vboName: "Utility - Strings" },
+        { pattern: /Date/i, vboName: "Utility - Date and Time" },
+        { pattern: /Math/i, vboName: "Utility - Math" },
+        { pattern: /Environment/i, vboName: "Utility - Environment" },
+        { pattern: /SAP/i, vboName: "SAP Application Server" },
+        { pattern: /Web/i, vboName: "Web API" },
+        { pattern: /Database/i, vboName: "Database" }
       ];
 
-      vboPatterns.forEach(pattern => {
+      for (const { pattern, vboName } of vboPatterns) {
         if (pattern.test(stageName)) {
-          const vboName = extractVBOName(stageName);
-          const vboKey = `vbo-${vboName}`;
+          const vboKey = vboName;
           
-          if (!dependencies.has(vboKey)) {
-            dependencies.set(vboKey, {
+          // Get or create VBO
+          if (!vbos.has(vboKey)) {
+            vbos.set(vboKey, {
               id: vboKey,
-              type: "vbo",
               name: vboName,
-              businessObject: vboName,
               usageCount: 0,
               locations: [],
+              actions: [],
               description: `Visual Business Object: ${vboName}`
             });
           }
           
-          const vbo = dependencies.get(vboKey)!;
+          const vbo = vbos.get(vboKey)!;
           vbo.usageCount++;
           if (!vbo.locations.includes(location)) {
             vbo.locations.push(location);
           }
 
-          // Create action entry
+          // Extract action name from stage name
           const actionName = extractActionName(stageName);
-          const actionKey = `action-${actionName}-${vboName}`;
+          const actionKey = `${actionName}-${location}`;
           
-          if (!dependencies.has(actionKey)) {
-            dependencies.set(actionKey, {
+          // Check if action already exists in this VBO
+          const existingAction = vbo.actions.find(action => action.id === actionKey);
+          
+          if (!existingAction) {
+            // Add new action to this VBO
+            vbo.actions.push({
               id: actionKey,
-              type: "action",
               name: actionName,
-              businessObject: vboName,
-              usageCount: 0,
-              locations: [],
+              usageCount: 1,
+              locations: [location],
               description: `Action: ${actionName}`
             });
+          } else {
+            // Update existing action
+            existingAction.usageCount++;
+            if (!existingAction.locations.includes(location)) {
+              existingAction.locations.push(location);
+            }
           }
           
-          const action = dependencies.get(actionKey)!;
-          action.usageCount++;
-          if (!action.locations.includes(location)) {
-            action.locations.push(location);
-          }
+          break; // Only match the first pattern
         }
-      });
+      }
     }
   });
 }
