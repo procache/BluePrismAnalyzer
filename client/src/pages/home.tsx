@@ -1,0 +1,74 @@
+import { useState } from "react";
+import { FileUpload } from "@/components/file-upload";
+import { AnalysisResults } from "@/components/analysis-results";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Bot, HelpCircle } from "lucide-react";
+import type { ProcessAnalysis } from "@shared/schema";
+
+export default function Home() {
+  const [analysis, setAnalysis] = useState<ProcessAnalysis | null>(null);
+  const [isUploading, setIsUploading] = useState(false);
+
+  const handleAnalysisComplete = (result: ProcessAnalysis) => {
+    setAnalysis(result);
+    setIsUploading(false);
+  };
+
+  const handleUploadStart = () => {
+    setIsUploading(true);
+    setAnalysis(null);
+  };
+
+  const handleUploadError = () => {
+    setIsUploading(false);
+  };
+
+  return (
+    <div className="bg-bp-surface min-h-screen">
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-bp-blue rounded-lg flex items-center justify-center">
+                <Bot className="text-white text-xl" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-bp-dark">Blue Prism Process Analyzer</h1>
+                <p className="text-sm text-gray-600">Analyze .bpprocess files and extract dependencies</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Button variant="ghost" className="text-bp-blue hover:bg-blue-50">
+                <HelpCircle className="mr-2 h-4 w-4" />
+                Help
+              </Button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* File Upload Section */}
+        <Card className="card-shadow mb-8">
+          <CardContent className="p-8">
+            <FileUpload
+              onUploadStart={handleUploadStart}
+              onUploadComplete={handleAnalysisComplete}
+              onUploadError={handleUploadError}
+              isUploading={isUploading}
+            />
+          </CardContent>
+        </Card>
+
+        {/* Analysis Results */}
+        {analysis && (
+          <div className="fade-in">
+            <AnalysisResults analysis={analysis} />
+          </div>
+        )}
+      </main>
+    </div>
+  );
+}
