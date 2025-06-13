@@ -1,0 +1,2618 @@
+﻿<process name="Invoice Acquisition Test Rig" version="1.0" bpversion="7.0.1.49890" narrative="" byrefcollection="true" preferredid="490aeda1-7099-492e-8a8d-8cd13177806d">
+  <view>
+    <camerax>197</camerax>
+    <cameray>-294</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5" type="Normal" published="False">
+    <name>Load Queue</name>
+    <view>
+      <camerax>52</camerax>
+      <cameray>232</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="287c10e3-5686-4267-bd83-65cfd5fa5c9a" type="Normal" published="False">
+    <name>Process Queue</name>
+    <view>
+      <camerax>442</camerax>
+      <cameray>1111</cameray>
+      <zoom version="2">0.9375</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="974b03d0-d171-4e2d-a250-153305f0163b" type="Normal" published="False">
+    <name>Start Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="652fd011-f9b2-4c46-81cf-e0ddac012761" type="Normal" published="False">
+    <name>Validate Environment</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="83a6f529-eaf8-4ae6-8574-547c2468735d" type="Normal" published="False">
+    <name>[SAP] SE16 Get Posting Period</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="97e5132f-f9a2-4237-b12f-04fec8fe93f6" type="Normal" published="False">
+    <name>[Excel] Run Macro</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>42</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="3c789c48-a98f-4dbd-9227-81a59718df45" type="Normal" published="False">
+    <name>[Excel] Get BP Code Not Found</name>
+    <view>
+      <camerax>-2</camerax>
+      <cameray>-160</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="b2a53817-d864-4cce-bcd5-8efa421b54eb" type="Normal" published="False">
+    <name>[Email] Send to CLSC</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="bdc50675-9be9-4f37-ac4a-b1d455ebf693" type="Normal" published="False">
+    <name>[Excel] Prepare CLSC Errors Split</name>
+    <view>
+      <camerax>98</camerax>
+      <cameray>689</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="3658971f-5a77-40b5-8557-b2185213e1a6" type="Normal" published="False">
+    <name>[Excel] Prepare Errors Split Files (CLSC &amp; MMU)</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="f8b8ec96-af4b-4144-8749-c98a55630e5b" type="Normal" published="False">
+    <name>[Excel] CLSC - Filter Errors 1 and 2 (Payoff &amp; No Contract)</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>147</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="bc9d282a-e24e-4a37-b806-cd6ae78ea4d3" type="Normal" published="False">
+    <name>[SAP] (HFP) ZKEDF_INV_PAID Paste Data</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>105</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="726b4333-8ca1-45aa-a819-9e349f06796b" type="Normal" published="False">
+    <name>[NWPM] Search Process IDs</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>168</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="084fa5eb-4a25-4064-b810-7dac14d48597" type="Normal" published="False">
+    <name>[Excel] CLSC Filter From Payload File</name>
+    <view>
+      <camerax>121</camerax>
+      <cameray>147</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="aef8a583-02f9-4ab4-89ed-abc999cc85bd" type="Normal" published="False">
+    <name>[Excel] CLSC Filter</name>
+    <view>
+      <camerax>141</camerax>
+      <cameray>126</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="fbd54af2-50bf-44dc-8710-341323fc255f" type="Normal" published="False">
+    <name>Reset Global Data</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="333e751c-e7c5-4b5d-b321-c9b0f59f8194" type="Normal" published="False">
+    <name>[Excel] Update Remarks</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>105</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="697928f2-2a14-4f06-a277-d8b5b1382ae9" name="Stage1" type="ProcessInfo">
+    <display x="-180" y="-330" w="150" h="90" />
+  </stage>
+  <stage stageid="5f4130df-7d38-4ecd-b1ee-19c4f4d12987" name="Start" type="Start">
+    <display x="135" y="-360" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>293bb5fc-cfc3-4b9e-bcb8-54155cd4a60c</onsuccess>
+  </stage>
+  <stage stageid="6bb2506a-1863-43d7-a0a8-258299482570" name="Load Queue" type="SubSheetInfo">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="-165" y="-75" w="150" h="90" />
+  </stage>
+  <stage stageid="ff843d1a-53cd-4156-8501-61deadd9d193" name="Process Queue" type="SubSheetInfo">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="-735" y="15" w="150" h="90" />
+  </stage>
+  <stage stageid="293bb5fc-cfc3-4b9e-bcb8-54155cd4a60c" name="End1" type="End">
+    <display x="135" y="-270" />
+  </stage>
+  <stage stageid="3db18315-6823-4877-80e0-cd4c3544f2c5" name="Start" type="Start">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="15" y="-105" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>1e1348f8-7889-4a75-add8-c5c43b585175</onsuccess>
+  </stage>
+  <stage stageid="8706a299-47d7-475b-bbdd-573a4141ed4a" name="End" type="End">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="375" y="-105" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="5c253e9b-df30-4b53-8091-803cfc6cbd63" name="Got Item?" type="Decision">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="135" y="120" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <decision expression="[Item ID]&lt;&gt;&quot;&quot;" />
+    <ontrue>e84e550a-944f-48c1-9935-86e69cc0c469</ontrue>
+    <onfalse>70946f28-868e-4a82-a0d5-8e223f53f4ec</onfalse>
+  </stage>
+  <stage stageid="1e1348f8-7889-4a75-add8-c5c43b585175" name="Start Up" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="15" y="-30" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>fcc26f52-1e37-405f-9ed3-2264def6b78b</onsuccess>
+    <processid>8f814e4a-ce3a-4fd2-8a04-5f2b890ceba7</processid>
+  </stage>
+  <stage stageid="6fd5f325-ab04-41d8-8b17-df06f8e1c114" name="Close Down" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="375" y="-30" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>8706a299-47d7-475b-bbdd-573a4141ed4a</onsuccess>
+    <processid>cf13a1fa-a9be-4527-973b-e2f66f99d14b</processid>
+  </stage>
+  <stage stageid="125a1ed7-a2c8-4ffc-a41c-b5b1982b18d2" name="Work Item" type="Block">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="75" y="165" w="120" h="450" />
+    <font family="Tahoma" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="21fa7327-1306-489a-8f5e-7fbde17faf63" name="Mark Item As Completed" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="255" y="525" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>3190459e-3f81-42d9-a9a7-12e4fd5b20d2</onsuccess>
+    <processid>d31d1c11-61ad-4c49-91a4-44bbf0bf0725</processid>
+  </stage>
+  <stage stageid="d1b85adc-c344-4b0d-b851-2b6facee44bd" name="Stop?" type="Decision">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="375" y="120" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Bold" color="FF0000" />
+    <decision expression="[Stop ASAP] OR [Stop After Items]=0 OR LocalTime()&gt;[Stop After Time]" />
+    <ontrue>6fd5f325-ab04-41d8-8b17-df06f8e1c114</ontrue>
+    <onfalse>fb3c7d0b-3d2e-4aed-9ade-e5221d8a0306</onfalse>
+  </stage>
+  <stage stageid="e72c4fb7-6883-4e89-a771-014929b32b4c" name="Get Next Item" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="15" y="120" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>5c253e9b-df30-4b53-8091-803cfc6cbd63</onsuccess>
+    <processid>dfdac946-b452-40b6-90bf-c0a6a3bed2b5</processid>
+  </stage>
+  <stage stageid="69d44645-9737-466e-affc-d4308cb5fdb9" name="Notify Termination" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="495" y="-30" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>b63566ac-318c-44f2-ba00-0a5c00be995e</onsuccess>
+    <processid>f4038194-4b17-4bda-9fcb-f05477818bff</processid>
+  </stage>
+  <stage stageid="b63566ac-318c-44f2-ba00-0a5c00be995e" name="Re-Throw" type="Exception">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="495" y="-105" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <exception localized="yes" type="" detail="" usecurrent="yes" />
+  </stage>
+  <stage stageid="0b7b2439-1e0c-421d-ba95-355179929d68" name="Reset Global Data" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="375" y="300" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>ff3bbfe0-f6ce-43a0-be50-50d4e3f2b68e</onsuccess>
+    <processid>83eb389d-b506-4a87-b1d2-b4b095d91313</processid>
+  </stage>
+  <stage stageid="0a6ab0bf-4186-4621-a7ab-5a245d66b218" name="Recover" type="Recover">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="495" y="45" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>69d44645-9737-466e-affc-d4308cb5fdb9</onsuccess>
+  </stage>
+  <stage stageid="fcc26f52-1e37-405f-9ed3-2264def6b78b" name="Load Queue" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="15" y="45" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>e72c4fb7-6883-4e89-a771-014929b32b4c</onsuccess>
+    <processid>2e04e593-0de7-48d6-ac5f-b8fdae5c3e59</processid>
+  </stage>
+  <stage stageid="fb3c7d0b-3d2e-4aed-9ade-e5221d8a0306" name="Get Next Item" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="255" y="120" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>5c253e9b-df30-4b53-8091-803cfc6cbd63</onsuccess>
+    <processid>dfdac946-b452-40b6-90bf-c0a6a3bed2b5</processid>
+  </stage>
+  <stage stageid="70946f28-868e-4a82-a0d5-8e223f53f4ec" name="Note7" type="Note">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <loginhibit />
+    <narrative>There are no more items available</narrative>
+    <display x="135" y="-30" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>6fd5f325-ab04-41d8-8b17-df06f8e1c114</onsuccess>
+  </stage>
+  <stage stageid="28fa85f7-27ff-4fe1-97c5-6f1c37de6d5d" name="Control Applications" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="375" y="375" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>0b7b2439-1e0c-421d-ba95-355179929d68</onsuccess>
+    <processid>c349177a-c8c1-4b8c-8295-47359a640f0d</processid>
+  </stage>
+  <stage stageid="3190459e-3f81-42d9-a9a7-12e4fd5b20d2" name="anchor18" type="Anchor">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="375" y="525" w="10" h="10" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>28fa85f7-27ff-4fe1-97c5-6f1c37de6d5d</onsuccess>
+  </stage>
+  <stage stageid="ff3bbfe0-f6ce-43a0-be50-50d4e3f2b68e" name="Count Items" type="Calculation">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="375" y="225" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>d1b85adc-c344-4b0d-b851-2b6facee44bd</onsuccess>
+    <calculation expression="[Stop After Items]-1" stage="Stop After Items" />
+  </stage>
+  <stage stageid="e84e550a-944f-48c1-9935-86e69cc0c469" name="[NWPM] Filter Process Search" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="135" y="225" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>9f0ff607-dea3-4f4e-900c-be284f1716fc</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="d619905c-19da-4ce5-9ce4-cb097cd51d54" name="Recover" type="Recover">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="135" y="585" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>cf961bea-f0cc-4fca-b5de-35553715488b</onsuccess>
+  </stage>
+  <stage stageid="8a8a3925-aa8c-4cd4-8385-a5468cff50b4" name="Mark Item As Exception" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="255" y="720" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>431bdfc6-c243-4113-8778-62fde261ae6d</onsuccess>
+    <processid>d599353b-a78b-40f4-ab04-255791b86a1a</processid>
+  </stage>
+  <stage stageid="cf961bea-f0cc-4fca-b5de-35553715488b" name="Exception Data" type="MultipleCalculation">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="135" y="660" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>fe93d740-320c-4b42-b417-b12fbbe0cf74</onsuccess>
+    <steps>
+      <calculation expression="ExceptionType()" stage="Exception Type" />
+      <calculation expression="ExceptionDetail()" stage="Exception Detail" />
+    </steps>
+  </stage>
+  <stage stageid="fe93d740-320c-4b42-b417-b12fbbe0cf74" name="Resume" type="Resume">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="135" y="720" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>8a8a3925-aa8c-4cd4-8385-a5468cff50b4</onsuccess>
+  </stage>
+  <stage stageid="431bdfc6-c243-4113-8778-62fde261ae6d" name="anchor7" type="Anchor">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="375" y="720" w="10" h="10" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>3190459e-3f81-42d9-a9a7-12e4fd5b20d2</onsuccess>
+  </stage>
+  <stage stageid="9f0ff607-dea3-4f4e-900c-be284f1716fc" name="[NWPM] Select Layout" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="135" y="300" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>2f6bd952-d6c9-419e-a97a-8ea6f7c0d5a4</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="2f6bd952-d6c9-419e-a97a-8ea6f7c0d5a4" name="[NWPM] Restart and Refresh Errors" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="135" y="375" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>04961df4-a130-4f36-9d94-f2427cf0ed60</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="04961df4-a130-4f36-9d94-f2427cf0ed60" name="[NWPM] Generate Payload File" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="135" y="450" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>28868144-721b-4a31-ad3a-7b4c8fff1cf8</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="28868144-721b-4a31-ad3a-7b4c8fff1cf8" name="[Excel] Perform Macro Split" type="SubSheet">
+    <subsheetid>aa2b8d5f-9f2a-4e4e-84a0-e76a80ae03e5</subsheetid>
+    <display x="135" y="525" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>21fa7327-1306-489a-8f5e-7fbde17faf63</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="420efaf9-48f2-4bf4-9723-179a0e285f2a" name="Start" type="Start">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="15" y="-135" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>e35dd236-e92d-4076-b866-1a5b1135e963</onsuccess>
+  </stage>
+  <stage stageid="77ddef37-6e6a-464a-979e-2170b6c35cf1" name="End" type="End">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="1215" y="-135" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="9e4773bb-b2b5-4947-953b-e1fffa693071" name="Got Item?" type="Decision">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="135" y="15" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <decision expression="[Item ID]&lt;&gt;&quot;&quot;" />
+    <ontrue>6ef89eee-442a-4341-982d-1b389afa81be</ontrue>
+    <onfalse>a06bf0d8-74cf-4c38-be4c-e752ee63065b</onfalse>
+  </stage>
+  <stage stageid="e35dd236-e92d-4076-b866-1a5b1135e963" name="Start Up" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="15" y="-60" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>12eabc78-6223-45ca-aec1-f259933530b4</onsuccess>
+    <processid>974b03d0-d171-4e2d-a250-153305f0163b</processid>
+  </stage>
+  <stage stageid="bb0a5573-8ffc-401d-ab2b-e15d3ee86175" name="Close Down" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="1215" y="-60" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>77ddef37-6e6a-464a-979e-2170b6c35cf1</onsuccess>
+    <processid>cf13a1fa-a9be-4527-973b-e2f66f99d14b</processid>
+  </stage>
+  <stage stageid="62c1e4ab-2965-4951-9b0c-fe7e4b2ad5d1" name="Mark Item As Completed" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="1095" y="1665" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>614a3e22-6ac1-4000-8ec5-fbc2c0730fe8</onsuccess>
+    <processid>d31d1c11-61ad-4c49-91a4-44bbf0bf0725</processid>
+  </stage>
+  <stage stageid="169add56-8d16-4408-ae95-6e9ea297e0b4" name="Stop?" type="Decision">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="1215" y="15" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Bold" color="FF0000" />
+    <decision expression="[Stop ASAP] OR [Stop After Items]=0 OR LocalTime()&gt;[Stop After Time]" />
+    <ontrue>bb0a5573-8ffc-401d-ab2b-e15d3ee86175</ontrue>
+    <onfalse>be3f1e34-03a4-4e5c-9035-b485e8446db6</onfalse>
+  </stage>
+  <stage stageid="12eabc78-6223-45ca-aec1-f259933530b4" name="Get Next Item" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="15" y="15" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>9e4773bb-b2b5-4947-953b-e1fffa693071</onsuccess>
+    <processid>dfdac946-b452-40b6-90bf-c0a6a3bed2b5</processid>
+  </stage>
+  <stage stageid="73b11597-74f2-479c-ad42-3f6f82579ef5" name="Notify Termination" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="1335" y="-60" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>57c9ce98-05d4-4574-b9d2-fd2a13803a71</onsuccess>
+    <processid>f4038194-4b17-4bda-9fcb-f05477818bff</processid>
+  </stage>
+  <stage stageid="57c9ce98-05d4-4574-b9d2-fd2a13803a71" name="Re-Throw" type="Exception">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="1335" y="-135" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <exception localized="yes" type="" detail="" usecurrent="yes" />
+  </stage>
+  <stage stageid="0808be63-9ea4-482c-81f7-2bab6d40e268" name="Reset Global Data" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="1215" y="195" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>40855798-f3a8-4756-b0a8-a5862826d1c2</onsuccess>
+    <processid>83eb389d-b506-4a87-b1d2-b4b095d91313</processid>
+  </stage>
+  <stage stageid="5c89badc-aa7c-4525-96f3-a9bb51ed48fe" name="Recover" type="Recover">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="1335" y="15" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>73b11597-74f2-479c-ad42-3f6f82579ef5</onsuccess>
+  </stage>
+  <stage stageid="be3f1e34-03a4-4e5c-9035-b485e8446db6" name="Get Next Item" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="240" y="15" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>9e4773bb-b2b5-4947-953b-e1fffa693071</onsuccess>
+    <processid>dfdac946-b452-40b6-90bf-c0a6a3bed2b5</processid>
+  </stage>
+  <stage stageid="a06bf0d8-74cf-4c38-be4c-e752ee63065b" name="Note7" type="Note">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <loginhibit />
+    <narrative>There are no more items available</narrative>
+    <display x="135" y="-60" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>bb0a5573-8ffc-401d-ab2b-e15d3ee86175</onsuccess>
+  </stage>
+  <stage stageid="dba4c004-b3b6-4a8f-9d0d-2a962f64070d" name="Control Applications" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="1215" y="270" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>0808be63-9ea4-482c-81f7-2bab6d40e268</onsuccess>
+    <processid>c349177a-c8c1-4b8c-8295-47359a640f0d</processid>
+  </stage>
+  <stage stageid="614a3e22-6ac1-4000-8ec5-fbc2c0730fe8" name="anchor18" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="1215" y="1665" w="10" h="10" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>dba4c004-b3b6-4a8f-9d0d-2a962f64070d</onsuccess>
+  </stage>
+  <stage stageid="40855798-f3a8-4756-b0a8-a5862826d1c2" name="Count Items" type="Calculation">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="1215" y="120" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>169add56-8d16-4408-ae95-6e9ea297e0b4</onsuccess>
+    <calculation expression="[Stop After Items]-1" stage="Stop After Items" />
+  </stage>
+  <stage stageid="6bfe95fe-7544-4f11-8fa9-03d3d2073ff1" name="[Excel] Get BP Code Not Found" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="135" y="210" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="00FF00" />
+    <onsuccess>5b9e17a6-35d5-4e98-9711-1f0108c5908a</onsuccess>
+    <processid>3c789c48-a98f-4dbd-9227-81a59718df45</processid>
+  </stage>
+  <stage stageid="2ccd85d9-c108-4f13-9332-f77241236880" name="Recover" type="Recover">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="-135" y="1650" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>5338a554-1c0f-4953-acbf-ce73e22b7c40</onsuccess>
+  </stage>
+  <stage stageid="e5ee457c-333c-40f5-8896-459717db8842" name="Mark Item As Exception" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="1095" y="1785" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>187e22a1-702d-445f-b5cc-936f9c18e8bd</onsuccess>
+    <processid>d599353b-a78b-40f4-ab04-255791b86a1a</processid>
+  </stage>
+  <stage stageid="5338a554-1c0f-4953-acbf-ce73e22b7c40" name="Exception Data" type="MultipleCalculation">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="-135" y="1725" w="90" h="60" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>ee56a401-810a-4ae7-aa49-27ada1ed149d</onsuccess>
+    <steps>
+      <calculation expression="ExceptionType()" stage="Exception Type" />
+      <calculation expression="ExceptionDetail()" stage="Exception Detail" />
+    </steps>
+  </stage>
+  <stage stageid="ee56a401-810a-4ae7-aa49-27ada1ed149d" name="Resume" type="Resume">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="-135" y="1785" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>e5ee457c-333c-40f5-8896-459717db8842</onsuccess>
+  </stage>
+  <stage stageid="187e22a1-702d-445f-b5cc-936f9c18e8bd" name="anchor7" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="1215" y="1785" w="10" h="10" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>614a3e22-6ac1-4000-8ec5-fbc2c0730fe8</onsuccess>
+  </stage>
+  <stage stageid="5b9e17a6-35d5-4e98-9711-1f0108c5908a" name="Any Lines?" type="Decision">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="240" y="210" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="00FF00" />
+    <decision expression="[Not Found Count] &gt; 0" />
+    <ontrue>7891ff21-6d3e-449d-9832-f0d4109bd44e</ontrue>
+    <onfalse>f0b66301-4f8f-4a3f-9cab-a61c2cff4d75</onfalse>
+  </stage>
+  <stage stageid="7891ff21-6d3e-449d-9832-f0d4109bd44e" name="[E-mail] Send Email to CLSC" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="345" y="210" w="90" h="60" />
+    <onsuccess>ad9a5c36-e9e9-419f-815c-2939402f0684</onsuccess>
+    <processid>b2a53817-d864-4cce-bcd5-8efa421b54eb</processid>
+  </stage>
+  <stage stageid="ad9a5c36-e9e9-419f-815c-2939402f0684" name="Anchor1" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="345" y="270" w="10" h="10" />
+    <onsuccess>f0b66301-4f8f-4a3f-9cab-a61c2cff4d75</onsuccess>
+  </stage>
+  <stage stageid="f0b66301-4f8f-4a3f-9cab-a61c2cff4d75" name="Anchor2" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="240" y="270" w="10" h="10" />
+    <onsuccess>79efd199-82c2-435c-88b5-398d758c87db</onsuccess>
+  </stage>
+  <stage stageid="e60ba7e3-0b0d-444c-83df-012beffa79ca" name="[Excel] Prepare CLSC Errors Split" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="135" y="315" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF9900" />
+    <onsuccess>10ed1063-97d5-4283-b22d-ff6f8ae3f640</onsuccess>
+    <processid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</processid>
+  </stage>
+  <stage stageid="10ed1063-97d5-4283-b22d-ff6f8ae3f640" name="[SAP] ZKNRFI_BP_MONITOR Export CMD File" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="135" y="390" w="90" h="60" />
+    <onsuccess>41e17f67-4b66-4d75-9b5d-fb09044be9cf</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="41e17f67-4b66-4d75-9b5d-fb09044be9cf" name="[Excel] Prepare Errors Split Files (CLSC &amp; MMU)" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="135" y="465" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>11d04a78-5637-4748-82e9-db16bbf701e0</onsuccess>
+    <processid>3658971f-5a77-40b5-8557-b2185213e1a6</processid>
+  </stage>
+  <stage stageid="54ca481f-8d1e-4f19-9da2-94d9ce53265b" name="[Excel] CLSC - Filter Payoff &amp; No Contract" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="345" y="555" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="00FF00" />
+    <onsuccess>b5413891-4103-4b88-bad9-5cf350d5d6c3</onsuccess>
+    <processid>f8b8ec96-af4b-4144-8749-c98a55630e5b</processid>
+  </stage>
+  <stage stageid="8a81ce6d-e0cc-4e73-81b2-a178dd7ca3ad" name="[SAP] (HFP) ZKEDF_INV_PAID Paste Data" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="525" y="555" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>43aaf3a7-6477-415b-8f0e-c081773231ed</onsuccess>
+    <processid>bc9d282a-e24e-4a37-b806-cd6ae78ea4d3</processid>
+  </stage>
+  <stage stageid="43aaf3a7-6477-415b-8f0e-c081773231ed" name="[NWPM] Search Process IDs" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="630" y="555" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>842ae040-5697-429b-9ac2-f176e4e91ac8</onsuccess>
+    <processid>726b4333-8ca1-45aa-a819-9e349f06796b</processid>
+  </stage>
+  <stage stageid="11d04a78-5637-4748-82e9-db16bbf701e0" name="Note1" type="Note">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <narrative>[CLSC Errors Split]
+
+1. Payoff not saved for contract 
+&amp; 
+2. No contract exists for legacy invoice number</narrative>
+    <display x="135" y="555" w="300" h="90" />
+    <font family="Segoe UI" size="12" style="Bold" color="0000FF" />
+    <onsuccess>54ca481f-8d1e-4f19-9da2-94d9ce53265b</onsuccess>
+  </stage>
+  <stage stageid="842ae040-5697-429b-9ac2-f176e4e91ac8" name="[Excel] Update Remarks " type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="735" y="555" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF9900" />
+    <inputs>
+      <input type="text" name="Remark" expr="&quot;Processed by Bot on &quot;&amp;[Today YYYYMMDD]&amp;&quot;, if error remains day after, please check.&quot;" />
+      <input type="text" name="Column" expr="" />
+    </inputs>
+    <onsuccess>0fb987dd-4a7d-4d31-88dc-2f7b167033dc</onsuccess>
+    <processid>333e751c-e7c5-4b5d-b321-c9b0f59f8194</processid>
+  </stage>
+  <stage stageid="0fb987dd-4a7d-4d31-88dc-2f7b167033dc" name="[SAP] (HFP) ZKEDF_INV_PAID Clear Table" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="840" y="555" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>4bda6831-e547-43a8-8ceb-178a5bdc955b</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="4bda6831-e547-43a8-8ceb-178a5bdc955b" name="Anchor5" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="840" y="630" w="10" h="10" />
+    <font family="Segoe UI" size="10" style="Regular" color="0000FF" />
+    <onsuccess>27f37cb8-96cd-4cf1-af6c-efcaa9550ef6</onsuccess>
+  </stage>
+  <stage stageid="580143d4-043e-4f90-8a6c-970baf481798" name="Note1" type="Note">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <narrative>[CLSC Errors Split]
+
+3. Calculation date is before valid-as-from date</narrative>
+    <display x="135" y="765" w="300" h="90" />
+    <font family="Segoe UI" size="12" style="Bold" color="0000FF" />
+    <onsuccess>273e5bac-e3bc-4829-ac64-618a3d3d997b</onsuccess>
+  </stage>
+  <stage stageid="c8401b55-03fc-4426-bea9-446eae3665df" name="[Excel] CLSC Filter From Payload File" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="480" y="900" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF9900" />
+    <onsuccess>71a3921b-7202-4cf6-a0b9-b07a9d291719</onsuccess>
+    <processid>084fa5eb-4a25-4064-b810-7dac14d48597</processid>
+  </stage>
+  <stage stageid="71a3921b-7202-4cf6-a0b9-b07a9d291719" name="Any Rows?" type="Decision">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="585" y="900" w="90" h="60" />
+    <decision expression="" />
+    <ontrue>1e8e986c-c2dc-4076-8d62-7bbbc8ece0d0</ontrue>
+    <onfalse>69218dca-b4eb-4b6b-916e-475a9130cc84</onfalse>
+  </stage>
+  <stage stageid="8fc89207-4053-42a0-a743-27fbf0b6d004" name="[Excel] CLSC Filter" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="480" y="1035" w="90" h="60" />
+    <onsuccess>64d852c3-a5fd-4800-a5bc-23786233fac7</onsuccess>
+    <processid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</processid>
+  </stage>
+  <stage stageid="a4b55959-86ee-4de7-ba1d-8785bb7b2cf3" name="Anchor7" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="480" y="960" w="10" h="10" />
+    <onsuccess>8fc89207-4053-42a0-a743-27fbf0b6d004</onsuccess>
+  </stage>
+  <stage stageid="69218dca-b4eb-4b6b-916e-475a9130cc84" name="Anchor8" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="585" y="960" w="10" h="10" />
+    <onsuccess>a4b55959-86ee-4de7-ba1d-8785bb7b2cf3</onsuccess>
+  </stage>
+  <stage stageid="1e8e986c-c2dc-4076-8d62-7bbbc8ece0d0" name="[Excel] Create Calculation File" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="690" y="900" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>816ab5f3-be40-4a21-a6f2-1751df1f131e</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="816ab5f3-be40-4a21-a6f2-1751df1f131e" name="[SAP] (HXP) ZNWPM_MASS_UPDATE Upload Files" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="795" y="900" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>67754f80-9001-44cb-bf82-7136372d422a</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="ab3da31d-4de8-41c7-8a57-c4ea77bf2fc8" name="Anchor9" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="135" y="1335" w="10" h="10" />
+    <onsuccess>25d54ad2-53b5-4c55-ad38-e74f9fc166fb</onsuccess>
+  </stage>
+  <stage stageid="586d38a9-17dc-4b6f-b954-4ab2a39376f4" name="Anchor10" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="960" y="1035" w="10" h="10" />
+    <onsuccess>0c9efb3a-a229-4008-9997-a97ae01b1a4a</onsuccess>
+  </stage>
+  <stage stageid="0c9efb3a-a229-4008-9997-a97ae01b1a4a" name="Anchor11" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="960" y="1155" w="10" h="10" />
+    <onsuccess>f80cc5a4-c8c9-4652-86c1-67baa31cc3f8</onsuccess>
+  </stage>
+  <stage stageid="4486788a-4140-45aa-840b-066643094dc4" name="Anchor12" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="960" y="1335" w="10" h="10" />
+    <onsuccess>d1b1192e-8aa6-4f26-bdd4-24f1b769f4ca</onsuccess>
+  </stage>
+  <stage stageid="64d852c3-a5fd-4800-a5bc-23786233fac7" name="Any Rows?" type="Decision">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="585" y="1035" w="90" h="60" />
+    <decision expression="" />
+    <ontrue>3078d5fb-10d2-47f2-bb83-76865ab966cc</ontrue>
+    <onfalse>b38d1bb3-86a7-45e1-b50e-f44066f2483e</onfalse>
+  </stage>
+  <stage stageid="29a71c43-353d-4690-be34-57950794879c" name="[Excel] CLSC Filter" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="480" y="1155" w="90" h="60" />
+    <onsuccess>85b7c6f3-a496-409d-9fbc-724adee257ff</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="77f27fcc-2983-4700-bf40-f3c3867e1084" name="Anchor7" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="480" y="1095" w="10" h="10" />
+    <onsuccess>29a71c43-353d-4690-be34-57950794879c</onsuccess>
+  </stage>
+  <stage stageid="b38d1bb3-86a7-45e1-b50e-f44066f2483e" name="Anchor8" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="585" y="1095" w="10" h="10" />
+    <onsuccess>77f27fcc-2983-4700-bf40-f3c3867e1084</onsuccess>
+  </stage>
+  <stage stageid="3078d5fb-10d2-47f2-bb83-76865ab966cc" name="[Excel] Prepare Data for E-mail" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="690" y="1035" w="90" h="60" />
+    <onsuccess>2e998368-1cae-4362-8de8-8e2da08099bb</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="2e998368-1cae-4362-8de8-8e2da08099bb" name="[Excel] Get Recipient from Distribution List" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="795" y="1035" w="90" h="60" />
+    <onsuccess>5613e064-7c2e-4d83-811a-f69ad6ce487b</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="5613e064-7c2e-4d83-811a-f69ad6ce487b" name="[E-mail] Send" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="900" y="1035" w="90" h="60" />
+    <onsuccess>586d38a9-17dc-4b6f-b954-4ab2a39376f4</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="f80cc5a4-c8c9-4652-86c1-67baa31cc3f8" name="[Excel] Update Remarks " type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="960" y="1260" w="90" h="60" />
+    <onsuccess>4486788a-4140-45aa-840b-066643094dc4</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="67754f80-9001-44cb-bf82-7136372d422a" name="Anchor13" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="960" y="900" w="10" h="10" />
+    <onsuccess>586d38a9-17dc-4b6f-b954-4ab2a39376f4</onsuccess>
+  </stage>
+  <stage stageid="85b7c6f3-a496-409d-9fbc-724adee257ff" name="Any Rows?" type="Decision">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="585" y="1155" w="90" h="60" />
+    <decision expression="" />
+    <ontrue>d1b1192e-8aa6-4f26-bdd4-24f1b769f4ca</ontrue>
+    <onfalse>0c9efb3a-a229-4008-9997-a97ae01b1a4a</onfalse>
+  </stage>
+  <stage stageid="d1b1192e-8aa6-4f26-bdd4-24f1b769f4ca" name="Anchor14" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="585" y="1335" w="10" h="10" />
+    <onsuccess>ab3da31d-4de8-41c7-8a57-c4ea77bf2fc8</onsuccess>
+  </stage>
+  <stage stageid="25d54ad2-53b5-4c55-ad38-e74f9fc166fb" name="Note1" type="Note">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <narrative>[CLSC Errors Split]
+
+4. Limit not defined for Product Type KXX, Business Partner</narrative>
+    <display x="135" y="1395" w="300" h="90" />
+    <font family="Segoe UI" size="12" style="Bold" color="0000FF" />
+    <onsuccess>31ba6e6f-a43c-47e3-8f34-bcb3aac3e28e</onsuccess>
+  </stage>
+  <stage stageid="31ba6e6f-a43c-47e3-8f34-bcb3aac3e28e" name="Company Code C404" type="Decision">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="345" y="1395" w="90" h="60" />
+    <decision expression="" />
+    <ontrue>930eb652-4765-4289-86f9-fcaa73a7e90b</ontrue>
+    <onfalse>287d5f1e-80e6-4cc7-af8f-73f544dd6353</onfalse>
+  </stage>
+  <stage stageid="930eb652-4765-4289-86f9-fcaa73a7e90b" name="[Excel] Payload Filter" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="465" y="1395" w="90" h="60" />
+    <onsuccess>49434da1-6f13-405c-9d9a-f74b73a6891b</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="49434da1-6f13-405c-9d9a-f74b73a6891b" name="Any Rows?" type="Decision">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="570" y="1395" w="90" h="60" />
+    <decision expression="" />
+    <ontrue>baec6642-918d-423e-a4e5-7448a8524840</ontrue>
+    <onfalse>771fe467-ac5d-4089-94c3-8acf7deb70e6</onfalse>
+  </stage>
+  <stage stageid="771fe467-ac5d-4089-94c3-8acf7deb70e6" name="Anchor8" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="570" y="1485" w="10" h="10" />
+    <onsuccess>287d5f1e-80e6-4cc7-af8f-73f544dd6353</onsuccess>
+  </stage>
+  <stage stageid="baec6642-918d-423e-a4e5-7448a8524840" name="[Excel] Limits_macro Paste Data from Payload" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="675" y="1395" w="90" h="60" />
+    <onsuccess>50d96bd6-fb19-4c2a-b107-85652ca3c55d</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="50d96bd6-fb19-4c2a-b107-85652ca3c55d" name="[Excel] Limits_macro Run Macro" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="780" y="1395" w="90" h="60" />
+    <onsuccess>096d3ad6-41d2-453c-9d3e-723529f00b54</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="096d3ad6-41d2-453c-9d3e-723529f00b54" name="[E-mail] Send E-mails" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="885" y="1395" w="90" h="60" />
+    <onsuccess>698a5329-213d-4ea6-b913-9851dfe3dfc2</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="698a5329-213d-4ea6-b913-9851dfe3dfc2" name="[Excel] CLSC Update Remarks " type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="885" y="1575" w="90" h="60" />
+    <onsuccess>064e030c-8ee0-43a5-8e72-b224f6e66d1b</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="287d5f1e-80e6-4cc7-af8f-73f544dd6353" name="[Excel] CLSC Filter" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="345" y="1485" w="90" h="60" />
+    <onsuccess>942268bf-479f-4cbf-990b-39893fa0b692</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="942268bf-479f-4cbf-990b-39893fa0b692" name="[E-mail] Send E-mails" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="345" y="1575" w="90" h="60" />
+    <onsuccess>698a5329-213d-4ea6-b913-9851dfe3dfc2</onsuccess>
+    <processid>00000000-0000-0000-0000-000000000000</processid>
+  </stage>
+  <stage stageid="79efd199-82c2-435c-88b5-398d758c87db" name="Anchor15" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="135" y="270" w="10" h="10" />
+    <onsuccess>e60ba7e3-0b0d-444c-83df-012beffa79ca</onsuccess>
+  </stage>
+  <stage stageid="b36cd5d9-fbf0-47c4-b5fd-3ae65cca367f" name="Calendar - Run Errors 3 &amp; 4?" type="Decision">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="135" y="675" w="90" h="60" />
+    <decision expression="" />
+    <ontrue>580143d4-043e-4f90-8a6c-970baf481798</ontrue>
+    <onfalse>ff7c7793-c3da-47d3-bb63-4f9d7a8dd1e3</onfalse>
+  </stage>
+  <stage stageid="4b8aa6a9-c701-44a1-bcd0-39a3f84b8433" name="Anchor3" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="135" y="630" w="10" h="10" />
+    <onsuccess>b36cd5d9-fbf0-47c4-b5fd-3ae65cca367f</onsuccess>
+  </stage>
+  <stage stageid="ff7c7793-c3da-47d3-bb63-4f9d7a8dd1e3" name="Anchor4" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="-75" y="675" w="10" h="10" />
+    <onsuccess>512b22a1-96de-4d20-9a19-e90b3027c446</onsuccess>
+  </stage>
+  <stage stageid="512b22a1-96de-4d20-9a19-e90b3027c446" name="Anchor6" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="-75" y="1665" w="10" h="10" />
+    <onsuccess>064e030c-8ee0-43a5-8e72-b224f6e66d1b</onsuccess>
+  </stage>
+  <stage stageid="064e030c-8ee0-43a5-8e72-b224f6e66d1b" name="Anchor16" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="885" y="1665" w="10" h="10" />
+    <onsuccess>62c1e4ab-2965-4951-9b0c-fe7e4b2ad5d1</onsuccess>
+  </stage>
+  <stage stageid="68b2351a-9a55-4e8d-b3af-2820ada8218e" name="Work" type="Block">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="-180" y="90" w="1200" h="1590" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="86c0a845-1e87-4654-b615-6c484b7b76fd" name="Note2" type="Note">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <narrative>* continues on the next page</narrative>
+    <display x="-615" y="570" w="210" h="60" />
+    <font family="Segoe UI" size="17" style="Bold" color="FF0000" />
+  </stage>
+  <stage stageid="745929bd-f89f-440f-9ae7-f1cbcdbfb58f" name="[Excel] Run Macro" type="SubSheetInfo">
+    <subsheetid>97e5132f-f9a2-4237-b12f-04fec8fe93f6</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="231b9b6a-f847-4976-8d1a-e47540327a0e" name="Start" type="Start">
+    <subsheetid>97e5132f-f9a2-4237-b12f-04fec8fe93f6</subsheetid>
+    <display x="15" y="-105" />
+    <onsuccess>52509543-4dee-421a-867c-68fe07847a58</onsuccess>
+  </stage>
+  <stage stageid="23eb434b-98c0-4c82-973f-c6162a0fbb00" name="End" type="End">
+    <subsheetid>97e5132f-f9a2-4237-b12f-04fec8fe93f6</subsheetid>
+    <display x="15" y="195" />
+  </stage>
+  <stage stageid="f45d6e56-f378-4e61-9d68-a520c8509b15" name="Payload Path" type="Data">
+    <display x="-75" y="-195" w="150" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">C:\TEMP\CNH\Invoice Acquisition\Payload\Payload - 2020-12-09.xls</initialvalue>
+    <alwaysinit />
+  </stage>
+  <stage stageid="70db8883-9936-4563-b50e-6b7c77563744" name="Macro Path" type="Data">
+    <display x="-75" y="-165" w="150" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">C:\TEMP\CNH\Invoice Acquisition\macro\RPA - invoice acquisition macro v1.2.xlsb</initialvalue>
+    <alwaysinit />
+  </stage>
+  <stage stageid="52509543-4dee-421a-867c-68fe07847a58" name="Create Instance" type="Action">
+    <subsheetid>97e5132f-f9a2-4237-b12f-04fec8fe93f6</subsheetid>
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="flag" name="Enable Events" narrative="Flag to indicate that events should be enabled / disabled on the attached instance - defaulted to True" expr="" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" narrative="An integer which can be used to identify the created instance in subsequent actions" stage="Macro Handle" />
+    </outputs>
+    <onsuccess>c1475ed0-205c-4694-989b-620996e741ae</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Create Instance" />
+  </stage>
+  <stage stageid="c54c5cd1-8a7c-470e-8fc8-dc15c08d480c" name="Macro Handle" type="Data">
+    <subsheetid>97e5132f-f9a2-4237-b12f-04fec8fe93f6</subsheetid>
+    <display x="90" y="-45" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c1475ed0-205c-4694-989b-620996e741ae" name="Open Workbook" type="Action">
+    <subsheetid>97e5132f-f9a2-4237-b12f-04fec8fe93f6</subsheetid>
+    <display x="15" y="0" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[Macro Handle]" />
+      <input type="text" name="File name" narrative="The path and name of the file which should be opened." expr="[Macro Path]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="Macro WB Name" />
+    </outputs>
+    <onsuccess>06124cc6-da35-42e4-91fd-a94f9b9c2939</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Open Workbook" />
+  </stage>
+  <stage stageid="350d16be-a1f9-40e1-83af-985c123df376" name="Macro WB Name" type="Data">
+    <subsheetid>97e5132f-f9a2-4237-b12f-04fec8fe93f6</subsheetid>
+    <display x="90" y="0" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="06124cc6-da35-42e4-91fd-a94f9b9c2939" name="Show" type="Action">
+    <subsheetid>97e5132f-f9a2-4237-b12f-04fec8fe93f6</subsheetid>
+    <display x="15" y="45" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance which should have its window displayed. The default of zero indicates the currently active instance." expr="[Macro Handle]" />
+    </inputs>
+    <onsuccess>aac809aa-3286-4a41-a01e-6c8e0a3dda11</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Show" />
+  </stage>
+  <stage stageid="aac809aa-3286-4a41-a01e-6c8e0a3dda11" name="Run Macro Async" type="Action">
+    <subsheetid>97e5132f-f9a2-4237-b12f-04fec8fe93f6</subsheetid>
+    <display x="15" y="90" />
+    <inputs>
+      <input type="number" name="Handle" narrative="The integer handle identifying the instance that contains the macro. The default of zero indicates the currently active instance." expr="[Macro Handle]" />
+      <input type="text" name="Macro Name" narrative="The name of the macro to run" expr="&quot;Auto&quot;" />
+      <input type="number" name="Timer" expr="30" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Result" stage="Result" />
+    </outputs>
+    <onsuccess>0bb5b1f6-609f-42d3-8933-f2a7257a258f</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Run Macro Async" />
+  </stage>
+  <stage stageid="a2a0ec6c-ec5c-4de7-9277-614ce33032a9" name="Result" type="Data">
+    <subsheetid>97e5132f-f9a2-4237-b12f-04fec8fe93f6</subsheetid>
+    <display x="90" y="90" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0bb5b1f6-609f-42d3-8933-f2a7257a258f" name="Close Instance" type="Action">
+    <subsheetid>97e5132f-f9a2-4237-b12f-04fec8fe93f6</subsheetid>
+    <display x="15" y="135" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance to be closed. Zero indicates the currently active instance." expr="[Macro Handle]" />
+      <input type="flag" name="Save Changes" narrative="True to save the changes to the open workbooks on the instance, False to discard any changes. Default is False." expr="False" />
+    </inputs>
+    <onsuccess>23eb434b-98c0-4c82-973f-c6162a0fbb00</onsuccess>
+    <breakpoint type="0">
+      <condition>
+      </condition>
+    </breakpoint>
+    <resource object="MS Excel VBO Extended" action="Close Instance" />
+  </stage>
+  <stage stageid="69ab9b6e-a36d-41a8-8b86-fe618a4bbeda" name="[Excel] Get BP Code Not Found" type="SubSheetInfo">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="-165" y="-405" w="150" h="90" />
+  </stage>
+  <stage stageid="95536a6c-d2c5-4975-a04a-209d864ad3a8" name="Start" type="Start">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="-435" />
+    <onsuccess>780545f7-6140-4a09-b707-c461e3b0fbd7</onsuccess>
+  </stage>
+  <stage stageid="cab97c3a-3581-437f-ad16-ac43954e0ea2" name="End" type="End">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="1200" />
+  </stage>
+  <stage stageid="1b22aff5-2131-4345-bcb6-27d8ba039501" name="Create Instance" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="-330" />
+    <inputs>
+      <input type="flag" name="Enable Events" narrative="Flag to indicate that events should be enabled / disabled on the attached instance - defaulted to True" expr="" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" narrative="An integer which can be used to identify the created instance in subsequent actions" stage="CLSC Handle" />
+    </outputs>
+    <onsuccess>18a302a9-4727-4ef4-8138-58e3dd4d5daa</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Create Instance" />
+  </stage>
+  <stage stageid="e9de7253-6117-4f2a-86b6-8166808d2f21" name="CLSC Handle" type="Data">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="120" y="-330" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="18a302a9-4727-4ef4-8138-58e3dd4d5daa" name="Open Workbook" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="-285" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[CLSC Handle]" />
+      <input type="text" name="File name" narrative="The path and name of the file which should be opened." expr="[CLSC File Path]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="CLSC WB Name" />
+    </outputs>
+    <onsuccess>d707a9d5-e50e-4ee5-887c-bdd120a2a3b0</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Open Workbook" />
+  </stage>
+  <stage stageid="d707a9d5-e50e-4ee5-887c-bdd120a2a3b0" name="Show" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="-240" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance which should have its window displayed. The default of zero indicates the currently active instance." expr="[CLSC Handle]" />
+    </inputs>
+    <onsuccess>f4a3fa3c-c011-423f-9581-982fb6459668</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Show" />
+  </stage>
+  <stage stageid="d8727122-d6fa-4a7a-bac8-4da2f9ddedbc" name="CLSC File Path" type="Data">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="-165" y="-315" w="150" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">C:\TEMP\CNH\Invoice Acquisition\Output from last run\2020.12.14 KC_10 errors split - CLSC.xlsb</initialvalue>
+    <alwaysinit />
+  </stage>
+  <stage stageid="eeb183ba-9e5f-41a4-abdf-8d029af5d38f" name="MMU File Path" type="Data">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="-165" y="-285" w="150" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">C:\TEMP\CNH\Invoice Acquisition\Output from last run\2020.12.14 KC_10 errors split - MMU.xlsb</initialvalue>
+    <alwaysinit />
+  </stage>
+  <stage stageid="780545f7-6140-4a09-b707-c461e3b0fbd7" name="Note3" type="Note">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <narrative>CLSC</narrative>
+    <display x="15" y="-375" w="120" h="30" />
+    <onsuccess>1b22aff5-2131-4345-bcb6-27d8ba039501</onsuccess>
+  </stage>
+  <stage stageid="94a8d11b-7c21-437c-b8a3-f577158b700e" name="CLSC WB Name" type="Data">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="120" y="-285" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="edd06866-30f1-4813-bbb5-67ab8e90e824" name="Get CLSC Data" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the number of rows is required. The default of zero indicates the currently active instance." expr="[CLSC Handle]" />
+      <input type="text" name="Workbook Name" narrative="The name of the workbook on which the number of rows is required. The default empty text value indicates the currently active workbook on the specified instance." expr="[CLSC WB Name]" />
+      <input type="text" name="Worksheet Name" narrative="The name of the worksheet within the specified workbook which should be written to a collection. The default empty text indicates the currently active worksheet within the specified workbook." expr="" />
+      <input type="text" name="StartCell" narrative="The starting cell of the range of interest" expr="&quot;A1&quot;" />
+      <input type="text" name="EndCell" narrative="The end cell of the range of interest" expr="&quot;F10000&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" narrative="The spreadsheet data from the specified range, as a collection" stage="CLSC Data" />
+    </outputs>
+    <onsuccess>b1bbcb97-787c-4c4f-8f6a-428179c6542f</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Get Worksheet Range As Collection" />
+  </stage>
+  <stage stageid="b30c4ba6-7e2c-462a-be11-a9ecdcf208a0" name="CLSC Data" type="Collection">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="120" y="-105" w="90" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2fa09de7-1dc3-497c-8f86-eded150f18ae" name="Create Instance" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="30" />
+    <inputs>
+      <input type="flag" name="Enable Events" narrative="Flag to indicate that events should be enabled / disabled on the attached instance - defaulted to True" expr="" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" narrative="An integer which can be used to identify the created instance in subsequent actions" stage="MMU Handle" />
+    </outputs>
+    <onsuccess>ac6881c5-defc-47fd-a17d-173c29b80d6b</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Create Instance" />
+  </stage>
+  <stage stageid="c2871969-9f9e-4b48-8559-5f0d57a4c0d9" name="MMU Handle" type="Data">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="120" y="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ac6881c5-defc-47fd-a17d-173c29b80d6b" name="Open Workbook" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="75" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[MMU Handle]" />
+      <input type="text" name="File name" narrative="The path and name of the file which should be opened." expr="[MMU File Path]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="MMU WB Name" />
+    </outputs>
+    <onsuccess>5fbe5912-242d-4006-b089-ddc601c88536</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Open Workbook" />
+  </stage>
+  <stage stageid="5fbe5912-242d-4006-b089-ddc601c88536" name="Show" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="120" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance which should have its window displayed. The default of zero indicates the currently active instance." expr="[MMU Handle]" />
+    </inputs>
+    <onsuccess>32916fb4-fe37-4ec5-b7d6-408af020c19e</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Show" />
+  </stage>
+  <stage stageid="4f31214e-b108-4447-9c8d-1f91cc7afaa2" name="MMU WB Name" type="Data">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="120" y="75" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f51b529e-a5b7-4296-acb7-b99e6e6d962a" name="Get MMU Data" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="300" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the number of rows is required. The default of zero indicates the currently active instance." expr="[MMU Handle]" />
+      <input type="text" name="Workbook Name" narrative="The name of the workbook on which the number of rows is required. The default empty text value indicates the currently active workbook on the specified instance." expr="[MMU WB Name]" />
+      <input type="text" name="Worksheet Name" narrative="The name of the worksheet within the specified workbook which should be written to a collection. The default empty text indicates the currently active worksheet within the specified workbook." expr="" />
+      <input type="text" name="StartCell" narrative="The starting cell of the range of interest" expr="&quot;A1&quot;" />
+      <input type="text" name="EndCell" narrative="The end cell of the range of interest" expr="&quot;F10000&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" narrative="The spreadsheet data from the specified range, as a collection" stage="MMU Data" />
+    </outputs>
+    <onsuccess>db5f96fc-1e21-4fe0-9e8c-29af04cc75e9</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Get Worksheet Range As Collection" />
+  </stage>
+  <stage stageid="b1bbcb97-787c-4c4f-8f6a-428179c6542f" name="Note3" type="Note">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <narrative>MMU</narrative>
+    <display x="15" y="-15" w="120" h="30" />
+    <onsuccess>2fa09de7-1dc3-497c-8f86-eded150f18ae</onsuccess>
+  </stage>
+  <stage stageid="a5c0a656-bdb9-4ded-9156-41b65279ac2c" name="Filter C = not found" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="-150" />
+    <inputs>
+      <input type="number" name="Handle" expr="[CLSC Handle]" />
+      <input type="text" name="Workbookname" expr="[CLSC WB Name]" />
+      <input type="text" name="Column" expr="&quot;C&quot;" />
+      <input type="text" name="Filter1" expr="&quot;not found&quot;" />
+      <input type="text" name="Filter2" expr="" />
+    </inputs>
+    <onsuccess>edd06866-30f1-4813-bbb5-67ab8e90e824</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Apply Filter" />
+  </stage>
+  <stage stageid="09f62c3f-c16c-4a91-bc3a-59b87c3de276" name="MMU Data" type="Collection">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="105" y="300" w="90" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="68ddbf77-44ca-4855-b9c5-debb2078b1ea" name="Close Instance" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="-60" y="-60" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance to be closed. Zero indicates the currently active instance." expr="[CLSC Handle]" />
+      <input type="flag" name="Save Changes" narrative="True to save the changes to the open workbooks on the instance, False to discard any changes. Default is False." expr="False" />
+    </inputs>
+    <onsuccess>b1bbcb97-787c-4c4f-8f6a-428179c6542f</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Close Instance" />
+  </stage>
+  <stage stageid="333025e5-0b51-4b3b-b8e6-4523c0a880b9" name="Filter C = not found" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="210" />
+    <inputs>
+      <input type="number" name="Handle" expr="[MMU Handle]" />
+      <input type="text" name="Workbookname" expr="[MMU WB Name]" />
+      <input type="text" name="Column" expr="&quot;C&quot;" />
+      <input type="text" name="Filter1" expr="&quot;not found&quot;" />
+      <input type="text" name="Filter2" expr="" />
+    </inputs>
+    <onsuccess>967a65dc-ac50-49d7-abca-e70b8e820620</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Apply Filter" />
+  </stage>
+  <stage stageid="d2557fc9-ac10-4c77-ac71-f84197721213" name="Close Instance" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="-60" y="330" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance to be closed. Zero indicates the currently active instance." expr="[MMU Handle]" />
+      <input type="flag" name="Save Changes" narrative="True to save the changes to the open workbooks on the instance, False to discard any changes. Default is False." expr="False" />
+    </inputs>
+    <onsuccess>db5f96fc-1e21-4fe0-9e8c-29af04cc75e9</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Close Instance" />
+  </stage>
+  <stage stageid="db5f96fc-1e21-4fe0-9e8c-29af04cc75e9" name="Combine Collections" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="390" />
+    <inputs>
+      <input type="collection" name="Main Collection" narrative="The collection to append to." expr="[CLSC Data]" />
+      <input type="collection" name="Collection to Append" narrative="The collection to append." expr="[MMU Data]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Combined Collection" narrative="The combined collection." stage="Not Found" />
+    </outputs>
+    <onsuccess>17301899-2eca-4f85-85b5-01a29de64798</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Append Rows to Collection" />
+  </stage>
+  <stage stageid="2215caad-0c70-4d1a-8e02-1b3a95e2f316" name="Not Found" type="Collection">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="105" y="375" w="90" h="60" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f4a3fa3c-c011-423f-9581-982fb6459668" name="1s" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="-195" w="30" h="30" />
+    <inputs>
+      <input type="number" name="Sleep Time (Seconds)" narrative="The time (in seconds) for which to sleep" expr="1" />
+    </inputs>
+    <onsuccess>a5c0a656-bdb9-4ded-9156-41b65279ac2c</onsuccess>
+    <resource object="Utility - General" action="Sleep" />
+  </stage>
+  <stage stageid="32916fb4-fe37-4ec5-b7d6-408af020c19e" name="1s" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="165" w="30" h="30" />
+    <inputs>
+      <input type="number" name="Sleep Time (Seconds)" narrative="The time (in seconds) for which to sleep" expr="1" />
+    </inputs>
+    <onsuccess>333025e5-0b51-4b3b-b8e6-4523c0a880b9</onsuccess>
+    <resource object="Utility - General" action="Sleep" />
+  </stage>
+  <stage stageid="967a65dc-ac50-49d7-abca-e70b8e820620" name="Filter C = not found" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="60" y="255" />
+    <inputs>
+      <input type="number" name="Handle" expr="[MMU Handle]" />
+      <input type="text" name="Workbookname" expr="[MMU WB Name]" />
+      <input type="text" name="Column" expr="&quot;C&quot;" />
+      <input type="text" name="Filter1" expr="&quot;not found&quot;" />
+      <input type="text" name="Filter2" expr="" />
+    </inputs>
+    <onsuccess>f51b529e-a5b7-4296-acb7-b99e6e6d962a</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Apply Filter" />
+  </stage>
+  <stage stageid="17301899-2eca-4f85-85b5-01a29de64798" name="Note4" type="Note">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <narrative>Remove duplicates</narrative>
+    <display x="15" y="450" w="180" h="30" />
+    <onsuccess>2c98aff1-7a11-4285-9b1a-b1e716fcdb0d</onsuccess>
+  </stage>
+  <stage stageid="2c98aff1-7a11-4285-9b1a-b1e716fcdb0d" name="Not Found" type="LoopStart">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="495" w="90" h="30" />
+    <onsuccess>e82898d0-ae25-4783-8cd1-f82bfd71be93</onsuccess>
+    <groupid>22c4bbbe-8dab-4274-b9e7-e22e2d350b27</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Not Found</loopdata>
+  </stage>
+  <stage stageid="ac589092-72c9-445b-9a17-011d9d6d2faa" name="Not Found" type="LoopEnd">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="765" w="90" h="30" />
+    <onsuccess>3ce1cfe3-3de0-4f81-81b8-43f71b704b96</onsuccess>
+    <groupid>22c4bbbe-8dab-4274-b9e7-e22e2d350b27</groupid>
+  </stage>
+  <stage stageid="ef49a526-74f0-4d0d-81eb-86014966b8e3" name="1 ID?" type="Decision">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="645" w="90" h="60" />
+    <decision expression="[Count] = 1" />
+    <ontrue>ac589092-72c9-445b-9a17-011d9d6d2faa</ontrue>
+    <onfalse>125c9a0d-1493-4a77-94ee-f4c23cbd171b</onfalse>
+  </stage>
+  <stage stageid="e82898d0-ae25-4783-8cd1-f82bfd71be93" name="Filter Duplicates" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="540" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to filter." expr="[Not Found]" />
+      <input type="text" name="Filter" narrative="The filter query." expr="&quot;[msgguid] = '&quot;&amp;[Not Found.msgguid]&amp;&quot;'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection." stage="Duplicates_TMP" />
+    </outputs>
+    <onsuccess>a8465c03-8377-45a1-8b5c-2193554df153</onsuccess>
+    <resource object="Utility - Collection Manipulation2" action="Filter Collection" />
+  </stage>
+  <stage stageid="8ba8c699-90cf-4fd4-b96e-302de346ad03" name="Duplicates" type="Collection">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="210" y="690" w="90" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="ID" type="text" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="a8465c03-8377-45a1-8b5c-2193554df153" name="Count Rows" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="585" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Duplicates_TMP&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="Count" />
+    </outputs>
+    <onsuccess>ef49a526-74f0-4d0d-81eb-86014966b8e3</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="50d642b8-78ca-4f90-ae11-ba5d5a62c8b8" name="Count" type="Data">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="120" y="585" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ae03ef77-9cf8-4fc6-8ffd-6deeb9903557" name="Remove Row" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="105" y="735" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Not Found&quot;" />
+    </inputs>
+    <onsuccess>9ce50684-548f-405d-8573-b3169adf9dad</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Remove Row" />
+  </stage>
+  <stage stageid="9ce50684-548f-405d-8573-b3169adf9dad" name="Anchor17" type="Anchor">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="105" y="765" w="10" h="10" />
+    <onsuccess>ac589092-72c9-445b-9a17-011d9d6d2faa</onsuccess>
+  </stage>
+  <stage stageid="3d2a8237-678d-4b11-9845-9e06ca57f775" name="Add ID" type="Calculation">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="105" y="690" />
+    <onsuccess>ae03ef77-9cf8-4fc6-8ffd-6deeb9903557</onsuccess>
+    <calculation expression="[Not Found.msgguid]" stage="Duplicates.ID" />
+  </stage>
+  <stage stageid="f5a98be0-65c0-4152-8fdc-43b8e212cee5" name="Duplicates_TMP" type="Collection">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="105" y="540" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="125c9a0d-1493-4a77-94ee-f4c23cbd171b" name="Add Row Duplicates" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="105" y="645" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Duplicates&quot;" />
+    </inputs>
+    <onsuccess>3d2a8237-678d-4b11-9845-9e06ca57f775</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Add Row" />
+  </stage>
+  <stage stageid="3ce1cfe3-3de0-4f81-81b8-43f71b704b96" name="Not Found" type="LoopStart">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="810" w="120" h="30" />
+    <onsuccess>2e0f0580-3fa1-44b2-ae56-ee7df33730a6</onsuccess>
+    <groupid>4470063e-6a8b-4afa-90c2-2a3e1d85f1ca</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Not Found</loopdata>
+  </stage>
+  <stage stageid="879d50dd-d8ea-4bd2-b926-8e7936f56cfa" name="Not Found" type="LoopEnd">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="1020" w="120" h="30" />
+    <onsuccess>60ee533c-5e26-4403-af8a-b6537bc92cfc</onsuccess>
+    <groupid>4470063e-6a8b-4afa-90c2-2a3e1d85f1ca</groupid>
+  </stage>
+  <stage stageid="5e9e0d96-5f60-4ed0-8e17-1e95027f2aec" name="ID Match?" type="Decision">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="915" w="90" h="60" />
+    <decision expression="[Not Found.msgguid] = [Duplicates.ID]" />
+    <ontrue>f6c74171-7052-4b07-a33c-c5167c45b9a5</ontrue>
+    <onfalse>639976d9-7acd-4be4-8693-7025c4767c87</onfalse>
+  </stage>
+  <stage stageid="2e0f0580-3fa1-44b2-ae56-ee7df33730a6" name="Duplicates" type="LoopStart">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="855" w="90" h="30" />
+    <onsuccess>5e9e0d96-5f60-4ed0-8e17-1e95027f2aec</onsuccess>
+    <groupid>85fd79fc-6a23-4bbf-830a-707595cbde5a</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Duplicates</loopdata>
+  </stage>
+  <stage stageid="639976d9-7acd-4be4-8693-7025c4767c87" name="Duplicates" type="LoopEnd">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="975" w="90" h="30" />
+    <onsuccess>879d50dd-d8ea-4bd2-b926-8e7936f56cfa</onsuccess>
+    <groupid>85fd79fc-6a23-4bbf-830a-707595cbde5a</groupid>
+  </stage>
+  <stage stageid="f6c74171-7052-4b07-a33c-c5167c45b9a5" name="Remove Row" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="105" y="915" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Not Found&quot;" />
+    </inputs>
+    <onsuccess>b023bb6c-4b07-4ca2-8c90-67b2d1ce4784</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Remove Row" />
+  </stage>
+  <stage stageid="b023bb6c-4b07-4ca2-8c90-67b2d1ce4784" name="Anchor18" type="Anchor">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="105" y="1020" w="10" h="10" />
+    <onsuccess>879d50dd-d8ea-4bd2-b926-8e7936f56cfa</onsuccess>
+  </stage>
+  <stage stageid="60ee533c-5e26-4403-af8a-b6537bc92cfc" name="Count Rows Not Found" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="1065" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Not Found&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="Not Found Count" />
+    </outputs>
+    <onsuccess>e177f9c2-b5aa-4bb9-8200-07a3c9651e9a</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="826c693c-e37c-465e-98b1-cb782e1b2f4a" name="Not Found Count" type="Data">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="90" y="1065" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e177f9c2-b5aa-4bb9-8200-07a3c9651e9a" name="Any Not Found" type="Decision">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="15" y="1125" w="90" h="60" />
+    <decision expression="[Not Found Count] &gt; 0" />
+    <ontrue>cf0ae027-4c7b-4e55-8a59-8dfef101c42d</ontrue>
+    <onfalse>cab97c3a-3581-437f-ad16-ac43954e0ea2</onfalse>
+  </stage>
+  <stage stageid="ea3cf782-e494-4e83-b690-7147360d7910" name="[Email] Send to CLSC" type="SubSheetInfo">
+    <subsheetid>b2a53817-d864-4cce-bcd5-8efa421b54eb</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="a159de1a-9f60-437c-bcb1-7ef39c07b6a1" name="Start" type="Start">
+    <subsheetid>b2a53817-d864-4cce-bcd5-8efa421b54eb</subsheetid>
+    <display x="15" y="-105" />
+  </stage>
+  <stage stageid="74d0a135-a27b-4cca-a2e5-c3e0ed4a6773" name="End" type="End">
+    <subsheetid>b2a53817-d864-4cce-bcd5-8efa421b54eb</subsheetid>
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="cf0ae027-4c7b-4e55-8a59-8dfef101c42d" name="Delete Field msgguid" type="Action">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="120" y="1125" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to delete the field from." expr="[Not Found]" />
+      <input type="text" name="Field Name" narrative="The field to delete." expr="&quot;msgguid&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The collection with the field removed." stage="Not Found" />
+    </outputs>
+    <onsuccess>437c9c80-1c06-473a-a6ba-92adcd4d3a17</onsuccess>
+    <resource object="Utility - Collection Manipulation2" action="Delete Field" />
+  </stage>
+  <stage stageid="437c9c80-1c06-473a-a6ba-92adcd4d3a17" name="Note5" type="Note">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <narrative>TODO: HTML table or plain text?</narrative>
+    <display x="225" y="1125" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>0143a3c9-d74d-4d36-a5b9-2ddb192dac19</onsuccess>
+    <breakpoint type="0">
+      <condition>
+      </condition>
+    </breakpoint>
+  </stage>
+  <stage stageid="0143a3c9-d74d-4d36-a5b9-2ddb192dac19" name="Anchor19" type="Anchor">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="225" y="1200" w="10" h="10" />
+    <onsuccess>cab97c3a-3581-437f-ad16-ac43954e0ea2</onsuccess>
+  </stage>
+  <stage stageid="5a7dd983-876e-4e37-96ce-7402caea6df6" name="[Excel] Prepare CLSC Errors Split" type="SubSheetInfo">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="11f286c6-7f96-412d-a448-ed0c4395d79f" name="Start" type="Start">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="-105" />
+    <onsuccess>122c9b68-4204-4f5d-b749-715c52eef8da</onsuccess>
+  </stage>
+  <stage stageid="6dfa5eba-3875-4d24-a640-08e37d4fad2a" name="End" type="End">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="840" />
+  </stage>
+  <stage stageid="122c9b68-4204-4f5d-b749-715c52eef8da" name="Clear Filter" type="Action">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="number" name="handle" expr="[CLSC Handle]" />
+    </inputs>
+    <onsuccess>42d554b0-4d41-487b-b963-081a26e0354b</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Clear Filter" />
+  </stage>
+  <stage stageid="97e2d7c5-40f4-448a-91f1-4952bafb78f4" name="Get BP Code (C)" type="Action">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="60" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance from which the required cell value should be retrieved. The default of zero indicates the currently active instance." expr="[CLSC Handle]" />
+      <input type="text" name="Cell Reference" narrative="The cell reference indicating which cell's value should be retrieved. An empty value indicates that the currently active cell's value should be retrieved." expr="&quot;C&quot;&amp;[CLSC Row]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value" narrative="The (unformatted) value from the required cell." stage="BP Code" />
+    </outputs>
+    <onsuccess>e10ad09b-6b53-4fa4-aa64-9a5b2700ca3d</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Get Cell Value" />
+  </stage>
+  <stage stageid="42d554b0-4d41-487b-b963-081a26e0354b" name="2s" type="Action">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="0" w="30" h="30" />
+    <inputs>
+      <input type="number" name="Sleep Time (Seconds)" narrative="The time (in seconds) for which to sleep" expr="2" />
+    </inputs>
+    <onsuccess>d316d7c9-2346-4908-8157-7da22530f0a6</onsuccess>
+    <resource object="Utility - General" action="Sleep" />
+  </stage>
+  <stage stageid="d316d7c9-2346-4908-8157-7da22530f0a6" name="Anchor20" type="Anchor">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="30" w="10" h="10" />
+    <onsuccess>97e2d7c5-40f4-448a-91f1-4952bafb78f4</onsuccess>
+  </stage>
+  <stage stageid="4646d411-9cc7-4614-b255-fbf1cafaa64d" name="CLSC Row" type="Data">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="-60" y="60" />
+    <datatype>number</datatype>
+    <initialvalue>2</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="bed8a0d5-9594-4998-9552-3fdd53e3bcc0" name="BP Code" type="Data">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="90" y="60" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="19e71384-9a6f-4b91-a614-9904281d336e" name="Not Found?" type="Decision">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="150" />
+    <decision expression="Lower([BP Code]) = &quot;not found&quot;" />
+    <ontrue>390ced85-1c6e-4855-9f74-a4356c011313</ontrue>
+    <onfalse>956b9e77-77e8-45c1-8219-955b5e4943dd</onfalse>
+  </stage>
+  <stage stageid="390ced85-1c6e-4855-9f74-a4356c011313" name="Get Message Text (CA)" type="Action">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="90" y="150" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance from which the required cell value should be retrieved. The default of zero indicates the currently active instance." expr="[CLSC Handle]" />
+      <input type="text" name="Cell Reference" narrative="The cell reference indicating which cell's value should be retrieved. An empty value indicates that the currently active cell's value should be retrieved." expr="&quot;CA&quot;&amp;[CLSC Row]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value" narrative="The (unformatted) value from the required cell." stage="Message Text" />
+    </outputs>
+    <onsuccess>4d6ef3ad-bf29-486f-9b0b-3bf6893b8dc0</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Get Cell Value" />
+  </stage>
+  <stage stageid="63578157-f5ee-450c-ab40-92953bfad08c" name="Message Text" type="Data">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="90" y="195" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4d6ef3ad-bf29-486f-9b0b-3bf6893b8dc0" name="Limit not defined" type="Decision">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="165" y="150" />
+    <decision expression="StartsWith(Lower([Message Text]), &quot;limit not defined&quot;)" />
+    <ontrue>e57c0411-b408-4b99-bbe1-9e3c540dbe26</ontrue>
+    <onfalse>2e6df928-7cb9-4892-a606-09dcbdc5c095</onfalse>
+  </stage>
+  <stage stageid="e57c0411-b408-4b99-bbe1-9e3c540dbe26" name="Set BP Code (C)" type="Action">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="240" y="150" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the required cell value should be set. The default of zero indicates the currently active instance." expr="[CLSC Handle]" />
+      <input type="text" name="Cell Reference" narrative="The reference on the speficied sheet identifying the cell which should be set." expr="&quot;C&quot;&amp;[CLSC Row]" />
+      <input type="text" name="Value" narrative="The value to which the specified cell should be set." expr="Right([Message Text], 10)" />
+    </inputs>
+    <onsuccess>bec87d62-4db6-4204-afdf-27045bb1634d</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Set Cell Value" />
+  </stage>
+  <stage stageid="956b9e77-77e8-45c1-8219-955b5e4943dd" name="Add Row" type="Calculation">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="225" />
+    <onsuccess>982e1877-b6f4-48c4-9e16-cca154789805</onsuccess>
+    <calculation expression="[CLSC Row] + 1" stage="CLSC Row" />
+  </stage>
+  <stage stageid="2e6df928-7cb9-4892-a606-09dcbdc5c095" name="Anchor21" type="Anchor">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="165" y="225" w="10" h="10" />
+    <onsuccess>956b9e77-77e8-45c1-8219-955b5e4943dd</onsuccess>
+  </stage>
+  <stage stageid="bec87d62-4db6-4204-afdf-27045bb1634d" name="Anchor22" type="Anchor">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="240" y="225" w="10" h="10" />
+    <onsuccess>2e6df928-7cb9-4892-a606-09dcbdc5c095</onsuccess>
+  </stage>
+  <stage stageid="982e1877-b6f4-48c4-9e16-cca154789805" name="Anchor23" type="Anchor">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="-105" y="225" w="10" h="10" />
+    <onsuccess>1937a09c-d1e7-4f3b-80ca-28c2185c2391</onsuccess>
+  </stage>
+  <stage stageid="1937a09c-d1e7-4f3b-80ca-28c2185c2391" name="Anchor24" type="Anchor">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="-105" y="30" w="10" h="10" />
+    <onsuccess>d316d7c9-2346-4908-8157-7da22530f0a6</onsuccess>
+  </stage>
+  <stage stageid="e10ad09b-6b53-4fa4-aa64-9a5b2700ca3d" name="No Value" type="Decision">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="105" />
+    <decision expression="Trim([BP Code]) = &quot;&quot;" />
+    <ontrue>d8293da5-9437-4a4b-9e88-dd5b1d480b8b</ontrue>
+    <onfalse>19e71384-9a6f-4b91-a614-9904281d336e</onfalse>
+  </stage>
+  <stage stageid="d8293da5-9437-4a4b-9e88-dd5b1d480b8b" name="Anchor25" type="Anchor">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="285" y="105" w="10" h="10" />
+    <onsuccess>04b0016b-4d36-427b-9c1c-37608ab695b7</onsuccess>
+  </stage>
+  <stage stageid="04b0016b-4d36-427b-9c1c-37608ab695b7" name="Anchor26" type="Anchor">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="285" y="270" w="10" h="10" />
+    <onsuccess>1d11d049-16b7-4be0-81a4-3be169eec96b</onsuccess>
+  </stage>
+  <stage stageid="1d11d049-16b7-4be0-81a4-3be169eec96b" name="Note6" type="Note">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <narrative>End of list</narrative>
+    <display x="15" y="270" w="90" h="30" />
+    <font family="Segoe UI" size="10" style="Bold" color="0000FF" />
+    <onsuccess>b6714099-f408-4591-b133-18e392582354</onsuccess>
+    <breakpoint type="0">
+      <condition>
+      </condition>
+    </breakpoint>
+  </stage>
+  <stage stageid="b6714099-f408-4591-b133-18e392582354" name="Get CLSC Data ZKNRFI_BP_MONITOR" type="Action">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="315" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the worksheet which should be retrieved resides. The default of zero indicates the currently active instance." expr="[CLSC Handle]" />
+      <input type="text" name="Workbook Name" narrative="The name of the workbook which contains the sheet required. The default empty text indicates the currently active workbook on the specified instance." expr="[CLSC WB Name]" />
+      <input type="text" name="Worksheet Name" narrative="The name of the worksheet within the specified workbook which should be written to a collection. The default empty text indicates the currently active worksheet within the specified workbook." expr="" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" narrative="The collection containing the data from the specified worksheet - the column IDs will be gleaned from the first row on the sheet being retrieved." stage="CLSC Data ZKNRFI_BP_MONITOR" />
+    </outputs>
+    <onsuccess>0f31413e-6aa6-4ab2-b2d1-b57e36172439</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Get Worksheet As Collection" />
+  </stage>
+  <stage stageid="273e5bac-e3bc-4829-ac64-618a3d3d997b" name="Anchor27" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="480" y="765" w="10" h="10" />
+    <font family="Segoe UI" size="10" style="Regular" color="0000FF" />
+    <onsuccess>c8401b55-03fc-4426-bea9-446eae3665df</onsuccess>
+  </stage>
+  <stage stageid="6ef89eee-442a-4341-982d-1b389afa81be" name="[SAP] SE16 Get Posting Period" type="SubSheet">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="135" y="135" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>6bfe95fe-7544-4f11-8fa9-03d3d2073ff1</onsuccess>
+    <processid>83a6f529-eaf8-4ae6-8574-547c2468735d</processid>
+  </stage>
+  <stage stageid="d0492843-d28c-46eb-af91-7b939f0caa75" name="[SAP] SE16 Get Posting Period" type="SubSheetInfo">
+    <subsheetid>83a6f529-eaf8-4ae6-8574-547c2468735d</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="ddbce34a-f294-498c-8b57-998e2a11e57b" name="Start" type="Start">
+    <subsheetid>83a6f529-eaf8-4ae6-8574-547c2468735d</subsheetid>
+    <display x="15" y="-105" />
+  </stage>
+  <stage stageid="58e06274-811e-4782-be00-eed22b6f6176" name="End" type="End">
+    <subsheetid>83a6f529-eaf8-4ae6-8574-547c2468735d</subsheetid>
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="24fbcc5f-1449-4bb4-a69e-038d50767f9f" name="Reset Global Data" type="SubSheetInfo">
+    <subsheetid>fbd54af2-50bf-44dc-8710-341323fc255f</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="c6c23c13-970c-4de3-adaf-783ee9fc30c5" name="Start" type="Start">
+    <subsheetid>fbd54af2-50bf-44dc-8710-341323fc255f</subsheetid>
+    <display x="15" y="-105" />
+  </stage>
+  <stage stageid="ab3e429c-c13d-461a-9bbf-3ec3bf8aad9e" name="End" type="End">
+    <subsheetid>fbd54af2-50bf-44dc-8710-341323fc255f</subsheetid>
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="b2dfba07-1a3c-47d8-adb4-c293f876b52d" name="Posting Period" type="Data">
+    <subsheetid>fbd54af2-50bf-44dc-8710-341323fc255f</subsheetid>
+    <display x="150" y="-30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="405e34bf-9558-410a-82b1-e18899e9baa0" name="CLSC Data ZKNRFI_BP_MONITOR" type="Collection">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="105" y="315" w="90" h="60" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b66e5efe-de54-4000-995f-1dcda652f25b" name="Note8" type="Note">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <narrative>TODO
+Cleanup collections</narrative>
+    <display x="15" y="765" w="120" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>6dfa5eba-3875-4d24-a640-08e37d4fad2a</onsuccess>
+  </stage>
+  <stage stageid="0f31413e-6aa6-4ab2-b2d1-b57e36172439" name="Filter Limit not defined" type="Action">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="375" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to filter." expr="[CLSC Data ZKNRFI_BP_MONITOR]" />
+      <input type="text" name="Filter" narrative="The filter query." expr="&quot;[Message Text] LIKE 'Limit not defined%'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection." stage="Limit not defined" />
+    </outputs>
+    <onsuccess>e1517f92-725a-4059-a449-4eecd145a7db</onsuccess>
+    <resource object="Utility - Collection Manipulation2" action="Filter Collection" />
+  </stage>
+  <stage stageid="460bc67a-6b77-49a5-94cc-0007ea9fadfc" name="Limit not defined" type="Collection">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="105" y="375" w="90" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e1517f92-725a-4059-a449-4eecd145a7db" name="Filter Calculation date" type="Action">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="420" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to filter." expr="[CLSC Data ZKNRFI_BP_MONITOR]" />
+      <input type="text" name="Filter" narrative="The filter query." expr="&quot;[Message Text] LIKE 'Calculation date%'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection." stage="Calculation date" />
+    </outputs>
+    <onsuccess>99495fc3-2a01-48f3-b0f3-214469f1541f</onsuccess>
+    <resource object="Utility - Collection Manipulation2" action="Filter Collection" />
+  </stage>
+  <stage stageid="1bd1bc6e-039d-4c66-b1be-ae9599cff4c3" name="Calculation date" type="Collection">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="105" y="420" w="90" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="99495fc3-2a01-48f3-b0f3-214469f1541f" name="Calculation Date" type="LoopStart">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="465" w="90" h="30" />
+    <onsuccess>c27f5cf3-5130-4bca-b545-0dc0d806d928</onsuccess>
+    <groupid>0cf78019-904f-466e-93c5-1e251b964af0</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Calculation date</loopdata>
+  </stage>
+  <stage stageid="dbc41df3-a083-4376-8f21-50c0c3cc13d8" name="Calculation Date" type="LoopEnd">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="570" w="90" h="30" />
+    <onsuccess>5d7cc980-ecc0-47e9-8d6b-ed545e892dcc</onsuccess>
+    <groupid>0cf78019-904f-466e-93c5-1e251b964af0</groupid>
+  </stage>
+  <stage stageid="c27f5cf3-5130-4bca-b545-0dc0d806d928" name="Before Posting Period?" type="Decision">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="510" />
+    <decision expression="ToNumber(Left(Right([Calculation date.DATSCA], 4), 2)) &lt; ToNumber([Posting Period])" />
+    <ontrue>6563f3f6-a446-4172-9ee4-2b26d60c191f</ontrue>
+    <onfalse>74deefeb-4bac-4976-89d3-6ea458d61b59</onfalse>
+  </stage>
+  <stage stageid="74deefeb-4bac-4976-89d3-6ea458d61b59" name="Remove Row" type="Action">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="90" y="510" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Calculation date&quot;" />
+    </inputs>
+    <onsuccess>3c49f747-5bf0-4dbe-902c-49df83bf3a82</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Remove Row" />
+  </stage>
+  <stage stageid="3c49f747-5bf0-4dbe-902c-49df83bf3a82" name="Anchor28" type="Anchor">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="90" y="540" w="10" h="10" />
+    <onsuccess>6563f3f6-a446-4172-9ee4-2b26d60c191f</onsuccess>
+  </stage>
+  <stage stageid="6563f3f6-a446-4172-9ee4-2b26d60c191f" name="Anchor29" type="Anchor">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="540" w="10" h="10" />
+    <onsuccess>dbc41df3-a083-4376-8f21-50c0c3cc13d8</onsuccess>
+  </stage>
+  <stage stageid="5d7cc980-ecc0-47e9-8d6b-ed545e892dcc" name="Merge Collections" type="Action">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <display x="15" y="615" />
+    <inputs>
+      <input type="collection" name="Main Collection" narrative="The collection to append to." expr="[Limit not defined]" />
+      <input type="collection" name="Collection to Append" narrative="The collection to append." expr="[Calculation date]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Combined Collection" narrative="The combined collection." stage="CLSC Data ZKNRFI_BP_MONITOR" />
+    </outputs>
+    <onsuccess>2bb51fbc-a596-4155-a479-ae21dadc0633</onsuccess>
+    <resource object="Utility - Collection Manipulation2" action="Append Rows to Collection" />
+  </stage>
+  <stage stageid="2bb51fbc-a596-4155-a479-ae21dadc0633" name="Note8" type="Note">
+    <subsheetid>bdc50675-9be9-4f37-ac4a-b1d455ebf693</subsheetid>
+    <narrative>TODO
+Prepare collection for ZKNRFI_BP_MONITOR pasting</narrative>
+    <display x="15" y="675" w="120" h="60" />
+    <onsuccess>b66e5efe-de54-4000-995f-1dcda652f25b</onsuccess>
+    <breakpoint type="0">
+      <condition>
+      </condition>
+    </breakpoint>
+  </stage>
+  <stage stageid="b4a516d6-2a80-4581-a7a7-3c24f4b94aa0" name="Note9" type="Note">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <narrative>Sent mail to Maxime 14/12 to provide CMD.xls</narrative>
+    <display x="270" y="465" w="180" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF9900" />
+  </stage>
+  <stage stageid="b0d816fc-b6fa-4310-89e0-8f21cc5d634a" name="[Excel] CLSC - Filter Errors 1 and 2 (Payoff &amp; No Contract)" type="SubSheetInfo">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="-150" y="-75" w="150" h="90" />
+  </stage>
+  <stage stageid="fe0d6394-50f1-4bad-9ad6-c48990d55b35" name="Start" type="Start">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="15" y="-105" />
+    <onsuccess>0e656743-b64d-45ae-9a5e-629d84307a06</onsuccess>
+  </stage>
+  <stage stageid="65a2da73-19b7-4369-a510-ef6b35bc1757" name="End" type="End">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="15" y="375" />
+  </stage>
+  <stage stageid="0e656743-b64d-45ae-9a5e-629d84307a06" name="Clear Filter" type="Action">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="number" name="handle" expr="[CLSC Handle]" />
+    </inputs>
+    <onsuccess>630300db-9b5c-458d-a144-cdcc5e884840</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Clear Filter" />
+  </stage>
+  <stage stageid="630300db-9b5c-458d-a144-cdcc5e884840" name="Filter CA = Payoff" type="Action">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="15" y="0" />
+    <inputs>
+      <input type="number" name="Handle" expr="[CLSC Handle]" />
+      <input type="text" name="Workbookname" expr="[CLSC WB Name]" />
+      <input type="text" name="Column" expr="&quot;CA&quot;" />
+      <input type="text" name="Filter1" expr="&quot;Payoff not saved for contract*&quot;" />
+      <input type="text" name="Filter2" expr="" />
+    </inputs>
+    <onsuccess>a940bbd4-3f09-4e0c-96c9-4702e4893555</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Apply Filter" />
+  </stage>
+  <stage stageid="a940bbd4-3f09-4e0c-96c9-4702e4893555" name="Get Payoff Rows" type="Action">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="15" y="45" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the worksheet which should be retrieved resides. The default of zero indicates the currently active instance." expr="[CLSC Handle]" />
+      <input type="text" name="Workbook Name" narrative="The name of the workbook which contains the sheet required. The default empty text indicates the currently active workbook on the specified instance." expr="[CLSC WB Name]" />
+      <input type="text" name="Worksheet Name" narrative="The name of the worksheet within the specified workbook which should be written to a collection. The default empty text indicates the currently active worksheet within the specified workbook." expr="" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" narrative="The collection containing the data from the specified worksheet - the column IDs will be gleaned from the first row on the sheet being retrieved." stage="Payoff Rows" />
+    </outputs>
+    <onsuccess>ab2f64d3-edef-46da-a975-62bd19ea642a</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Get Worksheet As Collection" />
+  </stage>
+  <stage stageid="84c59c93-18ae-46a9-b7b3-bb6016503fcd" name="Payoff Rows" type="Collection">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="120" y="45" />
+    <datatype>collection</datatype>
+    <alwaysinit />
+  </stage>
+  <stage stageid="ab2f64d3-edef-46da-a975-62bd19ea642a" name="Clear Filter" type="Action">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="15" y="90" />
+    <inputs>
+      <input type="number" name="handle" expr="[CLSC Handle]" />
+    </inputs>
+    <onsuccess>32746958-66af-48a4-8fc5-22fe051f6c3e</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Clear Filter" />
+  </stage>
+  <stage stageid="32746958-66af-48a4-8fc5-22fe051f6c3e" name="Filter CA = No contract exists" type="Action">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="15" y="135" />
+    <inputs>
+      <input type="number" name="Handle" expr="[CLSC Handle]" />
+      <input type="text" name="Workbookname" expr="[CLSC WB Name]" />
+      <input type="text" name="Column" expr="&quot;CA&quot;" />
+      <input type="text" name="Filter1" expr="&quot;No contract exists for legacy invoice*&quot;" />
+      <input type="text" name="Filter2" expr="" />
+    </inputs>
+    <onsuccess>1c163532-b608-436c-a245-156088b58a8c</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Apply Filter" />
+  </stage>
+  <stage stageid="1c163532-b608-436c-a245-156088b58a8c" name="Get No contract Rows" type="Action">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="15" y="180" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the worksheet which should be retrieved resides. The default of zero indicates the currently active instance." expr="[CLSC Handle]" />
+      <input type="text" name="Workbook Name" narrative="The name of the workbook which contains the sheet required. The default empty text indicates the currently active workbook on the specified instance." expr="[CLSC WB Name]" />
+      <input type="text" name="Worksheet Name" narrative="The name of the worksheet within the specified workbook which should be written to a collection. The default empty text indicates the currently active worksheet within the specified workbook." expr="" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" narrative="The collection containing the data from the specified worksheet - the column IDs will be gleaned from the first row on the sheet being retrieved." stage="No contract Rows" />
+    </outputs>
+    <onsuccess>0f1b670d-1339-4c2f-b8dd-5bde54fc2281</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Get Worksheet As Collection" />
+  </stage>
+  <stage stageid="abc0a3d7-dbf2-4ae8-a7c5-9af812430bb3" name="No contract Rows" type="Collection">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="120" y="180" />
+    <datatype>collection</datatype>
+    <alwaysinit />
+  </stage>
+  <stage stageid="0f1b670d-1339-4c2f-b8dd-5bde54fc2281" name="Count Payoff" type="Action">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="15" y="225" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Payoff Rows&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="Payoff Count" />
+    </outputs>
+    <onsuccess>cf362ef4-8ac4-40d4-af9d-f26f231e2aac</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="2c1375db-89cf-4170-8c21-be34177ef9cf" name="Payoff Count" type="Data">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="120" y="225" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="cf362ef4-8ac4-40d4-af9d-f26f231e2aac" name="Count No contract" type="Action">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="15" y="270" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;No contract Rows&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="No contract Count" />
+    </outputs>
+    <onsuccess>ea5b0421-f38a-4b3a-9444-e74c0e4f1267</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="385e305b-9ccb-47c3-b016-c86c0519c8dc" name="No contract Count" type="Data">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="120" y="270" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b5413891-4103-4b88-bad9-5cf350d5d6c3" name="Any Rows?" type="Decision">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="435" y="555" />
+    <decision expression="[Payoff Count] &gt; 0 OR&#xA;[No contract Count] &gt; 0" />
+    <ontrue>8a81ce6d-e0cc-4e73-81b2-a178dd7ca3ad</ontrue>
+    <onfalse>27f37cb8-96cd-4cf1-af6c-efcaa9550ef6</onfalse>
+  </stage>
+  <stage stageid="27f37cb8-96cd-4cf1-af6c-efcaa9550ef6" name="Anchor31" type="Anchor">
+    <subsheetid>287c10e3-5686-4267-bd83-65cfd5fa5c9a</subsheetid>
+    <display x="435" y="630" w="10" h="10" />
+    <onsuccess>4b8aa6a9-c701-44a1-bcd0-39a3f84b8433</onsuccess>
+  </stage>
+  <stage stageid="580e4729-5dd7-4b34-8f7d-9a6b7e207d40" name="[SAP] (HFP) ZKEDF_INV_PAID Paste Data" type="SubSheetInfo">
+    <subsheetid>bc9d282a-e24e-4a37-b806-cd6ae78ea4d3</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="68d1fff4-aa25-4345-8cb2-2855a876541b" name="Start" type="Start">
+    <subsheetid>bc9d282a-e24e-4a37-b806-cd6ae78ea4d3</subsheetid>
+    <display x="15" y="-105" />
+    <onsuccess>3316f640-2b84-4ccc-a4c2-38d6a25719cb</onsuccess>
+  </stage>
+  <stage stageid="30e6040e-c893-4145-b445-4e021f014b82" name="End" type="End">
+    <subsheetid>bc9d282a-e24e-4a37-b806-cd6ae78ea4d3</subsheetid>
+    <display x="15" y="270" />
+  </stage>
+  <stage stageid="3316f640-2b84-4ccc-a4c2-38d6a25719cb" name="Payoff Rows" type="LoopStart">
+    <subsheetid>bc9d282a-e24e-4a37-b806-cd6ae78ea4d3</subsheetid>
+    <display x="15" y="-45" w="90" h="30" />
+    <onsuccess>444b803f-8501-47a2-b613-a31e26a39f31</onsuccess>
+    <groupid>2bed102f-8822-4ba1-8da9-d40356ce45e3</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Payoff Rows</loopdata>
+  </stage>
+  <stage stageid="3df7ad50-8cb3-4eef-a650-e224b524b7f3" name="Payoff Rows" type="LoopEnd">
+    <subsheetid>bc9d282a-e24e-4a37-b806-cd6ae78ea4d3</subsheetid>
+    <display x="15" y="45" w="90" h="30" />
+    <onsuccess>dbb185b0-0665-4f93-b7de-e74b0b8cd7a6</onsuccess>
+    <groupid>2bed102f-8822-4ba1-8da9-d40356ce45e3</groupid>
+  </stage>
+  <stage stageid="444b803f-8501-47a2-b613-a31e26a39f31" name="Note10" type="Note">
+    <subsheetid>bc9d282a-e24e-4a37-b806-cd6ae78ea4d3</subsheetid>
+    <narrative>Add to SAP ZKEDF_INV_PAID</narrative>
+    <display x="15" y="0" w="120" h="30" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>3df7ad50-8cb3-4eef-a650-e224b524b7f3</onsuccess>
+  </stage>
+  <stage stageid="dbb185b0-0665-4f93-b7de-e74b0b8cd7a6" name="No contract Rows" type="LoopStart">
+    <subsheetid>bc9d282a-e24e-4a37-b806-cd6ae78ea4d3</subsheetid>
+    <display x="15" y="90" w="90" h="30" />
+    <onsuccess>e3868f84-e50d-4266-bc42-5be33ce44c45</onsuccess>
+    <groupid>85d7ad13-131c-40e3-bc48-a630fe28bbcd</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>No contract Rows</loopdata>
+  </stage>
+  <stage stageid="b3a8d019-a1d5-455d-86ec-acc2884afd1e" name="No contract Rows" type="LoopEnd">
+    <subsheetid>bc9d282a-e24e-4a37-b806-cd6ae78ea4d3</subsheetid>
+    <display x="15" y="210" w="90" h="30" />
+    <onsuccess>30e6040e-c893-4145-b445-4e021f014b82</onsuccess>
+    <groupid>85d7ad13-131c-40e3-bc48-a630fe28bbcd</groupid>
+  </stage>
+  <stage stageid="e3868f84-e50d-4266-bc42-5be33ce44c45" name="Note10" type="Note">
+    <subsheetid>bc9d282a-e24e-4a37-b806-cd6ae78ea4d3</subsheetid>
+    <narrative>Add to SAP ZKEDF_INV_PAID</narrative>
+    <display x="15" y="150" w="120" h="30" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>b3a8d019-a1d5-455d-86ec-acc2884afd1e</onsuccess>
+  </stage>
+  <stage stageid="b2fd1f51-eee5-4aff-9053-6178e9d63eba" name="Global" type="Block">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="75" y="15" w="90" h="285" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF00" />
+  </stage>
+  <stage stageid="8c89eaa4-850d-4ea3-9579-b1dece8094fa" name="[SAP] (HFP) ZKEDF_INV_PAID Paste Data" type="SubSheetInfo">
+    <subsheetid>726b4333-8ca1-45aa-a819-9e349f06796b</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="c255342d-e08a-4d3e-82db-1c8630d6090c" name="Start" type="Start">
+    <subsheetid>726b4333-8ca1-45aa-a819-9e349f06796b</subsheetid>
+    <display x="15" y="-105" />
+    <onsuccess>eca78059-6c51-4f88-aa51-5d202e866a12</onsuccess>
+  </stage>
+  <stage stageid="a630699a-7892-4492-baa2-92b181529d89" name="End" type="End">
+    <subsheetid>726b4333-8ca1-45aa-a819-9e349f06796b</subsheetid>
+    <display x="15" y="225" />
+  </stage>
+  <stage stageid="ba01358b-4897-40fc-b0c2-56fc36098030" name="[Excel] Update Remarks" type="SubSheetInfo">
+    <subsheetid>333e751c-e7c5-4b5d-b321-c9b0f59f8194</subsheetid>
+    <display x="-150" y="-75" w="150" h="90" />
+  </stage>
+  <stage stageid="104000ee-408f-4a16-8ec6-677c24e00f4d" name="Start" type="Start">
+    <subsheetid>333e751c-e7c5-4b5d-b321-c9b0f59f8194</subsheetid>
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="text" name="Remark" stage="Remark" />
+      <input type="text" name="Column" stage="Column" />
+    </inputs>
+    <onsuccess>34f8478e-7328-4afa-a2b8-b9ef08997f7b</onsuccess>
+  </stage>
+  <stage stageid="78e34fdc-70aa-4d3c-9392-903e4fdfdeb9" name="End" type="End">
+    <subsheetid>333e751c-e7c5-4b5d-b321-c9b0f59f8194</subsheetid>
+    <display x="15" y="195" />
+  </stage>
+  <stage stageid="4fd3c0f3-9bc8-4496-b5ae-4599d4a978b4" name="[Excel] Prepare Errors Split Files (CLSC &amp; MMU)" type="SubSheetInfo">
+    <subsheetid>3658971f-5a77-40b5-8557-b2185213e1a6</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="b915f1ea-4b5b-440e-bdd9-c6b75c9d4594" name="Start" type="Start">
+    <subsheetid>3658971f-5a77-40b5-8557-b2185213e1a6</subsheetid>
+    <display x="15" y="-105" />
+    <onsuccess>70bdef20-f496-4900-8cfb-06e26ba3771c</onsuccess>
+  </stage>
+  <stage stageid="d7f957c9-3942-4277-8ab6-8a3b0409488b" name="End" type="End">
+    <subsheetid>3658971f-5a77-40b5-8557-b2185213e1a6</subsheetid>
+    <display x="15" y="285" />
+  </stage>
+  <stage stageid="70bdef20-f496-4900-8cfb-06e26ba3771c" name="Create Instance" type="Action">
+    <subsheetid>3658971f-5a77-40b5-8557-b2185213e1a6</subsheetid>
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="flag" name="Enable Events" narrative="Flag to indicate that events should be enabled / disabled on the attached instance - defaulted to True" expr="" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" narrative="An integer which can be used to identify the created instance in subsequent actions" stage="CMD Handle" />
+    </outputs>
+    <onsuccess>bf1e6375-7405-48ce-b890-e6d83b1fa0e7</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Create Instance" />
+  </stage>
+  <stage stageid="bf1e6375-7405-48ce-b890-e6d83b1fa0e7" name="Open Workbook" type="Action">
+    <subsheetid>3658971f-5a77-40b5-8557-b2185213e1a6</subsheetid>
+    <display x="15" y="0" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[CMD Handle]" />
+      <input type="text" name="File name" narrative="The path and name of the file which should be opened." expr="[CMD Path]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="CMD WB Name" />
+    </outputs>
+    <onsuccess>8b0bbd32-afc6-4a5d-b688-6fdfcba66dbd</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Open Workbook" />
+  </stage>
+  <stage stageid="8b0bbd32-afc6-4a5d-b688-6fdfcba66dbd" name="Show" type="Action">
+    <subsheetid>3658971f-5a77-40b5-8557-b2185213e1a6</subsheetid>
+    <display x="15" y="45" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance which should have its window displayed. The default of zero indicates the currently active instance." expr="[CMD Handle]" />
+    </inputs>
+    <onsuccess>d7f957c9-3942-4277-8ab6-8a3b0409488b</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Show" />
+  </stage>
+  <stage stageid="269626b0-df57-46e6-a3eb-d48432013567" name="CMD Handle" type="Data">
+    <subsheetid>3658971f-5a77-40b5-8557-b2185213e1a6</subsheetid>
+    <display x="90" y="-45" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="32f1d842-696c-4f8f-92d1-bfc9dad12a03" name="CMD WB Name" type="Data">
+    <subsheetid>3658971f-5a77-40b5-8557-b2185213e1a6</subsheetid>
+    <display x="90" y="0" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="529dfd46-6eb3-4e5c-ac3c-124bbae7dc7d" name="CMD Path" type="Data">
+    <subsheetid>3658971f-5a77-40b5-8557-b2185213e1a6</subsheetid>
+    <display x="-195" y="0" w="150" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">C:\TEMP\CNH\Invoice Acquisition\CMD\CMD1.xlsx</initialvalue>
+    <alwaysinit />
+  </stage>
+  <stage stageid="55b6de30-f6b6-42ac-9462-fced08c91738" name="Global" type="Block">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="75" y="-360" w="90" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF00" />
+  </stage>
+  <stage stageid="ab381fc1-9e78-46d8-a507-9e769f55d99b" name="Global" type="Block">
+    <subsheetid>3c789c48-a98f-4dbd-9227-81a59718df45</subsheetid>
+    <display x="75" y="0" w="90" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF00" />
+  </stage>
+  <stage stageid="ea5b0421-f38a-4b3a-9444-e74c0e4f1267" name="Clear Filter" type="Action">
+    <subsheetid>f8b8ec96-af4b-4144-8749-c98a55630e5b</subsheetid>
+    <display x="15" y="315" />
+    <inputs>
+      <input type="number" name="handle" expr="[CLSC Handle]" />
+    </inputs>
+    <onsuccess>65a2da73-19b7-4369-a510-ef6b35bc1757</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Clear Filter" />
+  </stage>
+  <stage stageid="6f046225-d902-46f6-98e9-df15179fb2e2" name="Note11" type="Note">
+    <subsheetid>726b4333-8ca1-45aa-a819-9e349f06796b</subsheetid>
+    <narrative>Step 8. Select all lines in NWPM and click on ‘Restart message’</narrative>
+    <display x="15" y="165" w="150" h="30" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>a630699a-7892-4492-baa2-92b181529d89</onsuccess>
+  </stage>
+  <stage stageid="eca78059-6c51-4f88-aa51-5d202e866a12" name="Note12" type="Note">
+    <subsheetid>726b4333-8ca1-45aa-a819-9e349f06796b</subsheetid>
+    <narrative>Step 5. Open NWPM -  Click on ‘Advanced Selection Criteria’</narrative>
+    <display x="15" y="-45" w="150" h="30" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>dbfd8e90-f25f-4be4-9576-3229d6289fb3</onsuccess>
+  </stage>
+  <stage stageid="dbfd8e90-f25f-4be4-9576-3229d6289fb3" name="Note12" type="Note">
+    <subsheetid>726b4333-8ca1-45aa-a819-9e349f06796b</subsheetid>
+    <narrative>.
+.
+.
+.
+.
+.
+</narrative>
+    <display x="15" y="60" w="60" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>6f046225-d902-46f6-98e9-df15179fb2e2</onsuccess>
+  </stage>
+  <stage stageid="703ff694-948a-4244-8913-80e342126613" name="Remark" type="Data">
+    <subsheetid>333e751c-e7c5-4b5d-b321-c9b0f59f8194</subsheetid>
+    <display x="-150" y="15" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c3d54dff-dedf-42e6-9c36-b2e485aa6d3b" name="Column" type="Data">
+    <subsheetid>333e751c-e7c5-4b5d-b321-c9b0f59f8194</subsheetid>
+    <display x="-150" y="45" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">CH</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="905ad8f6-e115-48ae-80d0-529dc6abfa57" name="Input" type="Block">
+    <subsheetid>333e751c-e7c5-4b5d-b321-c9b0f59f8194</subsheetid>
+    <display x="-225" y="-15" w="150" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="34f8478e-7328-4afa-a2b8-b9ef08997f7b" name="Get Current Remark" type="Action">
+    <subsheetid>333e751c-e7c5-4b5d-b321-c9b0f59f8194</subsheetid>
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance from which the required cell value should be retrieved. The default of zero indicates the currently active instance." expr="[CLSC Handle]" />
+      <input type="text" name="Cell Reference" narrative="The cell reference indicating which cell's value should be retrieved. An empty value indicates that the currently active cell's value should be retrieved." expr="[Column]&amp;[Row]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value" narrative="The (unformatted) value from the required cell." stage="Current Remark" />
+    </outputs>
+    <onsuccess>be88e6f4-33af-46f9-ab80-ff252291e1f5</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Get Cell Value" />
+  </stage>
+  <stage stageid="ce69d7af-0d0b-4a53-bf31-f02dcf964a1f" name="Row" type="Data">
+    <subsheetid>333e751c-e7c5-4b5d-b321-c9b0f59f8194</subsheetid>
+    <display x="-150" y="75" w="90" h="30" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">2</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b7411b34-76e9-472e-905a-2d8027adda69" name="Note13" type="Note">
+    <subsheetid>333e751c-e7c5-4b5d-b321-c9b0f59f8194</subsheetid>
+    <narrative>TODO:
+Get proper row or a range</narrative>
+    <display x="-150" y="135" w="120" h="30" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+  </stage>
+  <stage stageid="bf2110dc-2143-4d9e-afe0-17b5248b6f82" name="Current Remark" type="Data">
+    <subsheetid>333e751c-e7c5-4b5d-b321-c9b0f59f8194</subsheetid>
+    <display x="90" y="-45" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="be88e6f4-33af-46f9-ab80-ff252291e1f5" name="Update Remark" type="Action">
+    <subsheetid>333e751c-e7c5-4b5d-b321-c9b0f59f8194</subsheetid>
+    <display x="15" y="0" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the required cell value should be set. The default of zero indicates the currently active instance." expr="[CLSC Handle]" />
+      <input type="text" name="Cell Reference" narrative="The reference on the speficied sheet identifying the cell which should be set." expr="[Column]&amp;[Row]" />
+      <input type="text" name="Value" narrative="The value to which the specified cell should be set." expr="[Current Remark]&amp;&quot; &quot;&amp;[Remark]" />
+    </inputs>
+    <onsuccess>78e34fdc-70aa-4d3c-9392-903e4fdfdeb9</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Set Cell Value" />
+  </stage>
+  <stage stageid="efd9f096-9c8f-4077-94bb-d904d0b18e62" name="Validate Environment" type="SubSheetInfo">
+    <subsheetid>652fd011-f9b2-4c46-81cf-e0ddac012761</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="90cdae63-e498-4ae2-946d-444aed74af60" name="Start" type="Start">
+    <subsheetid>652fd011-f9b2-4c46-81cf-e0ddac012761</subsheetid>
+    <display x="15" y="-105" />
+    <onsuccess>420b6737-6923-4467-a2b7-d545c80805e7</onsuccess>
+  </stage>
+  <stage stageid="040a0024-4361-4d90-91db-0ce92b98e9cd" name="End" type="End">
+    <subsheetid>652fd011-f9b2-4c46-81cf-e0ddac012761</subsheetid>
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="a818c182-6214-44eb-93b4-29d53ee69a5a" name="Start Up" type="SubSheetInfo">
+    <subsheetid>974b03d0-d171-4e2d-a250-153305f0163b</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="0c6da876-c1e0-46b3-b22d-1d8f5d9b9a70" name="Start" type="Start">
+    <subsheetid>974b03d0-d171-4e2d-a250-153305f0163b</subsheetid>
+    <display x="15" y="-105" />
+    <onsuccess>e9b04b04-e835-4e38-af45-cdfceb21fda5</onsuccess>
+  </stage>
+  <stage stageid="71e0bc6a-ef74-4e4d-acde-c77ed47f43c6" name="End" type="End">
+    <subsheetid>974b03d0-d171-4e2d-a250-153305f0163b</subsheetid>
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="e9b04b04-e835-4e38-af45-cdfceb21fda5" name="Validate Environment" type="SubSheet">
+    <subsheetid>974b03d0-d171-4e2d-a250-153305f0163b</subsheetid>
+    <display x="15" y="15" />
+    <onsuccess>71e0bc6a-ef74-4e4d-acde-c77ed47f43c6</onsuccess>
+    <processid>652fd011-f9b2-4c46-81cf-e0ddac012761</processid>
+  </stage>
+  <stage stageid="420b6737-6923-4467-a2b7-d545c80805e7" name="Get Today YYYYMMDD" type="Calculation">
+    <subsheetid>652fd011-f9b2-4c46-81cf-e0ddac012761</subsheetid>
+    <display x="15" y="-45" />
+    <onsuccess>040a0024-4361-4d90-91db-0ce92b98e9cd</onsuccess>
+    <calculation expression="FormatDate(Today(), &quot;yyyyMMdd&quot;)" stage="Today YYYYMMDD" />
+  </stage>
+  <stage stageid="ff616c71-45bd-496c-9be6-916312dcad25" name="Today YYYYMMDD" type="Data">
+    <subsheetid>652fd011-f9b2-4c46-81cf-e0ddac012761</subsheetid>
+    <display x="90" y="-45" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fe4d3357-18d7-45e7-bb3a-7c80aa7c212c" name="[Excel] CLSC Filter From Payload File" type="SubSheetInfo">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="-165" y="-75" w="150" h="90" />
+  </stage>
+  <stage stageid="03820014-2eb9-42f6-a8be-e43a23b0b61b" name="Start" type="Start">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="15" y="-105" />
+    <onsuccess>f8197c60-0f87-4a9f-80ac-2b610bef9741</onsuccess>
+  </stage>
+  <stage stageid="ebfc0a10-a96b-4da1-825d-13b6d736f17d" name="End" type="End">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="15" y="555" />
+  </stage>
+  <stage stageid="5cbd220e-7524-4b79-997d-cc833a93ce77" name="Due Date" type="ChoiceStart">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="330" y="-30" w="90" h="60" />
+    <groupid>18a1ea32-2603-4c85-88e5-f234f3b24d5f</groupid>
+    <choices>
+      <choice expression="">
+        <name>Within Current Posting Period and in Past</name>
+        <distance>263.2309</distance>
+      </choice>
+      <choice expression="">
+        <name>Before Current Posting Period</name>
+        <distance>273.2309</distance>
+      </choice>
+      <choice expression="">
+        <name>In the Future</name>
+        <distance>283.2309</distance>
+      </choice>
+    </choices>
+  </stage>
+  <stage stageid="26c6aa9e-122e-4176-be8f-d32c02cd9216" name="Otherwise1" type="ChoiceEnd">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="345" y="285" />
+    <onsuccess>89b4270d-e4cd-483e-8041-cb71b022e4a1</onsuccess>
+    <groupid>18a1ea32-2603-4c85-88e5-f234f3b24d5f</groupid>
+  </stage>
+  <stage stageid="89b4270d-e4cd-483e-8041-cb71b022e4a1" name="Due Date Out of Range" type="Exception">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="345" y="330" w="90" h="30" />
+    <exception localized="yes" type="" detail="" />
+  </stage>
+  <stage stageid="f8197c60-0f87-4a9f-80ac-2b610bef9741" name="Create Instance" type="Action">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="flag" name="Enable Events" narrative="Flag to indicate that events should be enabled / disabled on the attached instance - defaulted to True" expr="" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" narrative="An integer which can be used to identify the created instance in subsequent actions" stage="Payload Handle" />
+    </outputs>
+    <onsuccess>f827ab81-ecab-4cdf-aead-2f75eab538e4</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Create Instance" />
+  </stage>
+  <stage stageid="eaabc407-283e-49fd-96bb-86ef9c9a17db" name="Find msgguid in CLSC File (F)" type="Action">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="15" y="180" />
+    <inputs>
+      <input type="text" name="Range" expr="&quot;F2:F100000&quot;" />
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the number of rows is required. The default of zero indicates the currently active instance." expr="[CLSC Handle]" />
+      <input type="text" name="Workbook Name" narrative="The name of the workbook on which the number of rows is required. The default empty text value indicates the currently active workbook on the specified instance." expr="[CLSC WB Name]" />
+      <input type="text" name="Worksheet Name" narrative="The name of the worksheet on which the number of rows is required. The default empty text value indicates the currently active sheet on the specified workbook." expr="" />
+      <input type="text" name="Find String" expr="[Payload Data.msgguid]" />
+      <input type="text" name="Starting Cell" expr="&quot;F2&quot;" />
+    </inputs>
+    <onsuccess>976b5e42-0997-4791-b1e6-73b86e2ece3d</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Find" />
+  </stage>
+  <stage stageid="f6f5cf35-5d63-4029-8ca4-ea0766d43223" name="Payload Handle" type="Data">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="105" y="-45" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f827ab81-ecab-4cdf-aead-2f75eab538e4" name="Open Workbook Payload" type="Action">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="15" y="0" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[Payload Handle]" />
+      <input type="text" name="File name" narrative="The path and name of the file which should be opened." expr="[Payload Path]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="Payload WB Name" />
+    </outputs>
+    <onsuccess>c27127e7-8a0f-4b69-b722-ff6e041d809d</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Open Workbook" />
+  </stage>
+  <stage stageid="2a200bfe-c545-4b38-b800-d137958a44bb" name="Payload WB Name" type="Data">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="105" y="0" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="67a20a95-85e5-45b4-ba6d-fad848dfca7f" name="Global" type="Block">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="60" y="-75" w="90" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF00" />
+  </stage>
+  <stage stageid="c27127e7-8a0f-4b69-b722-ff6e041d809d" name="Show" type="Action">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="15" y="45" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance which should have its window displayed. The default of zero indicates the currently active instance." expr="[Payload Handle]" />
+    </inputs>
+    <onsuccess>3a1fc18c-f656-4046-a730-bcb9fb36b218</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Show" />
+  </stage>
+  <stage stageid="3a1fc18c-f656-4046-a730-bcb9fb36b218" name="Get Payload Data" type="Action">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="15" y="90" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the worksheet which should be retrieved resides. The default of zero indicates the currently active instance." expr="[Payload Handle]" />
+      <input type="text" name="Workbook Name" narrative="The name of the workbook which contains the sheet required. The default empty text indicates the currently active workbook on the specified instance." expr="[Payload WB Name]" />
+      <input type="text" name="Worksheet Name" narrative="The name of the worksheet within the specified workbook which should be written to a collection. The default empty text indicates the currently active worksheet within the specified workbook." expr="" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" narrative="The collection containing the data from the specified worksheet - the column IDs will be gleaned from the first row on the sheet being retrieved." stage="Payload Data" />
+    </outputs>
+    <onsuccess>ab698123-16bd-4399-a367-ae737efd9792</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Get Worksheet As Collection" />
+  </stage>
+  <stage stageid="6a370803-d0d3-47d9-9cd0-497b00fa2af5" name="Payload Data" type="Collection">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="105" y="90" w="90" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ab698123-16bd-4399-a367-ae737efd9792" name="Payload Data" type="LoopStart">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="15" y="135" w="90" h="30" />
+    <onsuccess>eaabc407-283e-49fd-96bb-86ef9c9a17db</onsuccess>
+    <groupid>e190fa64-1a8a-4d57-b898-37f590a9b238</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Payload Data</loopdata>
+  </stage>
+  <stage stageid="7226e3f0-1ed5-42f4-9640-6b4da84d735f" name="Payload Data" type="LoopEnd">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="15" y="390" w="90" h="30" />
+    <groupid>e190fa64-1a8a-4d57-b898-37f590a9b238</groupid>
+  </stage>
+  <stage stageid="976b5e42-0997-4791-b1e6-73b86e2ece3d" name="Find msgguid in CLSC File (F)" type="Action">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <display x="15" y="225" />
+    <inputs>
+      <input type="text" name="Range" expr="&quot;F100000&quot;" />
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the number of rows is required. The default of zero indicates the currently active instance." expr="[CLSC Handle]" />
+      <input type="text" name="Workbook Name" narrative="The name of the workbook on which the number of rows is required. The default empty text value indicates the currently active workbook on the specified instance." expr="[CLSC WB Name]" />
+      <input type="text" name="Worksheet Name" narrative="The name of the worksheet on which the number of rows is required. The default empty text value indicates the currently active sheet on the specified workbook." expr="" />
+      <input type="text" name="Find String" expr="[Payload Data.msgguid]" />
+      <input type="text" name="Starting Cell" expr="&quot;F2&quot;" />
+    </inputs>
+    <resource object="MS Excel VBO Extended" action="Find" />
+  </stage>
+  <stage stageid="e82ccff6-34b9-4ada-bbc1-c35cd377cade" name="Note14" type="Note">
+    <subsheetid>084fa5eb-4a25-4064-b810-7dac14d48597</subsheetid>
+    <narrative>TODO:
+
+PDD page 17 - need clarification</narrative>
+    <display x="150" y="225" w="150" h="60" />
+  </stage>
+  <stage stageid="b877a0d8-f6a0-47df-a79b-1f3912b8b2f9" name="[Excel] CLSC Filter" type="SubSheetInfo">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="-180" y="-180" w="150" h="90" />
+  </stage>
+  <stage stageid="e52117a2-0080-4fc9-90ae-da190c34b404" name="Start" type="Start">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="-15" y="-210" />
+    <onsuccess>9c016e12-9516-4a2e-be69-1138c6da56ab</onsuccess>
+  </stage>
+  <stage stageid="b37bc042-e4d2-4fb4-a757-87f34f5c0a47" name="End" type="End">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="-15" y="330" />
+  </stage>
+  <stage stageid="6dc34c71-3647-4323-af96-cbd36aa45f49" name="Find msgguid in CLSC File (F)" type="Action">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="-15" y="-105" />
+    <inputs>
+      <input type="number" name="Handle" expr="[CLSC Handle]" />
+      <input type="text" name="Workbookname" expr="[CLSC WB Name]" />
+      <input type="text" name="Column" expr="&quot;CA&quot;" />
+      <input type="text" name="Filter1" expr="&quot;Calculation date is before valid-as-from date*&quot;" />
+      <input type="text" name="Filter2" expr="" />
+    </inputs>
+    <onsuccess>8ed5feac-93a6-4d2f-b252-e3516e778207</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Apply Filter" />
+  </stage>
+  <stage stageid="9c016e12-9516-4a2e-be69-1138c6da56ab" name="Clear Filters" type="Action">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="-15" y="-150" />
+    <inputs>
+      <input type="number" name="handle" expr="[CLSC Handle]" />
+    </inputs>
+    <onsuccess>6dc34c71-3647-4323-af96-cbd36aa45f49</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Clear Filter" />
+  </stage>
+  <stage stageid="8ed5feac-93a6-4d2f-b252-e3516e778207" name="Get Calculation Date CLSC Data" type="Action">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="-15" y="-60" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the worksheet which should be retrieved resides. The default of zero indicates the currently active instance." expr="[CLSC Handle]" />
+      <input type="text" name="Workbook Name" narrative="The name of the workbook which contains the sheet required. The default empty text indicates the currently active workbook on the specified instance." expr="[CLSC WB Name]" />
+      <input type="text" name="Worksheet Name" narrative="The name of the worksheet within the specified workbook which should be written to a collection. The default empty text indicates the currently active worksheet within the specified workbook." expr="" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" narrative="The collection containing the data from the specified worksheet - the column IDs will be gleaned from the first row on the sheet being retrieved." stage="Calculation Date CLSC Data" />
+    </outputs>
+    <onsuccess>4894834f-8f8c-46f2-9a2c-809123653409</onsuccess>
+    <resource object="MS Excel VBO Extended" action="Get Worksheet As Collection" />
+  </stage>
+  <stage stageid="8f126827-aa00-4ab0-b5dc-1e75f09b872d" name="Calculation Date CLSC Data" type="Collection">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="90" y="-60" w="90" h="60" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4894834f-8f8c-46f2-9a2c-809123653409" name="[REMARKS CLSC] NOT LIKE 'Calculation date email sent out%'" type="Action">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="-15" y="-15" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to filter." expr="[Calculation Date CLSC Data]" />
+      <input type="text" name="Filter" narrative="The filter query." expr="&quot;[Remarks CLSC] NOT LIKE 'Calculation date email sent out%'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection." stage="Calculation Date CLSC Data" />
+    </outputs>
+    <onsuccess>18d3014c-05a7-4acd-bed1-c1ba744c8636</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Filter Collection" />
+  </stage>
+  <stage stageid="18d3014c-05a7-4acd-bed1-c1ba744c8636" name="Calculation Date CLSC Data" type="LoopStart">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="-15" y="30" w="90" h="30" />
+    <onsuccess>ea90b488-2e0a-4b6d-85fd-1f50ebf9b6ce</onsuccess>
+    <groupid>8db42413-8261-4df7-be63-94d1630d5576</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Calculation Date CLSC Data</loopdata>
+  </stage>
+  <stage stageid="b096b100-bea8-44ba-9ccd-02b917a26d26" name="Calculation Date CLSC Data" type="LoopEnd">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="-15" y="210" w="90" h="30" />
+    <onsuccess>fc15419e-1e11-4b7c-98c8-d8c2faeedae9</onsuccess>
+    <groupid>8db42413-8261-4df7-be63-94d1630d5576</groupid>
+  </stage>
+  <stage stageid="ea90b488-2e0a-4b6d-85fd-1f50ebf9b6ce" name="Current Year and Not In Future?" type="Decision">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="-15" y="90" w="90" h="60" />
+    <decision expression="Right([Calculation Date CLSC Data.DATSCA], 2) = FormatDate(Today(), &quot;yy&quot;) AND&#xA;ToNumber(Right([Calculation Date CLSC Data.DATSCA], 2)) &lt;= ToNumber(FormatDate(Today(), &quot;yy&quot;))" />
+    <ontrue>37300204-f5ef-4125-b6df-17633589c3c9</ontrue>
+    <onfalse>11232ccf-e2ed-45d1-b374-33e8ce869df0</onfalse>
+  </stage>
+  <stage stageid="37300204-f5ef-4125-b6df-17633589c3c9" name="Month &lt; Current Posting Period" type="Decision">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="90" y="90" w="90" h="60" />
+    <breakpoint type="0">
+      <condition>
+      </condition>
+    </breakpoint>
+    <decision expression="ToNumber(Left(Right([Calculation Date CLSC Data.DATSCA], 4), 2)) &lt; [Posting Period]" />
+    <ontrue>c90247a0-7017-4ad1-9577-4a3f10408711</ontrue>
+    <onfalse>8c544321-9dcf-4658-b50b-8decc09883cf</onfalse>
+  </stage>
+  <stage stageid="8c544321-9dcf-4658-b50b-8decc09883cf" name="Remove Row" type="Action">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="180" y="90" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Calculation Date CLSC Data&quot;" />
+    </inputs>
+    <onsuccess>f7f6e465-a97f-4aff-be89-3163a0508d14</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Remove Row" />
+  </stage>
+  <stage stageid="c90247a0-7017-4ad1-9577-4a3f10408711" name="Anchor30" type="Anchor">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="90" y="180" w="10" h="10" />
+    <onsuccess>72b4a44d-22ee-4fab-862a-67a0280bb00f</onsuccess>
+  </stage>
+  <stage stageid="11232ccf-e2ed-45d1-b374-33e8ce869df0" name="Note15" type="Note">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <narrative>Previous years</narrative>
+    <display x="-15" y="150" w="90" h="30" />
+    <font family="Segoe UI" size="10" style="Bold" color="0000FF" />
+    <onsuccess>72b4a44d-22ee-4fab-862a-67a0280bb00f</onsuccess>
+  </stage>
+  <stage stageid="f7f6e465-a97f-4aff-be89-3163a0508d14" name="Anchor32" type="Anchor">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="180" y="180" w="10" h="10" />
+    <font family="Segoe UI" size="10" style="Regular" color="0000FF" />
+    <onsuccess>c90247a0-7017-4ad1-9577-4a3f10408711</onsuccess>
+  </stage>
+  <stage stageid="72b4a44d-22ee-4fab-862a-67a0280bb00f" name="Anchor32" type="Anchor">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="-15" y="180" w="10" h="10" />
+    <font family="Segoe UI" size="10" style="Regular" color="0000FF" />
+    <onsuccess>b096b100-bea8-44ba-9ccd-02b917a26d26</onsuccess>
+  </stage>
+  <stage stageid="fc15419e-1e11-4b7c-98c8-d8c2faeedae9" name="Count Rows" type="Action">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="-15" y="255" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Calculation Date CLSC Data&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="Count" />
+    </outputs>
+    <onsuccess>b37bc042-e4d2-4fb4-a757-87f34f5c0a47</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="0d29adbe-0634-435f-a010-36bb28cbe238" name="Count" type="Data">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <display x="60" y="255" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="81938642-be47-40e8-8a44-a52a7ba73409" name="Note16" type="Note">
+    <subsheetid>aef8a583-02f9-4ab4-89ed-abc999cc85bd</subsheetid>
+    <narrative>TODO Continue from Page 19</narrative>
+    <display x="-135" y="105" w="90" h="30" />
+  </stage>
+</process>
