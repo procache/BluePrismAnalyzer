@@ -22,7 +22,7 @@ interface AnalysisResultsProps {
 
 export function AnalysisResults({ analysis }: AnalysisResultsProps) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [typeFilter, setTypeFilter] = useState<string>("");
+  const [typeFilter, setTypeFilter] = useState<string>("all");
   const [sortField, setSortField] = useState<string>("");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
   const { toast } = useToast();
@@ -33,7 +33,7 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
     let filtered = dependencies.filter(dep => {
       const matchesSearch = dep.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            dep.businessObject.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesType = !typeFilter || dep.type === typeFilter;
+      const matchesType = typeFilter === "all" || dep.type === typeFilter;
       return matchesSearch && matchesType;
     });
 
@@ -154,7 +154,7 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
                   <SelectValue placeholder="All Types" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Types</SelectItem>
+                  <SelectItem value="all">All Types</SelectItem>
                   <SelectItem value="vbo">VBO Only</SelectItem>
                   <SelectItem value="action">Actions Only</SelectItem>
                 </SelectContent>
