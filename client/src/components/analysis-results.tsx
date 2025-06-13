@@ -184,7 +184,6 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
                   </Button>
                 </TableHead>
                 <TableHead>Actions</TableHead>
-                <TableHead>Usage Count</TableHead>
                 <TableHead>Locations</TableHead>
               </TableRow>
             </TableHeader>
@@ -215,9 +214,6 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
                               <div className="text-sm font-medium text-gray-900">
                                 {action.name}
                               </div>
-                              <div className="text-xs text-gray-500">
-                                Used {action.usageCount} {action.usageCount === 1 ? "time" : "times"}
-                              </div>
                             </div>
                           </div>
                         ))
@@ -225,11 +221,6 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
                         <div className="text-sm text-gray-500 italic">No actions found</div>
                       )}
                     </div>
-                  </TableCell>
-                  <TableCell>
-                    <Badge variant="outline" className="bg-gray-100 text-gray-800">
-                      {vbo.usageCount} {vbo.usageCount === 1 ? "time" : "times"}
-                    </Badge>
                   </TableCell>
                   <TableCell>
                     <div className="flex flex-wrap gap-1">
