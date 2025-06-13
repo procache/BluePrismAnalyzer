@@ -138,71 +138,55 @@ function extractFromStages(stages: any[], vbos: Map<string, VBODependency>, loca
   stages.forEach((stage: any) => {
     const stageData = stage.$;
     const stageName = stageData.name;
-    const stageType = stageData.type;
+    
+    // Look for resource tags that define VBO usage
+    if (stage.resource && stage.resource.length > 0) {
+      const resource = stage.resource[0].$;
+      const vboName = resource.object;
+      const actionName = resource.action;
+      
+      if (vboName && actionName) {
+        const vboKey = vboName;
+        
+        // Get or create VBO
+        if (!vbos.has(vboKey)) {
+          vbos.set(vboKey, {
+            id: vboKey,
+            name: vboName,
+            usageCount: 0,
+            locations: [],
+            actions: [],
+            description: `Visual Business Object: ${vboName}`
+          });
+        }
+        
+        const vbo = vbos.get(vboKey)!;
+        vbo.usageCount++;
+        if (!vbo.locations.includes(location)) {
+          vbo.locations.push(location);
+        }
 
-    if (stageName) {
-      // Look for specific business object patterns in stage names
-      const vboPatterns = [
-        { pattern: /Excel/i, vboName: "MS Excel VBO" },
-        { pattern: /Email/i, vboName: "Email - POP3/SMTP" },
-        { pattern: /Collection/i, vboName: "Utility - Collection Manipulation" },
-        { pattern: /File/i, vboName: "Utility - File Management" },
-        { pattern: /String/i, vboName: "Utility - Strings" },
-        { pattern: /Date/i, vboName: "Utility - Date and Time" },
-        { pattern: /Math/i, vboName: "Utility - Math" },
-        { pattern: /Environment/i, vboName: "Utility - Environment" },
-        { pattern: /SAP/i, vboName: "SAP Application Server" },
-        { pattern: /Web/i, vboName: "Web API" },
-        { pattern: /Database/i, vboName: "Database" }
-      ];
-
-      for (const { pattern, vboName } of vboPatterns) {
-        if (pattern.test(stageName)) {
-          const vboKey = vboName;
-          
-          // Get or create VBO
-          if (!vbos.has(vboKey)) {
-            vbos.set(vboKey, {
-              id: vboKey,
-              name: vboName,
-              usageCount: 0,
-              locations: [],
-              actions: [],
-              description: `Visual Business Object: ${vboName}`
-            });
+        // Create unique action key
+        const actionKey = `${actionName}-${vboName}`;
+        
+        // Check if action already exists in this VBO
+        const existingAction = vbo.actions.find(action => action.name === actionName);
+        
+        if (!existingAction) {
+          // Add new action to this VBO
+          vbo.actions.push({
+            id: actionKey,
+            name: actionName,
+            usageCount: 1,
+            locations: [location],
+            description: `Action: ${actionName}`
+          });
+        } else {
+          // Update existing action
+          existingAction.usageCount++;
+          if (!existingAction.locations.includes(location)) {
+            existingAction.locations.push(location);
           }
-          
-          const vbo = vbos.get(vboKey)!;
-          vbo.usageCount++;
-          if (!vbo.locations.includes(location)) {
-            vbo.locations.push(location);
-          }
-
-          // Extract action name from stage name
-          const actionName = extractActionName(stageName);
-          const actionKey = `${actionName}-${location}`;
-          
-          // Check if action already exists in this VBO
-          const existingAction = vbo.actions.find(action => action.id === actionKey);
-          
-          if (!existingAction) {
-            // Add new action to this VBO
-            vbo.actions.push({
-              id: actionKey,
-              name: actionName,
-              usageCount: 1,
-              locations: [location],
-              description: `Action: ${actionName}`
-            });
-          } else {
-            // Update existing action
-            existingAction.usageCount++;
-            if (!existingAction.locations.includes(location)) {
-              existingAction.locations.push(location);
-            }
-          }
-          
-          break; // Only match the first pattern
         }
       }
     }
