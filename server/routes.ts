@@ -4,15 +4,15 @@ import multer from "multer";
 import { parseString } from "xml2js";
 import { z } from "zod";
 import { storage } from "./storage";
-import { insertProcessAnalysisSchema, type VBODependency, type VBOAction } from "@shared/schema";
+import { insertProcessAnalysisSchema, insertVBOAnalysisSchema, type VBODependency, type VBOAction } from "@shared/schema";
 
 const upload = multer({ 
   storage: multer.memoryStorage(),
   fileFilter: (req, file, cb) => {
-    if (file.originalname.endsWith('.bpprocess') || file.mimetype === 'text/xml' || file.mimetype === 'application/xml') {
+    if (file.originalname.endsWith('.bpprocess') || file.originalname.endsWith('.bpobject') || file.mimetype === 'text/xml' || file.mimetype === 'application/xml') {
       cb(null, true);
     } else {
-      cb(new Error('Only .bpprocess files are allowed'));
+      cb(new Error('Only .bpprocess and .bpobject files are allowed'));
     }
   },
   limits: {
@@ -109,6 +109,99 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Get analysis error:", error);
       res.status(500).json({ message: "Failed to retrieve analysis" });
+    }
+  });
+
+  // Upload and analyze .bpobject file
+  app.post("/api/analyze-vbo", upload.single('file'), async (req, res) => {
+    try {
+      if (!req.file) {
+        return res.status(400).json({ message: "No file uploaded" });
+      }
+
+      if (!req.file.originalname.endsWith('.bpobject')) {
+        return res.status(400).json({ message: "Invalid file type. Please upload a .bpobject file" });
+      }
+
+      const xmlContent = req.file.buffer.toString('utf-8');
+      
+      // Parse XML
+      const result = await new Promise<any>((resolve, reject) => {
+        parseString(xmlContent, (err, result) => {
+          if (err) reject(err);
+          else resolve(result);
+        });
+      });
+
+      if (!result.process) {
+        return res.status(400).json({ message: "Invalid .bpobject file format" });
+      }
+
+      const processData = result.process.$;
+      const vboName = processData.name || "Unknown VBO";
+      const version = processData.version || "1.0";
+      const narrative = processData.narrative || "";
+      
+      // Extract actions (SubSheetInfo stages)
+      const stages = result.process.stage || [];
+      const actions = extractVBOActions(stages);
+      
+      // Extract elements from appdef
+      const elements = extractVBOElements(result.process.appdef || []);
+      
+      const analysisData = {
+        fileName: req.file.originalname,
+        fileSize: req.file.size,
+        vboName,
+        version,
+        narrative,
+        actionCount: actions.length,
+        elementCount: elements.length,
+        actions,
+        elements,
+      };
+
+      // Validate and store
+      const validatedData = insertVBOAnalysisSchema.parse(analysisData);
+      const savedAnalysis = await storage.createVBOAnalysis(validatedData);
+
+      res.json(savedAnalysis);
+    } catch (error) {
+      console.error("VBO Analysis error:", error);
+      res.status(500).json({ 
+        message: error instanceof Error ? error.message : "Failed to analyze VBO file" 
+      });
+    }
+  });
+
+  // Get all VBO analyses
+  app.get("/api/vbo-analyses", async (req, res) => {
+    try {
+      const analyses = await storage.getAllVBOAnalyses();
+      res.json(analyses);
+    } catch (error) {
+      console.error("Get VBO analyses error:", error);
+      res.status(500).json({ message: "Failed to retrieve VBO analyses" });
+    }
+  });
+
+  // Get specific VBO analysis
+  app.get("/api/vbo-analyses/:id", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ message: "Invalid analysis ID" });
+      }
+
+      const analysis = await storage.getVBOAnalysis(id);
+      if (!analysis) {
+        return res.status(404).json({ message: "VBO analysis not found" });
+      }
+
+      res.json(analysis);
+    } catch (error) {
+      console.error("Get VBO analysis error:", error);
+      res.status(500).json({ message: "Failed to retrieve VBO analysis" });
     }
   });
 
@@ -223,4 +316,124 @@ function extractActionName(stageName: string): string {
     return cleaned || stageName;
   }
   return stageName;
+}
+
+function extractVBOActions(stages: any[]): any[] {
+  const actions: any[] = [];
+  
+  stages.forEach((stage: any) => {
+    const stageData = stage.$;
+    const stageType = stageData.type;
+    
+    if (stageType === "SubSheetInfo") {
+      const name = stageData.name;
+      const id = stageData.stageid;
+      const narrative = stage.narrative?.[0] || "";
+      
+      // Extract inputs and outputs
+      const inputs = (stage.input || []).map((input: any) => ({
+        name: input.$.name || "",
+        type: input.$.type || "text",
+        description: input.$.description || "",
+      }));
+
+      const outputs = (stage.output || []).map((output: any) => ({
+        name: output.$.name || "",
+        type: output.$.type || "text", 
+        description: output.$.description || "",
+      }));
+
+      actions.push({
+        id,
+        name,
+        type: stageType,
+        description: narrative.trim() || undefined,
+        inputs: inputs.length > 0 ? inputs : undefined,
+        outputs: outputs.length > 0 ? outputs : undefined,
+      });
+    }
+  });
+  
+  return actions;
+}
+
+function extractVBOElements(appdefArray: any[]): any[] {
+  const elements: any[] = [];
+  
+  if (!appdefArray || appdefArray.length === 0) {
+    return elements;
+  }
+  
+  const appdef = appdefArray[0];
+  if (appdef.element) {
+    extractElementsRecursive(appdef.element, elements, "");
+  }
+  
+  return elements;
+}
+
+function extractElementsRecursive(elementArray: any[], elements: any[], parentPath: string, parentId?: string): void {
+  if (!elementArray) return;
+  
+  elementArray.forEach((element: any) => {
+    const name = element.$.name;
+    const id = element.id?.[0];
+    const type = element.type?.[0] || element.$.type || "element";
+    
+    if (name && id) {
+      const currentPath = parentPath ? `${parentPath} - ${name}` : name;
+      
+      // Extract attributes
+      const attributes: Record<string, any> = {};
+      if (element.attributes && element.attributes[0] && element.attributes[0].attribute) {
+        element.attributes[0].attribute.forEach((attr: any) => {
+          const attrName = attr.$.name;
+          const processValue = attr.ProcessValue?.[0];
+          if (attrName && processValue) {
+            attributes[attrName] = {
+              datatype: processValue.$.datatype,
+              value: processValue.$.value,
+              inuse: attr.$.inuse === "True",
+            };
+          }
+        });
+      }
+
+      elements.push({
+        id,
+        name,
+        type,
+        parentId,
+        path: currentPath,
+        attributes: Object.keys(attributes).length > 0 ? attributes : undefined,
+      });
+
+      // Process child elements
+      if (element.element) {
+        extractElementsRecursive(element.element, elements, currentPath, id);
+      }
+      
+      // Process groups
+      if (element.group) {
+        element.group.forEach((group: any) => {
+          const groupName = group.$.name;
+          const groupId = group.id?.[0];
+          if (groupName && groupId) {
+            const groupPath = `${currentPath} - ${groupName}`;
+            elements.push({
+              id: groupId,
+              name: groupName,
+              type: "group",
+              parentId: id,
+              path: groupPath,
+            });
+            
+            if (group.element) {
+              extractElementsRecursive(group.element, elements, groupPath, groupId);
+            }
+          }
+        });
+      }
+    }
+  });
 }
