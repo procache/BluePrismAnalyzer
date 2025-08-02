@@ -336,8 +336,8 @@ export function ReleaseAnalysisResults({ analysis }: ReleaseAnalysisResultsProps
               </CardContent>
             </Card>
           ) : (
-            filteredVBOs.map((vbo) => (
-              <Card key={vbo.id} className="card-shadow">
+            filteredVBOs.map((vbo, index) => (
+              <Card key={`${vbo.id}-${index}`} className="card-shadow">
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <div>

@@ -268,37 +268,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }).filter(Boolean);
       }
 
-      // Parse VBOs from the release (note: .bprelease files typically only reference VBOs, not contain them)
-      // Look for actual VBO definitions in object elements
-      if (contents.object) {
-        const objectArray = Array.isArray(contents.object) ? contents.object : [contents.object];
-        vbos = objectArray.map((objectItem: any) => {
-          // Check if this is a complete VBO definition or just a reference
-          if (objectItem.process && objectItem.$) {
-            const objectContent = objectItem.process;
-            const objectAttrs = objectContent.$ || {};
-            const stages = objectContent.stage || [];
-            
-            // Extract actions and elements for this VBO
-            const actions = extractVBOActions(stages);
-            const elements = extractVBOElements(objectContent.appdef || []);
-            
-            return {
-              id: objectItem.$.id || "unknown",
-              name: objectItem.$.name || objectAttrs.name || "Unknown VBO",
-              version: objectAttrs.version || "1.0",
-              narrative: objectAttrs.narrative || "",
-              actionCount: actions.length,
-              elementCount: elements.length,
-              actions: actions,
-              elements: elements,
-            };
-          }
-          return null;
-        }).filter(Boolean);
-      }
-
-      // Also check for VBO references in object-group
+      // Parse VBO references from object-group (bprelease files typically only contain references, not full definitions)
+      const vboRefs = new Set<string>();
       if (contents['object-group']) {
         const objectGroups = Array.isArray(contents['object-group']) ? contents['object-group'] : [contents['object-group']];
         objectGroups.forEach((group: any) => {
@@ -306,8 +277,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             const refs = Array.isArray(group.members[0].object) ? group.members[0].object : [group.members[0].object];
             refs.forEach((ref: any) => {
               if (ref.$ && ref.$.id) {
-                // This is just a reference - we'd need the actual VBO file to get details
-                // For now, we'll note that VBOs are referenced but not included
+                vboRefs.add(ref.$.id);
                 vbos.push({
                   id: ref.$.id,
                   name: "Referenced VBO (not included in release)",
