@@ -1,0 +1,54 @@
+Here's a comprehensive list of tips and tricks for using Claude Code, with timestamps, combining all the information from our previous interactions:
+
+---
+
+### General Usage & Efficiency
+
+* **Install the Claude Code extension** for your IDE (VS Code, Cursor, or other forks). (0:05)
+* **Use the extension to easily launch Claude Code** within your IDE. (0:15)
+* **Open Claude Code in multiple panes** to run parallel tasks on different parts of the codebase. (0:30)
+* If a file is open, Claude Code will **automatically pull it into context**. (0:37)
+* **Utilize the terminal UI** to easily tag files and choose what to include. (0:44)
+* **Use slash commands, especially `/model` to switch between Opus and Sonnet**. Opus is generally preferred for its slight edge in quality, while Sonnet is more cost-efficient. (0:48)
+* **Frequently use the `/clear` command to clear chat history** every time you start something new; this saves tokens and avoids time-consuming compaction. (1:14)
+* **Use the up arrow key to access past chats**, including those from prior sessions. (1:34)
+* **Queue multiple messages or prompts** to allow Claude to work through them sequentially when it makes sense, improving time efficiency. (8:14)
+
+---
+
+### Permissions & Workflow
+
+* To avoid constant permission prompts (e.g., "Can I edit this file?"), **use `claude dangerously skip permissions`** after hitting `command C` when opening Claude Code. (2:17)
+* **Install the GitHub app to enable automatic code reviews** on pull requests by Claude. (2:43)
+* **Customize the `claude code review.yaml` prompt** to focus reviews on bugs and potential vulnerabilities, and to be concise. (3:13)
+
+---
+
+### Terminal Interface Interactions
+
+* To add new lines in the terminal, **hit `shift + enter`**. (3:52)
+* **Drag and hold `shift` while dropping files into the terminal** to reference them directly. (4:06)
+* **Use `control + v` to paste images** from your clipboard into the terminal. (4:24)
+* To **stop Claude** when it's working, hit `escape`. (4:39)
+* **Hitting `control + c` twice will exit entirely**. (4:35)
+* **Hit `escape` twice to see a list of previous messages** and jump back to them. (4:44)
+
+---
+
+### Advanced Features & Customization
+
+* **Add custom hooks and slash commands**, and even have Claude build them for you. (8:49)
+* **Use `claude.md` files for project overviews and key commands** to prevent Claude from having to re-figure out common tasks. (9:03)
+* **Implement hooks to run code before or after edits**, such as running Prettier or type checks. (9:16)
+* **Create custom slash commands in a `.cloud/commands` folder** using natural language. (9:31)
+* **`cloud.md` files can be hierarchical**, with more specific (nested) files taking priority. (10:09)
+* **Use the pound sign (`#`) to add memory quickly**, saving preferences to relevant `cloud.md` files. (9:59)
+* **Save global user memory preferences or local project memory**. (10:20)
+* You can have **hierarchical commands** using subfolders (e.g., `builder:plugin` for `builder/plugin.mmd`). (9:49)
+
+---
+
+### Visual Interface Alternative
+
+* For a more visual UI experience, **use the builder.io VS Code/Cursor/Windsurf extension**. This extension offers a visual interface with chat dynamics and live preview, while still leveraging Claude Code's underlying agent and approach. (10:45)
+* This visual tool allows for **design mode editing (Figma-style) and direct pull request creation** with AI-powered feedback addressing. (11:23)
