@@ -247,8 +247,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const processArray = Array.isArray(contents.process) ? contents.process : [contents.process];
         processes = processArray.map((processItem: any) => {
           const processContent = processItem.process;
-          if (processContent) {
-            const processAttrs = processContent.$;
+          if (processContent && processItem.$) {
+            const processAttrs = processContent.$ || {};
             const stages = processContent.stage || [];
             const subsheets = processContent.subsheet || [];
             
@@ -256,9 +256,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
             const dependencies = extractDependencies(processContent);
             
             return {
-              id: processItem.$.id,
-              name: processAttrs.name || "Unknown Process",
-              version: processAttrs.version,
+              id: processItem.$.id || "unknown",
+              name: processItem.$.name || processAttrs.name || "Unknown Process",
+              version: processAttrs.version || "1.0",
               totalStages: stages.length,
               subsheetCount: subsheets.length,
               dependencies: dependencies,
@@ -268,13 +268,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }).filter(Boolean);
       }
 
-      // Parse VBOs from the release
+      // Parse VBOs from the release (note: .bprelease files typically only reference VBOs, not contain them)
+      // Look for actual VBO definitions in object elements
       if (contents.object) {
         const objectArray = Array.isArray(contents.object) ? contents.object : [contents.object];
         vbos = objectArray.map((objectItem: any) => {
-          const objectContent = objectItem.process;
-          if (objectContent) {
-            const objectAttrs = objectContent.$;
+          // Check if this is a complete VBO definition or just a reference
+          if (objectItem.process && objectItem.$) {
+            const objectContent = objectItem.process;
+            const objectAttrs = objectContent.$ || {};
             const stages = objectContent.stage || [];
             
             // Extract actions and elements for this VBO
@@ -282,10 +284,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
             const elements = extractVBOElements(objectContent.appdef || []);
             
             return {
-              id: objectItem.$.id,
-              name: objectAttrs.name || "Unknown VBO",
-              version: objectAttrs.version,
-              narrative: objectAttrs.narrative,
+              id: objectItem.$.id || "unknown",
+              name: objectItem.$.name || objectAttrs.name || "Unknown VBO",
+              version: objectAttrs.version || "1.0",
+              narrative: objectAttrs.narrative || "",
               actionCount: actions.length,
               elementCount: elements.length,
               actions: actions,
@@ -294,6 +296,32 @@ export async function registerRoutes(app: Express): Promise<Server> {
           }
           return null;
         }).filter(Boolean);
+      }
+
+      // Also check for VBO references in object-group
+      if (contents['object-group']) {
+        const objectGroups = Array.isArray(contents['object-group']) ? contents['object-group'] : [contents['object-group']];
+        objectGroups.forEach((group: any) => {
+          if (group.members && group.members[0] && group.members[0].object) {
+            const refs = Array.isArray(group.members[0].object) ? group.members[0].object : [group.members[0].object];
+            refs.forEach((ref: any) => {
+              if (ref.$ && ref.$.id) {
+                // This is just a reference - we'd need the actual VBO file to get details
+                // For now, we'll note that VBOs are referenced but not included
+                vbos.push({
+                  id: ref.$.id,
+                  name: "Referenced VBO (not included in release)",
+                  version: "unknown",
+                  narrative: "VBO referenced by ID but definition not included in this release file",
+                  actionCount: 0,
+                  elementCount: 0,
+                  actions: [],
+                  elements: [],
+                });
+              }
+            });
+          }
+        });
       }
 
       // Calculate totals
