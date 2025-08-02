@@ -27,23 +27,6 @@ export const vboAnalyses = pgTable("vbo_analyses", {
   elements: json("elements").notNull(),
 });
 
-export const releaseAnalyses = pgTable("release_analyses", {
-  id: serial("id").primaryKey(),
-  fileName: text("file_name").notNull(),
-  fileSize: integer("file_size").notNull(),
-  releaseName: text("release_name").notNull(),
-  packageName: text("package_name").notNull(),
-  created: text("created").notNull(),
-  createdBy: text("created_by").notNull(),
-  processCount: integer("process_count").notNull(),
-  vboCount: integer("vbo_count").notNull(),
-  totalActionCount: integer("total_action_count").notNull(),
-  totalElementCount: integer("total_element_count").notNull(),
-  processes: json("processes").notNull(),
-  vbos: json("vbos").notNull(),
-  releaseNotes: text("release_notes"),
-});
-
 export const insertProcessAnalysisSchema = createInsertSchema(processAnalyses).omit({
   id: true,
 });
@@ -52,16 +35,10 @@ export const insertVBOAnalysisSchema = createInsertSchema(vboAnalyses).omit({
   id: true,
 });
 
-export const insertReleaseAnalysisSchema = createInsertSchema(releaseAnalyses).omit({
-  id: true,
-});
-
 export type InsertProcessAnalysis = z.infer<typeof insertProcessAnalysisSchema>;
 export type ProcessAnalysis = typeof processAnalyses.$inferSelect;
 export type InsertVBOAnalysis = z.infer<typeof insertVBOAnalysisSchema>;
 export type VBOAnalysis = typeof vboAnalyses.$inferSelect;
-export type InsertReleaseAnalysis = z.infer<typeof insertReleaseAnalysisSchema>;
-export type ReleaseAnalysis = typeof releaseAnalyses.$inferSelect;
 
 export const actionSchema = z.object({
   id: z.string(),
@@ -131,27 +108,3 @@ export const vboElementSchema: z.ZodType<VBOElement> = z.lazy(() => z.object({
 }));
 
 export type VBOActionDef = z.infer<typeof vboActionSchema>;
-
-// Release-specific schemas
-export const releaseProcessSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  version: z.string().optional(),
-  totalStages: z.number(),
-  subsheetCount: z.number(),
-  dependencies: z.array(vboSchema),
-});
-
-export const releaseVBOSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  version: z.string().optional(),
-  narrative: z.string().optional(),
-  actionCount: z.number(),
-  elementCount: z.number(),
-  actions: z.array(vboActionSchema),
-  elements: z.array(vboElementSchema),
-});
-
-export type ReleaseProcess = z.infer<typeof releaseProcessSchema>;
-export type ReleaseVBO = z.infer<typeof releaseVBOSchema>;

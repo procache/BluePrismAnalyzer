@@ -2,38 +2,27 @@ import { useState } from "react";
 import { UnifiedUpload } from "@/components/unified-upload";
 import { AnalysisResults } from "@/components/analysis-results";
 import { VBOAnalysisResults } from "@/components/vbo-analysis-results";
-import { ReleaseAnalysisResults } from "@/components/release-analysis-results";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Bot, HelpCircle, History as HistoryIcon } from "lucide-react";
 import { useLocation } from "wouter";
-import type { ProcessAnalysis, VBOAnalysis, ReleaseAnalysis } from "@shared/schema";
+import type { ProcessAnalysis, VBOAnalysis } from "@shared/schema";
 
 export default function Home() {
   const [analysis, setAnalysis] = useState<ProcessAnalysis | null>(null);
   const [vboAnalysis, setVboAnalysis] = useState<VBOAnalysis | null>(null);
-  const [releaseAnalysis, setReleaseAnalysis] = useState<ReleaseAnalysis | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [, navigate] = useLocation();
 
   const handleProcessAnalysisComplete = (result: ProcessAnalysis) => {
     setAnalysis(result);
-    setVboAnalysis(null);
-    setReleaseAnalysis(null);
+    setVboAnalysis(null); // Clear VBO analysis when process analysis is complete
     setIsUploading(false);
   };
 
   const handleVboAnalysisComplete = (result: VBOAnalysis) => {
     setVboAnalysis(result);
-    setAnalysis(null);
-    setReleaseAnalysis(null);
-    setIsUploading(false);
-  };
-
-  const handleReleaseAnalysisComplete = (result: ReleaseAnalysis) => {
-    setReleaseAnalysis(result);
-    setAnalysis(null);
-    setVboAnalysis(null);
+    setAnalysis(null); // Clear process analysis when VBO analysis is complete
     setIsUploading(false);
   };
 
@@ -41,7 +30,6 @@ export default function Home() {
     setIsUploading(true);
     setAnalysis(null);
     setVboAnalysis(null);
-    setReleaseAnalysis(null);
   };
 
   const handleUploadError = () => {
@@ -60,7 +48,7 @@ export default function Home() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-bp-dark">Blue Prism Process Analyzer</h1>
-                <p className="text-sm text-gray-600">Analyze .bpprocess, .bpobject, and .bprelease files and extract dependencies</p>
+                <p className="text-sm text-gray-600">Analyze .bpprocess files and extract dependencies</p>
               </div>
             </div>
             <div className="flex items-center space-x-2">
@@ -88,7 +76,6 @@ export default function Home() {
             <UnifiedUpload
               onProcessAnalysisComplete={handleProcessAnalysisComplete}
               onVBOAnalysisComplete={handleVboAnalysisComplete}
-              onReleaseAnalysisComplete={handleReleaseAnalysisComplete}
               onUploadStart={handleUploadStart}
               onUploadError={handleUploadError}
               isUploading={isUploading}
@@ -107,13 +94,6 @@ export default function Home() {
         {vboAnalysis && (
           <div className="fade-in">
             <VBOAnalysisResults analysis={vboAnalysis} />
-          </div>
-        )}
-
-        {/* Release Analysis Results */}
-        {releaseAnalysis && (
-          <div className="fade-in">
-            <ReleaseAnalysisResults analysis={releaseAnalysis} />
           </div>
         )}
       </main>
