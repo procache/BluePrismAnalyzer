@@ -1,4 +1,4 @@
-import { processAnalyses, vboAnalyses, type ProcessAnalysis, type InsertProcessAnalysis, type VBOAnalysis, type InsertVBOAnalysis } from "@shared/schema";
+import { processAnalyses, vboAnalyses, releaseAnalyses, type ProcessAnalysis, type InsertProcessAnalysis, type VBOAnalysis, type InsertVBOAnalysis, type ReleaseAnalysis, type InsertReleaseAnalysis } from "@shared/schema";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
 
@@ -9,6 +9,9 @@ export interface IStorage {
   getVBOAnalysis(id: number): Promise<VBOAnalysis | undefined>;
   createVBOAnalysis(analysis: InsertVBOAnalysis): Promise<VBOAnalysis>;
   getAllVBOAnalyses(): Promise<VBOAnalysis[]>;
+  getReleaseAnalysis(id: number): Promise<ReleaseAnalysis | undefined>;
+  createReleaseAnalysis(analysis: InsertReleaseAnalysis): Promise<ReleaseAnalysis>;
+  getAllReleaseAnalyses(): Promise<ReleaseAnalysis[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -44,6 +47,23 @@ export class DatabaseStorage implements IStorage {
 
   async getAllVBOAnalyses(): Promise<VBOAnalysis[]> {
     return await db.select().from(vboAnalyses);
+  }
+
+  async getReleaseAnalysis(id: number): Promise<ReleaseAnalysis | undefined> {
+    const [analysis] = await db.select().from(releaseAnalyses).where(eq(releaseAnalyses.id, id));
+    return analysis || undefined;
+  }
+
+  async createReleaseAnalysis(insertAnalysis: InsertReleaseAnalysis): Promise<ReleaseAnalysis> {
+    const [analysis] = await db
+      .insert(releaseAnalyses)
+      .values(insertAnalysis)
+      .returning();
+    return analysis;
+  }
+
+  async getAllReleaseAnalyses(): Promise<ReleaseAnalysis[]> {
+    return await db.select().from(releaseAnalyses);
   }
 }
 

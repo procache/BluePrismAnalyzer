@@ -5,11 +5,12 @@ import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { Cloud, FolderOpen, FileCode, X, Cog } from "lucide-react";
-import type { ProcessAnalysis, VBOAnalysis } from "@shared/schema";
+import type { ProcessAnalysis, VBOAnalysis, ReleaseAnalysis } from "@shared/schema";
 
 interface UnifiedUploadProps {
   onProcessAnalysisComplete: (analysis: ProcessAnalysis) => void;
   onVBOAnalysisComplete: (analysis: VBOAnalysis) => void;
+  onReleaseAnalysisComplete: (analysis: ReleaseAnalysis) => void;
   onUploadStart: () => void;
   onUploadError: () => void;
   isUploading: boolean;
@@ -18,18 +19,20 @@ interface UnifiedUploadProps {
 export function UnifiedUpload({ 
   onProcessAnalysisComplete, 
   onVBOAnalysisComplete, 
+  onReleaseAnalysisComplete,
   onUploadStart, 
   onUploadError, 
   isUploading 
 }: UnifiedUploadProps) {
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [progress, setProgress] = useState(0);
-  const [analysisType, setAnalysisType] = useState<'process' | 'vbo' | null>(null);
+  const [analysisType, setAnalysisType] = useState<'process' | 'vbo' | 'release' | null>(null);
   const { toast } = useToast();
 
-  const determineFileType = (fileName: string): 'process' | 'vbo' | null => {
+  const determineFileType = (fileName: string): 'process' | 'vbo' | 'release' | null => {
     if (fileName.endsWith('.bpprocess')) return 'process';
     if (fileName.endsWith('.bpobject')) return 'vbo';
+    if (fileName.endsWith('.bprelease')) return 'release';
     return null;
   };
 
@@ -42,7 +45,7 @@ export function UnifiedUpload({
     if (!fileType) {
       toast({
         title: "Invalid file type",
-        description: "Please upload a .bpprocess or .bpobject file",
+        description: "Please upload a .bpprocess, .bpobject, or .bprelease file",
         variant: "destructive",
       });
       return;
@@ -68,7 +71,15 @@ export function UnifiedUpload({
       formData.append('file', file);
 
       // Choose the appropriate API endpoint based on file type
-      const endpoint = fileType === 'process' ? '/api/analyze' : '/api/analyze-vbo';
+      let endpoint: string;
+      if (fileType === 'process') {
+        endpoint = '/api/analyze';
+      } else if (fileType === 'vbo') {
+        endpoint = '/api/analyze-vbo';
+      } else {
+        endpoint = '/api/analyze-release';
+      }
+      
       const response = await apiRequest('POST', endpoint, formData);
       const analysis = await response.json();
 
@@ -82,11 +93,17 @@ export function UnifiedUpload({
             title: "Process file analyzed successfully!",
             description: `Found ${analysis.vboCount} VBOs and ${analysis.actionCount} actions`,
           });
-        } else {
+        } else if (fileType === 'vbo') {
           onVBOAnalysisComplete(analysis);
           toast({
             title: "VBO file analyzed successfully!",
             description: `Found ${analysis.actionCount} actions and ${analysis.elementCount} elements`,
+          });
+        } else {
+          onReleaseAnalysisComplete(analysis);
+          toast({
+            title: "Release file analyzed successfully!",
+            description: `Found ${analysis.processCount} processes and ${analysis.vboCount} VBOs`,
           });
         }
       }, 500);
@@ -101,13 +118,13 @@ export function UnifiedUpload({
       });
       setProgress(0);
     }
-  }, [onUploadStart, onProcessAnalysisComplete, onVBOAnalysisComplete, onUploadError, toast]);
+  }, [onUploadStart, onProcessAnalysisComplete, onVBOAnalysisComplete, onReleaseAnalysisComplete, onUploadError, toast]);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
-      'application/xml': ['.bpprocess', '.bpobject'],
-      'text/xml': ['.bpprocess', '.bpobject'],
+      'application/xml': ['.bpprocess', '.bpobject', '.bprelease'],
+      'text/xml': ['.bpprocess', '.bpobject', '.bprelease'],
     },
     maxFiles: 1,
     multiple: false,
@@ -122,6 +139,7 @@ export function UnifiedUpload({
   const getAnalysisTypeDisplay = () => {
     if (analysisType === 'process') return 'Process Analysis';
     if (analysisType === 'vbo') return 'VBO Analysis';
+    if (analysisType === 'release') return 'Release Analysis';
     return 'Blue Prism File';
   };
 
@@ -132,7 +150,9 @@ export function UnifiedUpload({
         <p className="text-gray-600 mb-6">
           {analysisType === 'process' 
             ? 'Analyzing process structure and extracting dependencies'
-            : 'Analyzing VBO structure and extracting actions and elements'
+            : analysisType === 'vbo'
+            ? 'Analyzing VBO structure and extracting actions and elements'
+            : 'Analyzing release package and extracting processes and VBOs'
           }
         </p>
         
@@ -143,7 +163,9 @@ export function UnifiedUpload({
         <p className="text-sm text-gray-500 mb-4">
           {analysisType === 'process' 
             ? 'Extracting VBO dependencies and process flow'
-            : 'Extracting actions and application elements'
+            : analysisType === 'vbo'
+            ? 'Extracting actions and application elements'
+            : 'Extracting processes, VBOs, and their dependencies'
           }
         </p>
         
@@ -158,7 +180,7 @@ export function UnifiedUpload({
     return (
       <div className="text-center">
         <h2 className="text-xl font-semibold text-bp-dark mb-2">Upload Blue Prism File</h2>
-        <p className="text-gray-600 mb-6">Select or drag and drop your .bpprocess or .bpobject file to analyze</p>
+        <p className="text-gray-600 mb-6">Select or drag and drop your .bpprocess, .bpobject, or .bprelease file to analyze</p>
         
         <div className="bg-gray-50 rounded-lg p-4 max-w-md mx-auto">
           <div className="flex items-center justify-between">
@@ -188,7 +210,7 @@ export function UnifiedUpload({
   return (
     <div className="text-center">
       <h2 className="text-xl font-semibold text-bp-dark mb-2">Upload Blue Prism File</h2>
-      <p className="text-gray-600 mb-6">Select or drag and drop your .bpprocess or .bpobject file to analyze its structure and dependencies</p>
+      <p className="text-gray-600 mb-6">Select or drag and drop your .bpprocess, .bpobject, or .bprelease file to analyze its structure and dependencies</p>
       
       <div
         {...getRootProps()}
@@ -202,7 +224,7 @@ export function UnifiedUpload({
         
         <Cloud className="mx-auto h-16 w-16 text-gray-400 mb-4" />
         <p className="text-lg font-medium text-gray-700 mb-2">Drop your Blue Prism file here</p>
-        <p className="text-sm text-gray-500 mb-4">Supports .bpprocess and .bpobject files</p>
+        <p className="text-sm text-gray-500 mb-4">Supports .bpprocess, .bpobject, and .bprelease files</p>
         <Button className="bg-bp-blue text-white hover:bg-blue-700">
           <FolderOpen className="mr-2 h-4 w-4" />
           Browse Files

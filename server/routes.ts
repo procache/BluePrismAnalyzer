@@ -4,15 +4,15 @@ import multer from "multer";
 import { parseString } from "xml2js";
 import { z } from "zod";
 import { storage } from "./storage";
-import { insertProcessAnalysisSchema, insertVBOAnalysisSchema, type VBODependency, type VBOAction } from "@shared/schema";
+import { insertProcessAnalysisSchema, insertVBOAnalysisSchema, insertReleaseAnalysisSchema, type VBODependency, type VBOAction, type VBOElement, type VBOActionDef, type ReleaseProcess, type ReleaseVBO } from "@shared/schema";
 
 const upload = multer({ 
   storage: multer.memoryStorage(),
   fileFilter: (req, file, cb) => {
-    if (file.originalname.endsWith('.bpprocess') || file.originalname.endsWith('.bpobject') || file.mimetype === 'text/xml' || file.mimetype === 'application/xml') {
+    if (file.originalname.endsWith('.bpprocess') || file.originalname.endsWith('.bpobject') || file.originalname.endsWith('.bprelease') || file.mimetype === 'text/xml' || file.mimetype === 'application/xml') {
       cb(null, true);
     } else {
-      cb(new Error('Only .bpprocess and .bpobject files are allowed'));
+      cb(new Error('Only .bpprocess, .bpobject, and .bprelease files are allowed'));
     }
   },
   limits: {
@@ -202,6 +202,162 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Get VBO analysis error:", error);
       res.status(500).json({ message: "Failed to retrieve VBO analysis" });
+    }
+  });
+
+  // Upload and analyze .bprelease file
+  app.post("/api/analyze-release", upload.single('file'), async (req, res) => {
+    try {
+      if (!req.file) {
+        return res.status(400).json({ message: "No file uploaded" });
+      }
+
+      if (!req.file.originalname.endsWith('.bprelease')) {
+        return res.status(400).json({ message: "Invalid file type. Please upload a .bprelease file" });
+      }
+
+      const xmlContent = req.file.buffer.toString('utf-8');
+      
+      // Parse XML
+      const result = await new Promise<any>((resolve, reject) => {
+        parseString(xmlContent, (err, result) => {
+          if (err) reject(err);
+          else resolve(result);
+        });
+      });
+
+      if (!result['bpr:release']) {
+        return res.status(400).json({ message: "Invalid .bprelease file format" });
+      }
+
+      const releaseData = result['bpr:release'];
+      const releaseName = releaseData['bpr:name']?.[0] || "Unknown Release";
+      const packageName = releaseData['bpr:package-name']?.[0] || "Unknown Package";
+      const created = releaseData['bpr:created']?.[0] || "";
+      const createdBy = releaseData['bpr:user-created-by']?.[0] || "Unknown";
+      const releaseNotes = releaseData['bpr:release-notes']?.[0] || "";
+
+      // Extract contents
+      const contents = releaseData['bpr:contents']?.[0] || {};
+      let processes: ReleaseProcess[] = [];
+      let vbos: ReleaseVBO[] = [];
+
+      // Parse processes from the release
+      if (contents.process) {
+        const processArray = Array.isArray(contents.process) ? contents.process : [contents.process];
+        processes = processArray.map((processItem: any) => {
+          const processContent = processItem.process;
+          if (processContent) {
+            const processAttrs = processContent.$;
+            const stages = processContent.stage || [];
+            const subsheets = processContent.subsheet || [];
+            
+            // Extract dependencies for this process
+            const dependencies = extractDependencies(processContent);
+            
+            return {
+              id: processItem.$.id,
+              name: processAttrs.name || "Unknown Process",
+              version: processAttrs.version,
+              totalStages: stages.length,
+              subsheetCount: subsheets.length,
+              dependencies: dependencies,
+            };
+          }
+          return null;
+        }).filter(Boolean);
+      }
+
+      // Parse VBOs from the release
+      if (contents.object) {
+        const objectArray = Array.isArray(contents.object) ? contents.object : [contents.object];
+        vbos = objectArray.map((objectItem: any) => {
+          const objectContent = objectItem.process;
+          if (objectContent) {
+            const objectAttrs = objectContent.$;
+            const stages = objectContent.stage || [];
+            
+            // Extract actions and elements for this VBO
+            const actions = extractVBOActions(stages);
+            const elements = extractVBOElements(objectContent.appdef || []);
+            
+            return {
+              id: objectItem.$.id,
+              name: objectAttrs.name || "Unknown VBO",
+              version: objectAttrs.version,
+              narrative: objectAttrs.narrative,
+              actionCount: actions.length,
+              elementCount: elements.length,
+              actions: actions,
+              elements: elements,
+            };
+          }
+          return null;
+        }).filter(Boolean);
+      }
+
+      // Calculate totals
+      const totalActionCount = processes.reduce((sum, p) => sum + p.dependencies.reduce((pSum, dep) => pSum + dep.actions.length, 0), 0) +
+                             vbos.reduce((sum, v) => sum + v.actionCount, 0);
+      const totalElementCount = vbos.reduce((sum, v) => sum + v.elementCount, 0);
+
+      const analysisData = {
+        fileName: req.file.originalname,
+        fileSize: req.file.size,
+        releaseName,
+        packageName,
+        created,
+        createdBy,
+        processCount: processes.length,
+        vboCount: vbos.length,
+        totalActionCount,
+        totalElementCount,
+        processes,
+        vbos,
+        releaseNotes,
+      };
+
+      // Validate and store
+      const validatedData = insertReleaseAnalysisSchema.parse(analysisData);
+      const savedAnalysis = await storage.createReleaseAnalysis(validatedData);
+
+      res.json(savedAnalysis);
+    } catch (error) {
+      console.error("Release Analysis error:", error);
+      res.status(500).json({ 
+        message: error instanceof Error ? error.message : "Failed to analyze release file" 
+      });
+    }
+  });
+
+  // Get all release analyses
+  app.get("/api/release-analyses", async (req, res) => {
+    try {
+      const analyses = await storage.getAllReleaseAnalyses();
+      res.json(analyses);
+    } catch (error) {
+      console.error("Get release analyses error:", error);
+      res.status(500).json({ message: "Failed to retrieve release analyses" });
+    }
+  });
+
+  // Get specific release analysis
+  app.get("/api/release-analyses/:id", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ message: "Invalid analysis ID" });
+      }
+
+      const analysis = await storage.getReleaseAnalysis(id);
+      if (!analysis) {
+        return res.status(404).json({ message: "Release analysis not found" });
+      }
+
+      res.json(analysis);
+    } catch (error) {
+      console.error("Get release analysis error:", error);
+      res.status(500).json({ message: "Failed to retrieve release analysis" });
     }
   });
 
