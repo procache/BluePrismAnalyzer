@@ -107,24 +107,13 @@ export function VBOAnalysisResults({ analysis }: VBOAnalysisResultsProps) {
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
-              <h3 className="font-semibold text-bp-dark mb-2">VBO Information</h3>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div>
-                  <span className="text-sm text-gray-600">Name:</span>
-                  <span className="ml-2 font-medium">{analysis.vboName}</span>
-                </div>
-                <div>
-                  <span className="text-sm text-gray-600">Version:</span>
-                  <span className="ml-2 font-medium">{analysis.version}</span>
-                </div>
-                <div>
-                  <span className="text-sm text-gray-600">File:</span>
-                  <span className="ml-2 font-medium">{analysis.fileName}</span>
+                  <h3 className="text-xl font-semibold text-bp-dark">{analysis.vboName}</h3>
                 </div>
                 {analysis.narrative && (
                   <div>
-                    <span className="text-sm text-gray-600">Description:</span>
-                    <p className="ml-2 text-sm text-gray-700 mt-1">{analysis.narrative}</p>
+                    <p className="text-sm text-gray-700">{analysis.narrative}</p>
                   </div>
                 )}
               </div>
