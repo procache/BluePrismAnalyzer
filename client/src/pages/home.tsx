@@ -4,15 +4,14 @@ import { AnalysisResults } from "@/components/analysis-results";
 import { VBOAnalysisResults } from "@/components/vbo-analysis-results";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Bot, HelpCircle, History as HistoryIcon } from "lucide-react";
-import { useLocation } from "wouter";
+import { Bot, HelpCircle } from "lucide-react";
 import type { ProcessAnalysis, VBOAnalysis } from "@shared/schema";
 
 export default function Home() {
   const [analysis, setAnalysis] = useState<ProcessAnalysis | null>(null);
   const [vboAnalysis, setVboAnalysis] = useState<VBOAnalysis | null>(null);
   const [isUploading, setIsUploading] = useState(false);
-  const [, navigate] = useLocation();
+
 
   const handleProcessAnalysisComplete = (result: ProcessAnalysis) => {
     setAnalysis(result);
@@ -53,14 +52,6 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center space-x-2">
-              <Button 
-                variant="ghost" 
-                onClick={() => navigate('/history')}
-                className="text-bp-blue hover:bg-blue-50"
-              >
-                <HistoryIcon className="mr-2 h-4 w-4" />
-                History
-              </Button>
               <Button variant="ghost" className="text-bp-blue hover:bg-blue-50">
                 <HelpCircle className="mr-2 h-4 w-4" />
                 Help

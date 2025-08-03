@@ -3,8 +3,7 @@ import { createServer, type Server } from "http";
 import multer from "multer";
 import { parseString } from "xml2js";
 import { z } from "zod";
-import { storage } from "./storage";
-import { insertProcessAnalysisSchema, insertVBOAnalysisSchema, type VBODependency, type VBOAction } from "@shared/schema";
+import { type VBODependency, type VBOAction } from "@shared/schema";
 
 const upload = multer({ 
   storage: multer.memoryStorage(),
@@ -68,11 +67,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         dependencies: dependencies,
       };
 
-      // Validate and store
-      const validatedData = insertProcessAnalysisSchema.parse(analysisData);
-      const savedAnalysis = await storage.createProcessAnalysis(validatedData);
-
-      res.json(savedAnalysis);
+      res.json(analysisData);
     } catch (error) {
       console.error("Analysis error:", error);
       res.status(500).json({ 
@@ -81,36 +76,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get all analyses
-  app.get("/api/analyses", async (req, res) => {
-    try {
-      const analyses = await storage.getAllProcessAnalyses();
-      res.json(analyses);
-    } catch (error) {
-      console.error("Get analyses error:", error);
-      res.status(500).json({ message: "Failed to retrieve analyses" });
-    }
-  });
 
-  // Get specific analysis
-  app.get("/api/analyses/:id", async (req, res) => {
-    try {
-      const id = parseInt(req.params.id);
-      if (isNaN(id)) {
-        return res.status(400).json({ message: "Invalid analysis ID" });
-      }
-
-      const analysis = await storage.getProcessAnalysis(id);
-      if (!analysis) {
-        return res.status(404).json({ message: "Analysis not found" });
-      }
-
-      res.json(analysis);
-    } catch (error) {
-      console.error("Get analysis error:", error);
-      res.status(500).json({ message: "Failed to retrieve analysis" });
-    }
-  });
 
   // Upload and analyze .bpobject file
   app.post("/api/analyze-vbo", upload.single('file'), async (req, res) => {
@@ -161,11 +127,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         elements,
       };
 
-      // Validate and store
-      const validatedData = insertVBOAnalysisSchema.parse(analysisData);
-      const savedAnalysis = await storage.createVBOAnalysis(validatedData);
-
-      res.json(savedAnalysis);
+      res.json(analysisData);
     } catch (error) {
       console.error("VBO Analysis error:", error);
       res.status(500).json({ 
@@ -174,36 +136,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get all VBO analyses
-  app.get("/api/vbo-analyses", async (req, res) => {
-    try {
-      const analyses = await storage.getAllVBOAnalyses();
-      res.json(analyses);
-    } catch (error) {
-      console.error("Get VBO analyses error:", error);
-      res.status(500).json({ message: "Failed to retrieve VBO analyses" });
-    }
-  });
 
-  // Get specific VBO analysis
-  app.get("/api/vbo-analyses/:id", async (req, res) => {
-    try {
-      const id = parseInt(req.params.id);
-      if (isNaN(id)) {
-        return res.status(400).json({ message: "Invalid analysis ID" });
-      }
-
-      const analysis = await storage.getVBOAnalysis(id);
-      if (!analysis) {
-        return res.status(404).json({ message: "VBO analysis not found" });
-      }
-
-      res.json(analysis);
-    } catch (error) {
-      console.error("Get VBO analysis error:", error);
-      res.status(500).json({ message: "Failed to retrieve VBO analysis" });
-    }
-  });
 
   const httpServer = createServer(app);
   return httpServer;

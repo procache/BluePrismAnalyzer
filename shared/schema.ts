@@ -1,44 +1,31 @@
-import { pgTable, text, serial, integer, json } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const processAnalyses = pgTable("process_analyses", {
-  id: serial("id").primaryKey(),
-  fileName: text("file_name").notNull(),
-  fileSize: integer("file_size").notNull(),
-  processName: text("process_name").notNull(),
-  totalStages: integer("total_stages").notNull(),
-  vboCount: integer("vbo_count").notNull(),
-  actionCount: integer("action_count").notNull(),
-  subsheetCount: integer("subsheet_count").notNull(),
-  dependencies: json("dependencies").notNull(),
+// Process analysis types (no persistence needed)
+export const processAnalysisSchema = z.object({
+  fileName: z.string(),
+  fileSize: z.number(),
+  processName: z.string(),
+  totalStages: z.number(),
+  vboCount: z.number(),
+  actionCount: z.number(),
+  subsheetCount: z.number(),
+  dependencies: z.array(z.any()),
 });
 
-export const vboAnalyses = pgTable("vbo_analyses", {
-  id: serial("id").primaryKey(),
-  fileName: text("file_name").notNull(),
-  fileSize: integer("file_size").notNull(),
-  vboName: text("vbo_name").notNull(),
-  version: text("version").notNull(),
-  narrative: text("narrative"),
-  actionCount: integer("action_count").notNull(),
-  elementCount: integer("element_count").notNull(),
-  actions: json("actions").notNull(),
-  elements: json("elements").notNull(),
+export const vboAnalysisSchema = z.object({
+  fileName: z.string(),
+  fileSize: z.number(),
+  vboName: z.string(),
+  version: z.string(),
+  narrative: z.string().optional(),
+  actionCount: z.number(),
+  elementCount: z.number(),
+  actions: z.array(z.any()),
+  elements: z.array(z.any()),
 });
 
-export const insertProcessAnalysisSchema = createInsertSchema(processAnalyses).omit({
-  id: true,
-});
-
-export const insertVBOAnalysisSchema = createInsertSchema(vboAnalyses).omit({
-  id: true,
-});
-
-export type InsertProcessAnalysis = z.infer<typeof insertProcessAnalysisSchema>;
-export type ProcessAnalysis = typeof processAnalyses.$inferSelect;
-export type InsertVBOAnalysis = z.infer<typeof insertVBOAnalysisSchema>;
-export type VBOAnalysis = typeof vboAnalyses.$inferSelect;
+export type ProcessAnalysis = z.infer<typeof processAnalysisSchema>;
+export type VBOAnalysis = z.infer<typeof vboAnalysisSchema>;
 
 export const actionSchema = z.object({
   id: z.string(),
