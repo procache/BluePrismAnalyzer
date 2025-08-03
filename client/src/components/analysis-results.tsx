@@ -184,7 +184,6 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
                   </Button>
                 </TableHead>
                 <TableHead>Actions</TableHead>
-                <TableHead>Locations</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -222,20 +221,6 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
                           ))
                       ) : (
                         <div className="text-sm text-gray-500 italic">No actions found</div>
-                      )}
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <div className="flex flex-wrap gap-1">
-                      {vbo.locations.slice(0, 2).map((location: string, index: number) => (
-                        <Badge key={index} variant="outline" className="bg-gray-100 text-gray-700 text-xs">
-                          {location}
-                        </Badge>
-                      ))}
-                      {vbo.locations.length > 2 && (
-                        <Badge variant="outline" className="bg-gray-100 text-gray-700 text-xs">
-                          +{vbo.locations.length - 2} more
-                        </Badge>
                       )}
                     </div>
                   </TableCell>
