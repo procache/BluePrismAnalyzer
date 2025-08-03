@@ -12,7 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Search, Download, ArrowUpDown, Puzzle, Play, Box, Cog } from "lucide-react";
+import { Search, Download, Play, Cog } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import type { ProcessAnalysis, VBODependency } from "@shared/schema";
 
@@ -23,8 +23,6 @@ interface AnalysisResultsProps {
 export function AnalysisResults({ analysis }: AnalysisResultsProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [typeFilter, setTypeFilter] = useState<string>("all");
-  const [sortField, setSortField] = useState<string>("");
-  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
   const { toast } = useToast();
 
   const dependencies = analysis.dependencies as VBODependency[];
@@ -41,35 +39,13 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
       return matchesSearch;
     });
 
-    if (sortField) {
-      filtered.sort((a, b) => {
-        let aValue: any = a[sortField as keyof VBODependency];
-        let bValue: any = b[sortField as keyof VBODependency];
-
-        if (typeof aValue === "string") {
-          aValue = aValue.toLowerCase();
-          bValue = bValue.toLowerCase();
-        }
-
-        if (sortDirection === "asc") {
-          return aValue < bValue ? -1 : aValue > bValue ? 1 : 0;
-        } else {
-          return aValue > bValue ? -1 : aValue < bValue ? 1 : 0;
-        }
-      });
-    }
+    // Always sort VBOs alphabetically by name
+    filtered.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 
     return filtered;
-  }, [dependencies, searchTerm, typeFilter, sortField, sortDirection]);
+  }, [dependencies, searchTerm, typeFilter]);
 
-  const handleSort = (field: string) => {
-    if (sortField === field) {
-      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
-    } else {
-      setSortField(field);
-      setSortDirection("asc");
-    }
-  };
+
 
   const handleExport = () => {
     const csvRows = [
@@ -165,16 +141,7 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
           <Table>
             <TableHeader className="bg-gray-50">
               <TableRow>
-                <TableHead>
-                  <Button
-                    variant="ghost"
-                    onClick={() => handleSort("name")}
-                    className="flex items-center space-x-1 hover:text-gray-700 p-0"
-                  >
-                    <span>Visual Business Object</span>
-                    <ArrowUpDown className="h-3 w-3" />
-                  </Button>
-                </TableHead>
+                <TableHead>Visual Business Object</TableHead>
                 <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
@@ -182,17 +149,13 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
               {filteredAndSortedDependencies.map((vbo) => (
                 <TableRow key={vbo.id} className="table-row hover:bg-gray-50">
                   <TableCell>
-                    <div className="flex items-center">
-                      <Box className="text-bp-blue mr-3 h-5 w-5" />
-                      <div>
-                        <div className="text-sm font-medium text-gray-900">
-                          {vbo.name}
-                        </div>
-                        <Badge variant="outline" className="bg-blue-100 text-blue-800 mt-1">
-                          <Puzzle className="mr-1 h-3 w-3" />
-                          VBO
-                        </Badge>
+                    <div>
+                      <div className="text-sm font-medium text-gray-900">
+                        {vbo.name}
                       </div>
+                      <Badge variant="outline" className="bg-blue-100 text-blue-800 mt-1">
+                        VBO
+                      </Badge>
                     </div>
                   </TableCell>
                   <TableCell>
