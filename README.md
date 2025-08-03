@@ -1,6 +1,6 @@
-# Blue Prism Process Analyzer
+# Blue Prism Dependency Explorer
 
-A powerful web application for analyzing and visualizing Blue Prism automation files (.bpprocess and .bpobject), providing insights into process dependencies, VBO usage, and automation structure.
+A powerful web application for analyzing and visualizing Blue Prism automation files (.bpprocess and .bpobject), providing insights into process dependencies, VBO usage, automation structure, and Application Modeller structure.
 
 ## Features
 

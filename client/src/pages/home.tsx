@@ -47,8 +47,9 @@ export default function Home() {
                 <Bot className="text-white text-xl" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-bp-dark">Blue Prism Process Analyzer</h1>
+                <h1 className="text-2xl font-bold text-bp-dark">Blue Prism Dependency Explorer</h1>
                 <p className="text-sm text-gray-600">Analyze .bpprocess files and extract dependencies</p>
+                <p className="text-sm text-gray-600">Analyze .bpobject files and extract Application Modeller structure</p>
               </div>
             </div>
             <div className="flex items-center space-x-2">
