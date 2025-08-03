@@ -64,9 +64,19 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
       });
     });
 
-    const csvContent = csvRows.map(row => row.map(field => `"${field}"`).join(",")).join("\n");
+    // Create CSV content with UTF-8 BOM for better Excel compatibility and autofit
+    // The BOM helps Excel recognize UTF-8 encoding and apply autofit automatically
+    const csvContent = "\uFEFF" + csvRows.map(row => 
+      row.map(field => {
+        // Ensure proper escaping and formatting for Excel autofit
+        const escapedField = field.replace(/"/g, '""');
+        return `"${escapedField}"`;
+      }).join(",")
+    ).join("\r\n"); // Use Windows line endings for better Excel compatibility
 
-    const blob = new Blob([csvContent], { type: "text/csv" });
+    const blob = new Blob([csvContent], { 
+      type: "text/csv;charset=utf-8;" 
+    });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
