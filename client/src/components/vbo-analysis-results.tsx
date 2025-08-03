@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ChevronDown, ChevronRight, Package, Layers, Settings, FolderTree } from "lucide-react";
 import { useState } from "react";
 import type { VBOAnalysis, VBOElement } from "@shared/schema";
@@ -10,17 +9,6 @@ interface VBOAnalysisResultsProps {
 }
 
 export function VBOAnalysisResults({ analysis }: VBOAnalysisResultsProps) {
-  const [openSections, setOpenSections] = useState<Set<string>>(new Set(["summary"]));
-
-  const toggleSection = (section: string) => {
-    const newOpenSections = new Set(openSections);
-    if (newOpenSections.has(section)) {
-      newOpenSections.delete(section);
-    } else {
-      newOpenSections.add(section);
-    }
-    setOpenSections(newOpenSections);
-  };
 
   const buildElementTree = (elements: VBOElement[]): VBOElement[] => {
     const elementMap = new Map<string, VBOElement & { children: VBOElement[] }>();
@@ -134,105 +122,81 @@ export function VBOAnalysisResults({ analysis }: VBOAnalysisResultsProps) {
 
       {/* Actions List */}
       <Card className="card-shadow mb-6">
-        <Collapsible open={openSections.has("actions")} onOpenChange={() => toggleSection("actions")}>
-          <CollapsibleTrigger asChild>
-            <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors">
-              <CardTitle className="text-lg font-semibold text-bp-dark flex items-center justify-between">
-                <div className="flex items-center">
-                  <Settings className="mr-2 h-5 w-5" />
-                  Actions ({analysis.actionCount})
+        <CardHeader>
+          <CardTitle className="text-lg font-semibold text-bp-dark flex items-center">
+            <Settings className="mr-2 h-5 w-5" />
+            Actions ({analysis.actionCount})
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            {(analysis.actions as any[]).map((action, index) => (
+              <div key={action.id || index} className="border rounded-lg p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-semibold text-bp-dark">{action.name}</h4>
+                  <Badge variant="outline">Action</Badge>
                 </div>
-                {openSections.has("actions") ? 
-                  <ChevronDown className="h-5 w-5" /> : 
-                  <ChevronRight className="h-5 w-5" />
-                }
-              </CardTitle>
-            </CardHeader>
-          </CollapsibleTrigger>
-          <CollapsibleContent>
-            <CardContent>
-              <div className="space-y-4">
-                {(analysis.actions as any[]).map((action, index) => (
-                  <div key={action.id || index} className="border rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-semibold text-bp-dark">{action.name}</h4>
-                      <Badge variant="outline">Action</Badge>
+                
+                {action.description && (
+                  <p className="text-sm text-gray-600 mb-3">{action.description}</p>
+                )}
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {action.inputs && action.inputs.length > 0 && (
+                    <div>
+                      <h5 className="font-medium text-sm text-gray-700 mb-2">Inputs:</h5>
+                      <ul className="space-y-1">
+                        {action.inputs.map((input: any, idx: number) => (
+                          <li key={idx} className="text-sm">
+                            <span className="font-medium">{input.name}</span>
+                            <Badge variant="secondary" className="ml-2 text-xs">{input.type}</Badge>
+                            {input.description && (
+                              <p className="text-xs text-gray-500 mt-1">{input.description}</p>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    
-                    {action.description && (
-                      <p className="text-sm text-gray-600 mb-3">{action.description}</p>
-                    )}
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {action.inputs && action.inputs.length > 0 && (
-                        <div>
-                          <h5 className="font-medium text-sm text-gray-700 mb-2">Inputs:</h5>
-                          <ul className="space-y-1">
-                            {action.inputs.map((input: any, idx: number) => (
-                              <li key={idx} className="text-sm">
-                                <span className="font-medium">{input.name}</span>
-                                <Badge variant="secondary" className="ml-2 text-xs">{input.type}</Badge>
-                                {input.description && (
-                                  <p className="text-xs text-gray-500 mt-1">{input.description}</p>
-                                )}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                      
-                      {action.outputs && action.outputs.length > 0 && (
-                        <div>
-                          <h5 className="font-medium text-sm text-gray-700 mb-2">Outputs:</h5>
-                          <ul className="space-y-1">
-                            {action.outputs.map((output: any, idx: number) => (
-                              <li key={idx} className="text-sm">
-                                <span className="font-medium">{output.name}</span>
-                                <Badge variant="secondary" className="ml-2 text-xs">{output.type}</Badge>
-                                {output.description && (
-                                  <p className="text-xs text-gray-500 mt-1">{output.description}</p>
-                                )}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
+                  )}
+                  
+                  {action.outputs && action.outputs.length > 0 && (
+                    <div>
+                      <h5 className="font-medium text-sm text-gray-700 mb-2">Outputs:</h5>
+                      <ul className="space-y-1">
+                        {action.outputs.map((output: any, idx: number) => (
+                          <li key={idx} className="text-sm">
+                            <span className="font-medium">{output.name}</span>
+                            <Badge variant="secondary" className="ml-2 text-xs">{output.type}</Badge>
+                            {output.description && (
+                              <p className="text-xs text-gray-500 mt-1">{output.description}</p>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
-                ))}
+                  )}
+                </div>
               </div>
-            </CardContent>
-          </CollapsibleContent>
-        </Collapsible>
+            ))}
+          </div>
+        </CardContent>
       </Card>
 
       {/* Application Elements */}
       <Card className="card-shadow mb-6">
-        <Collapsible open={openSections.has("elements")} onOpenChange={() => toggleSection("elements")}>
-          <CollapsibleTrigger asChild>
-            <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors">
-              <CardTitle className="text-lg font-semibold text-bp-dark flex items-center justify-between">
-                <div className="flex items-center">
-                  <Layers className="mr-2 h-5 w-5" />
-                  Application Elements ({analysis.elementCount})
-                </div>
-                {openSections.has("elements") ? 
-                  <ChevronDown className="h-5 w-5" /> : 
-                  <ChevronRight className="h-5 w-5" />
-                }
-              </CardTitle>
-            </CardHeader>
-          </CollapsibleTrigger>
-          <CollapsibleContent>
-            <CardContent>
-              <div className="bg-gray-50 rounded-lg p-4 max-h-96 overflow-y-auto">
-                {elementTree.map((element) => (
-                  <ElementTreeNode key={element.id} element={element} />
-                ))}
-              </div>
-            </CardContent>
-          </CollapsibleContent>
-        </Collapsible>
+        <CardHeader>
+          <CardTitle className="text-lg font-semibold text-bp-dark flex items-center">
+            <Layers className="mr-2 h-5 w-5" />
+            Application Elements ({analysis.elementCount})
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="bg-gray-50 rounded-lg p-4 max-h-96 overflow-y-auto">
+            {elementTree.map((element) => (
+              <ElementTreeNode key={element.id} element={element} />
+            ))}
+          </div>
+        </CardContent>
       </Card>
     </>
   );
