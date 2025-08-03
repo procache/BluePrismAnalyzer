@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import { Cloud, FolderOpen, FileCode, X, Cog } from "lucide-react";
+import { ArrowDown, FolderOpen, FileCode, X, Cog } from "lucide-react";
 import type { ProcessAnalysis, VBOAnalysis } from "@shared/schema";
 
 interface UnifiedUploadProps {
@@ -200,7 +200,7 @@ export function UnifiedUpload({
       >
         <input {...getInputProps()} />
         
-        <Cloud className="mx-auto h-16 w-16 text-gray-400 mb-4" />
+        <ArrowDown className="mx-auto h-16 w-16 text-green-500 mb-4" />
         <p className="text-lg font-medium text-gray-700 mb-2">Drop your Blue Prism file here</p>
         <p className="text-sm text-gray-500 mb-4">Supports .bpprocess and .bpobject files</p>
         <Button className="bg-bp-blue text-white hover:bg-blue-700">
