@@ -4,7 +4,7 @@ import { AnalysisResults } from "@/components/analysis-results";
 import { VBOAnalysisResults } from "@/components/vbo-analysis-results";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Bot, HelpCircle } from "lucide-react";
+import { Bot } from "lucide-react";
 import type { ProcessAnalysis, VBOAnalysis } from "@shared/schema";
 
 export default function Home() {
@@ -51,12 +51,7 @@ export default function Home() {
                 <p className="text-sm text-gray-600">Analyze .bpobject files and extract Application Modeller structure</p>
               </div>
             </div>
-            <div className="flex items-center space-x-2">
-              <Button variant="ghost" className="text-bp-blue hover:bg-blue-50">
-                <HelpCircle className="mr-2 h-4 w-4" />
-                Help
-              </Button>
-            </div>
+
           </div>
         </div>
       </header>
