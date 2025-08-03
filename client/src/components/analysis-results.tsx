@@ -46,16 +46,20 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
 
   const handleExport = () => {
     const csvRows = [
-      ["Business Object", "Action", "Usage Count", "Locations"]
+      ["Business Object", "Action", "Usage Count"]
     ];
     
     filteredAndSortedDependencies.forEach(vbo => {
-      vbo.actions.forEach(action => {
+      // Sort actions alphabetically for each VBO
+      const sortedActions = vbo.actions
+        .slice()
+        .sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+      
+      sortedActions.forEach(action => {
         csvRows.push([
           vbo.name,
           action.name,
-          action.usageCount.toString(),
-          action.locations.join("; ")
+          action.usageCount.toString()
         ]);
       });
     });
