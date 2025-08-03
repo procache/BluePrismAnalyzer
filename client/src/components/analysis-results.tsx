@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -12,7 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Search, Download, Play, Cog, Square } from "lucide-react";
+import { Download, Play, Cog, Square } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import type { ProcessAnalysis, VBODependency } from "@shared/schema";
 
@@ -21,7 +21,6 @@ interface AnalysisResultsProps {
 }
 
 export function AnalysisResults({ analysis }: AnalysisResultsProps) {
-  const [searchTerm, setSearchTerm] = useState("");
   const [typeFilter, setTypeFilter] = useState<string>("all");
   const { toast } = useToast();
 
@@ -34,16 +33,14 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
     
     let filtered = dependencies.filter(vbo => {
       if (!vbo || !vbo.name || !vbo.actions) return false;
-      const matchesSearch = vbo.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           vbo.actions.some(action => action.name.toLowerCase().includes(searchTerm.toLowerCase()));
-      return matchesSearch;
+      return true;
     });
 
     // Always sort VBOs alphabetically by name
     filtered.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 
     return filtered;
-  }, [dependencies, searchTerm, typeFilter]);
+  }, [dependencies, typeFilter]);
 
 
 
@@ -108,26 +105,10 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0">
             <div>
               <CardTitle className="text-xl font-semibold text-bp-dark">
-                Visual Business Objects & Dependencies
+                VBO Dependencies and actions used in the process
               </CardTitle>
-              <p className="text-sm text-gray-600 mt-1">
-                All VBOs and actions identified in your process
-              </p>
             </div>
             <div className="flex items-center space-x-3">
-              {/* Search */}
-              <div className="relative">
-                <Input
-                  placeholder="Search dependencies..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-4"
-                />
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-              </div>
-              
-
-              
               {/* Export */}
               <Button onClick={handleExport} className="bg-bp-green text-white hover:bg-green-600">
                 <Download className="mr-2 h-4 w-4" />
