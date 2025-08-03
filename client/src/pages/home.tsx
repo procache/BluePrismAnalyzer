@@ -4,7 +4,7 @@ import { AnalysisResults } from "@/components/analysis-results";
 import { VBOAnalysisResults } from "@/components/vbo-analysis-results";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Bot } from "lucide-react";
+import logoImagePath from "@assets/image_1754245003276.png";
 import type { ProcessAnalysis, VBOAnalysis } from "@shared/schema";
 
 export default function Home() {
@@ -42,8 +42,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-bp-blue rounded-lg flex items-center justify-center">
-                <Bot className="text-white text-xl" />
+              <div className="w-10 h-10 flex items-center justify-center">
+                <img src={logoImagePath} alt="Blue Prism Logo" className="w-10 h-10 rounded-lg" />
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-bp-dark">Blue Prism Dependency Explorer</h1>

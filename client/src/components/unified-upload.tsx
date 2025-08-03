@@ -201,7 +201,7 @@ export function UnifiedUpload({
       >
         <input {...getInputProps()} />
         
-        <img src={robotImagePath} alt="Upload" className="mx-auto h-16 w-16 mb-4" />
+        <img src={robotImagePath} alt="Upload" className="mx-auto h-32 w-32 mb-4" />
         <p className="text-lg font-medium text-gray-700 mb-2">Drop your Blue Prism file here</p>
         <p className="text-sm text-gray-500 mb-4">Supports .bpprocess and .bpobject files</p>
         <Button className="bg-bp-blue text-white hover:bg-blue-700">
