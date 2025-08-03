@@ -134,7 +134,6 @@ export function VBOAnalysisResults({ analysis }: VBOAnalysisResultsProps) {
               <div key={action.id || index} className="border rounded-lg p-4">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-semibold text-bp-dark">{action.name}</h4>
-                  <Badge variant="outline">Action</Badge>
                 </div>
                 
                 {action.description && (
