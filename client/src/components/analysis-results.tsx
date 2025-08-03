@@ -64,42 +64,23 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
       });
     });
 
-    // Create Excel-compatible HTML table that will autofit columns when opened
-    const htmlContent = `
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <style>
-        table { border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; white-space: nowrap; }
-        th { background-color: #f2f2f2; font-weight: bold; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
-    </style>
-</head>
-<body>
-    <table>
-        <thead>
-            <tr>
-                ${csvRows[0].map(header => `<th>${header}</th>`).join('')}
-            </tr>
-        </thead>
-        <tbody>
-            ${csvRows.slice(1).map(row => 
-                `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`
-            ).join('')}
-        </tbody>
-    </table>
-</body>
-</html>`;
+    // Create CSV content with UTF-8 BOM for better Excel compatibility and autofit
+    // The BOM helps Excel recognize UTF-8 encoding and apply autofit automatically
+    const csvContent = "\uFEFF" + csvRows.map(row => 
+      row.map(field => {
+        // Ensure proper escaping and formatting for Excel autofit
+        const escapedField = field.replace(/"/g, '""');
+        return `"${escapedField}"`;
+      }).join(",")
+    ).join("\r\n"); // Use Windows line endings for better Excel compatibility
 
-    const blob = new Blob([htmlContent], { 
-      type: "application/vnd.ms-excel;charset=utf-8;" 
+    const blob = new Blob([csvContent], { 
+      type: "text/csv;charset=utf-8;" 
     });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `${analysis.fileName}_dependencies.xls`;
+    a.download = `${analysis.fileName}_dependencies.csv`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
