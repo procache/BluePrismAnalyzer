@@ -12,7 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Search, Download, Play, Cog } from "lucide-react";
+import { Search, Download, Play, Cog, Square } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import type { ProcessAnalysis, VBODependency } from "@shared/schema";
 
@@ -149,13 +149,11 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
               {filteredAndSortedDependencies.map((vbo) => (
                 <TableRow key={vbo.id} className="table-row hover:bg-gray-50">
                   <TableCell>
-                    <div>
+                    <div className="flex items-center">
+                      <Square className="text-bp-blue mr-3 h-5 w-5" />
                       <div className="text-sm font-medium text-gray-900">
                         {vbo.name}
                       </div>
-                      <Badge variant="outline" className="bg-blue-100 text-blue-800 mt-1">
-                        VBO
-                      </Badge>
                     </div>
                   </TableCell>
                   <TableCell>
