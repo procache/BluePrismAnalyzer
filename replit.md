@@ -6,6 +6,14 @@ The Blue Prism Process Analyzer is a web application designed to analyze and vis
 
 The application processes uploaded Blue Prism files, extracts metadata and structural information, and presents the results through interactive dashboards with search, filtering, and export capabilities. It serves as a tool for automation governance, documentation, and optimization.
 
+## Recent Changes (August 2025)
+
+### CSV Export Enhancements
+- **Alphabetical action sorting**: Actions are now sorted alphabetically for each VBO in CSV exports
+- **Streamlined columns**: Removed "Locations" column from CSV exports for cleaner data
+- **Enhanced Excel compatibility**: Added UTF-8 BOM and Windows line endings for better autofit functionality
+- **Improved encoding**: Better character encoding handling for international text
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
