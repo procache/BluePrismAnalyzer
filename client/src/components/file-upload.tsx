@@ -3,7 +3,8 @@ import { useDropzone } from "react-dropzone";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowDown, Upload, FolderOpen, FileCode, X, Cog } from "lucide-react";
+import { Upload, FolderOpen, FileCode, X, Cog } from "lucide-react";
+import robotImagePath from "@assets/image_1754244472536.png";
 import { apiRequest } from "@/lib/queryClient";
 import type { ProcessAnalysis } from "@shared/schema";
 
@@ -156,7 +157,7 @@ export function FileUpload({ onUploadStart, onUploadComplete, onUploadError, isU
       >
         <input {...getInputProps()} />
         
-        <ArrowDown className="mx-auto h-16 w-16 text-green-500 mb-4" />
+        <img src={robotImagePath} alt="Upload" className="mx-auto h-16 w-16 mb-4" />
         <p className="text-lg font-medium text-gray-700 mb-2">Drop your .bpprocess file here</p>
         <p className="text-sm text-gray-500 mb-4">or click to browse your computer</p>
         <Button className="bg-bp-blue text-white hover:bg-blue-700">
