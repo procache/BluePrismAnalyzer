@@ -207,16 +207,19 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
                   <TableCell>
                     <div className="space-y-2">
                       {vbo.actions && vbo.actions.length > 0 ? (
-                        vbo.actions.map((action) => (
-                          <div key={action.id} className="flex items-center bg-gray-50 rounded-lg p-2">
-                            <Play className="text-bp-green mr-2 h-4 w-4" />
-                            <div className="flex-1">
-                              <div className="text-sm font-medium text-gray-900">
-                                {action.name}
+                        vbo.actions
+                          .slice()
+                          .sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
+                          .map((action) => (
+                            <div key={action.id} className="flex items-center bg-gray-50 rounded-lg p-2">
+                              <Play className="text-bp-green mr-2 h-4 w-4" />
+                              <div className="flex-1">
+                                <div className="text-sm font-medium text-gray-900">
+                                  {action.name}
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        ))
+                          ))
                       ) : (
                         <div className="text-sm text-gray-500 italic">No actions found</div>
                       )}
