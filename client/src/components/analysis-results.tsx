@@ -130,11 +130,8 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
               {filteredAndSortedDependencies.map((vbo) => (
                 <TableRow key={vbo.id} className="table-row hover:bg-gray-50">
                   <TableCell>
-                    <div className="flex items-center">
-                      <Square className="text-bp-blue mr-3 h-5 w-5" />
-                      <div className="text-sm font-medium text-gray-900">
-                        {vbo.name}
-                      </div>
+                    <div className="text-sm font-medium text-gray-900">
+                      {vbo.name}
                     </div>
                   </TableCell>
                   <TableCell>
