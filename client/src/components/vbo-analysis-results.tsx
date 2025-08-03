@@ -181,12 +181,12 @@ export function VBOAnalysisResults({ analysis }: VBOAnalysisResultsProps) {
         </CardContent>
       </Card>
 
-      {/* Application Elements */}
+      {/* Application Modeller */}
       <Card className="card-shadow mb-6">
         <CardHeader>
           <CardTitle className="text-lg font-semibold text-bp-dark flex items-center">
             <Layers className="mr-2 h-5 w-5" />
-            Application Elements ({analysis.elementCount})
+            Application Modeller ({analysis.elementCount})
           </CardTitle>
         </CardHeader>
         <CardContent>
