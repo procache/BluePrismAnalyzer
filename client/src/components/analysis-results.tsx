@@ -110,14 +110,10 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
       {/* Process Summary */}
       <Card className="card-shadow mb-6">
         <CardHeader>
-          <CardTitle className="text-xl font-semibold text-bp-dark">Process Summary</CardTitle>
+          <CardTitle className="text-xl font-semibold text-bp-dark">{analysis.processName}</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-blue-50 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-bp-blue">{analysis.totalStages}</div>
-              <div className="text-sm text-gray-600">Total Stages</div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-green-50 rounded-lg p-4 text-center">
               <div className="text-2xl font-bold text-bp-green">{analysis.vboCount}</div>
               <div className="text-sm text-gray-600">VBO Dependencies</div>
@@ -125,10 +121,6 @@ export function AnalysisResults({ analysis }: AnalysisResultsProps) {
             <div className="bg-orange-50 rounded-lg p-4 text-center">
               <div className="text-2xl font-bold text-bp-orange">{analysis.actionCount}</div>
               <div className="text-sm text-gray-600">Actions Used</div>
-            </div>
-            <div className="bg-purple-50 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-purple-600">{analysis.subsheetCount}</div>
-              <div className="text-sm text-gray-600">Sub-sheets</div>
             </div>
           </div>
         </CardContent>
