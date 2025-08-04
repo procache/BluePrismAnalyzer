@@ -159,7 +159,8 @@ export function UnifiedUpload({
     return (
       <div className="text-center">
         <h2 className="text-xl font-semibold text-bp-dark mb-2">Upload Blue Prism File</h2>
-        <p className="text-gray-600 mb-6">Select or drag and drop your .bpprocess or .bpobject file to analyze</p>
+        <p className="text-sm text-gray-600 mb-2">Analyze .bpprocess files and extract dependencies</p>
+        <p className="text-sm text-gray-600 mb-6">Analyze .bpobject files and extract Application Modeller structure</p>
         
         <div className="bg-gray-50 rounded-lg p-4 max-w-md mx-auto">
           <div className="flex items-center justify-between">
@@ -189,7 +190,8 @@ export function UnifiedUpload({
   return (
     <div className="text-center">
       <h2 className="text-xl font-semibold text-bp-dark mb-2">Upload Blue Prism File</h2>
-      <p className="text-gray-600 mb-6">Select or drag and drop your .bpprocess or .bpobject file to analyze its structure and dependencies</p>
+      <p className="text-sm text-gray-600 mb-2">Analyze .bpprocess files and extract dependencies</p>
+      <p className="text-sm text-gray-600 mb-6">Analyze .bpobject files and extract Application Modeller structure</p>
       
       <div
         {...getRootProps()}

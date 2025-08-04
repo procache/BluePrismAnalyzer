@@ -104,6 +104,10 @@
     color: var(--bp-dark);
   }
 
+  .text-bp-blue {
+    color: var(--bp-blue);
+  }
+
   .bg-bp-surface {
     background-color: var(--bp-surface);
   }

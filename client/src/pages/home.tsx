@@ -45,10 +45,8 @@ export default function Home() {
               <div className="w-10 h-10 flex items-center justify-center">
                 <img src={logoImagePath} alt="Blue Prism Logo" className="w-10 h-10 rounded-lg" />
               </div>
-              <div>
-                <h1 className="text-2xl font-bold text-bp-dark">Blue Prism Dependency Explorer</h1>
-                <p className="text-sm text-gray-600">Analyze .bpprocess files and extract dependencies</p>
-                <p className="text-sm text-gray-600">Analyze .bpobject files and extract Application Modeller structure</p>
+              <div className="flex items-center h-10">
+                <h1 className="text-2xl font-bold text-bp-blue">Blue Prism Dependency Explorer</h1>
               </div>
             </div>
 
