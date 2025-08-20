@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: blueprism-analyzer
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: blueprism-db
+          property: connectionString
+
+databases:
+  - name: blueprism-db
+    databaseName: blue_prism_analyzer
+    user: blueprism_user
+    plan: free
